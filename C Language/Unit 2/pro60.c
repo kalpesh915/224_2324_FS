@@ -19,7 +19,11 @@ void main(){
             printf(" ");
         }
         for(j=1; j<=i; j++){
-            printf(" *");
+            if(j==1 || j==i || i==5){
+                printf(" *");
+            }else{
+                printf("  ");
+            }
         }
         printf("\n");
     }
