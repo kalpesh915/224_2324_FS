@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas height="300" width="500" id="mycanvas" style="border:1px solid #000000;"></canvas>
+</body>
+</html>
+
+<script>
+    let canvas = document.getElementById("mycanvas");
+    let ctx = canvas.getContext("2d");
+
+    ctx.font = "50px Arial";
+    ctx.strokeText("Welcome", 50, 50);
+    ctx.stroke();
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Image to use:</p>
+    <img id="scream" src="images/img1.jpg" alt="The Scream" width="220" height="277">
+    <canvas height="300" width="500" id="mycanvas" style="border:1px solid #000000;"></canvas>
+    <button onclick="draw()">Click Me</button>
+</body>
+</html>
+
+<script>
+    let canvas = document.getElementById("mycanvas");
+    let ctx = canvas.getContext("2d");
+
+    function draw(){
+        var img = document.getElementById("scream");
+        ctx.drawImage(img,0,0);
+    }
+    
+</script>
