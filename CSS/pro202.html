@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        img{
+            float: left;
+        }
+
+        .clearfix::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+    <div class="clearfix">
+        <img src="images/img_tree.gif" height="150">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas similique maiores blanditiis vel, consequuntur magnam ad rerum tempora officia sed ex saepe! A qui ipsum tempora. Eveniet 
+    </div>
+</body>
+</html>
