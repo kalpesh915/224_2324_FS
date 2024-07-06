@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            counter-reset: section;
+        }
+
+        h1::before{
+            counter-increment: section;
+            content: "Module "counter(section)" : ";
+        }
+
+        h1{
+            counter-reset: subsection;
+        }
+
+        h2::before{
+            counter-increment: subsection;
+            content: counter(section)"."counter(subsection)" ";
+        }
+    </style>
+</head>
+<body>
+    <h1>Front End Technology</h1>
+    <h2>HTML</h2>
+    <h2>CSS</h2>
+    <h2>BootStrap</h2>
+    <h2>Java Script</h2>
+    <h2>React JS</h2>
+
+    <h1>Back End Technology</h1>
+    <h2>PHP</h2>
+    <h2>Python</h2>
+    <h2>Node</h2>
+
+    <h1>Database Technology</h1>
+    <h2>MongoDB</h2>
+    <h2>MySql</h2>
+</body>
+</html>
