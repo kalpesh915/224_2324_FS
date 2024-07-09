@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .dropdown{
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content{
+            position: absolute;
+            min-width: 150px;
+            text-align: justify;
+            padding: 10px;
+            display: none;
+        }
+
+        .dropdown:hover .dropdown-content{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <img src="images/img_avatar.png" height="100" width="100">
+        <div class="dropdown-content">
+            <img src="images/img_avatar.png">
+        </div>
+    </div>
+</body>
+</html>
