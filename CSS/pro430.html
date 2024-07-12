@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @keyframes myAnimation {
+            0%{
+                background-color: darkblue;
+                top: 0px;
+                left: 0px;
+            }
+            25%{
+                background-color: purple;
+                left: 500px;
+                top: 0px;
+            }
+            50%{
+                background-color: orangered;
+                left: 500px;
+                top: 500px;
+            }
+            75%{
+                background-color: powderblue;
+                left: 0px;
+                top: 500px;
+            }
+            100%{
+                background-color: green;
+                top: 0px;
+                left: 0px;
+            }
+        }
+
+        .animate{
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            color: yellow;
+            position: relative;
+
+            animation-name: myAnimation;
+            animation-delay: 3s;
+            animation-duration: 10s;
+            animation-fill-mode: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="animate">
+        Welcome
+    </div>
+</body>
+</html>
