@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 50%;
+            position: relative;
+        }
+
+        .container img{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #008CBA;
+            transition: all 2s;
+            opacity: 0;
+        }
+
+        .container:hover .overlay{
+            opacity: 1;
+        }
+
+        .text{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            color: white;
+            font-size: 32px;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="images/img_avatar.png">
+        <div class="overlay">
+            <div class="text">
+                Bhavyata Dave
+            </div>
+        </div>
+    </div>
+</body>
+</html>
