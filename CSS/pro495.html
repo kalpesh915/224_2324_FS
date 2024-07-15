@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .pagination{
+            display: inline-block;
+        }
+
+        .page{
+            color: black;
+            float: left;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.5s;
+        }
+
+        .active{
+            background-color: green;
+            color: white;
+        }
+
+        /* .page:hover{
+            background-color: gray;
+            color: black;
+        } */
+
+        .page:hover:not(.active){
+            background-color: gray;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="pagination">
+        <a href="#" class="page">&laquo;</a>
+        <a href="#" class="page">1</a>
+        <a href="#" class="page active">2</a>
+        <a href="#" class="page">3</a>
+        <a href="#" class="page">4</a>
+        <a href="#" class="page">5</a>
+        <a href="#" class="page">&raquo;</a>
+    </div>
+</body>
+</html>
