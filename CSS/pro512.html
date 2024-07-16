@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: powderblue;
+        }
+
+        /* media query code */
+
+        /* code will be applied when screen size wider than 900px */
+        @media screen and (min-width: 900px){
+            body{
+                background-color: orange;
+            }
+        }
+
+    </style>
+</head>
+<body onresize="getWidth()">
+    <h1>Welcome to world of reposnsive web design with CSS</h1>
+    <h1 id="op"></h1>
+</body>
+</html>
+
+<script>
+    let op = document.getElementById("op");
+    function getWidth(){
+        op.innerHTML = window.innerWidth;
+    }
+</script>

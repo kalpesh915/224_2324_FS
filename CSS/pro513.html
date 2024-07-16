@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .wrapper{
+            overflow: auto;
+        }
+
+        #main{
+            margin-left: 4px;
+        }
+
+        #leftSidebar{
+            float: none;
+            width: auto;
+        }
+
+        #menulist{
+            margin: 0;
+            padding: 0;
+        }
+
+        .menuitem{
+            background: #CDF0F6;
+            border: 1px solid #d4d4d4;
+            border-radius: 4px;
+            list-style-type: none;
+            margin: 4px;
+            padding: 2px;
+        }
+
+        @media screen and (min-width:500px) {
+            #leftsidebar{
+                width: 200px;
+                float: left;
+            }
+
+            #main{
+                margin-left: 210px;
+            }
+        }
+    </style>
+</head>
+<body onresize="getWidth()">
+    
+    <!-- <h1 id="op"></h1> -->
+
+    <div class="wrapper">
+        <div id="leftsidebar">
+            <ul id="menulist">
+                <li class="menuitem">Link 1</li>
+                <li class="menuitem">Link 2</li>
+                <li class="menuitem">Link 3</li>
+                <li class="menuitem">Link 4</li>
+                <li class="menuitem">Link 5</li>
+            </ul>
+        </div>
+
+        <div id="main">
+            <h1>Welcome to CSS</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, necessitatibus id vitae maiores aperiam neque quos velit molestias inventore fugit voluptas saepe rem delectus cumque nisi, labore eos dolor eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem neque ullam repudiandae omnis nemo sunt, asperiores rem odio eos nam harum quisquam placeat eius autem, provident voluptatum rerum, a error!</p>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    let op = document.getElementById("op");
+    function getWidth(){
+        op.innerHTML = window.innerWidth;
+    }
+</script>

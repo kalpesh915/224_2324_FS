@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        .col{
+            width: 25%;
+            padding: 10px;
+            text-align: justify;
+            float: left;
+            font-size: 32px;
+            border: 1px solid black;
+        }
+
+        @media screen and (max-width:992px){
+            .col{
+                width: 50%;
+                font-size: 22px;
+            }
+        }
+
+        @media screen and (max-width:768px){
+            .col{
+                width: 100%;
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width:500px) {
+            .col{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body onresize="getWidth()">    
+    <h1 id="op"></h1>
+
+    <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt, dignissimos dolorum aliquid enim quos commodi labore, maxime est esse nihil minus cupiditate adipisci non eius. Vel doloremque deleniti impedit?</div>
+    <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt, dignissimos dolorum aliquid enim quos commodi labore, maxime est esse nihil minus cupiditate adipisci non eius. Vel doloremque deleniti impedit?</div>
+    <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt, dignissimos dolorum aliquid enim quos commodi labore, maxime est esse nihil minus cupiditate adipisci non eius. Vel doloremque deleniti impedit?</div>
+    <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt, dignissimos dolorum aliquid enim quos commodi labore, maxime est esse nihil minus cupiditate adipisci non eius. Vel doloremque deleniti impedit?</div>
+    <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt, dignissimos dolorum aliquid enim quos commodi labore, maxime est esse nihil minus cupiditate adipisci non eius. Vel doloremque deleniti impedit?</div>
+    <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt, dignissimos dolorum aliquid enim quos commodi labore, maxime est esse nihil minus cupiditate adipisci non eius. Vel doloremque deleniti impedit?</div>
+    <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt, dignissimos dolorum aliquid enim quos commodi labore, maxime est esse nihil minus cupiditate adipisci non eius. Vel doloremque deleniti impedit?</div>
+    <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt, dignissimos dolorum aliquid enim quos commodi labore, maxime est esse nihil minus cupiditate adipisci non eius. Vel doloremque deleniti impedit?</div>
+    <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt, dignissimos dolorum aliquid enim quos commodi labore, maxime est esse nihil minus cupiditate adipisci non eius. Vel doloremque deleniti impedit?</div>
+    <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt, dignissimos dolorum aliquid enim quos commodi labore, maxime est esse nihil minus cupiditate adipisci non eius. Vel doloremque deleniti impedit?</div>
+    <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt, dignissimos dolorum aliquid enim quos commodi labore, maxime est esse nihil minus cupiditate adipisci non eius. Vel doloremque deleniti impedit?</div>
+    <div class="col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt, dignissimos dolorum aliquid enim quos commodi labore, maxime est esse nihil minus cupiditate adipisci non eius. Vel doloremque deleniti impedit?</div>
+</body>
+</html>
+
+<script>
+    let op = document.getElementById("op");
+    function getWidth(){
+        op.innerHTML = window.innerWidth;
+    }
+</script>
