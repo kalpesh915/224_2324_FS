@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        [class*="class-"]{
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid black;
+            float: left;
+            width: 100%;
+        }
+
+        .header{
+            background-color: black;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .row::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .menu{
+            background-color: powderblue;
+            padding: 10px;
+        }
+
+        .menu a{
+            display: block;
+            background-color: chocolate;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            margin: 3px 0px;
+        }
+
+        .menu a:hover{
+            background-color: olive;
+        }
+
+        .main{
+            padding: 15px;
+            text-align: justify;
+            background-color: thistle;
+        }
+
+        .sidebar{
+            background-color: purple;
+            color: white;
+            padding: 10px;
+
+        }
+
+        .footer{
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Welcome to world of Responsive web design</h1>
+    </header>
+
+    <div class="row">
+        <div class="menu">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            <a href="#">Link 4</a>
+            <a href="#">Link 5</a>
+        </div>
+
+        <div class="main">
+            <h1>Main Content of Webpage</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione facilis voluptatem dignissimos maxime in totam nobis cumque saepe cum reiciendis? In quidem sint, ratione perspiciatis vitae modi inventore non voluptatibus?
+            Sit quibusdam iste sed! Accusantium excepturi repellendus laudantium, accusamus asperiores velit ullam. Quia, vitae. Vero expedita voluptate, laboriosam incidunt illum impedit dolor tempora ipsum, est voluptas qui odio, natus assumenda!
+            Neque ad earum fugit, iusto architecto laborum soluta quis placeat sunt laudantium nisi nulla sequi? Dicta qui aliquid culpa ratione saepe. Unde reprehenderit molestias ratione quis doloribus exercitationem ullam hic!</p>
+        </div>
+
+        <div class="sidebar">
+            <h3>What ?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus quas, tenetur obcaecati nam magnam voluptatibus, voluptatem dicta, aut exercitationem necessitatibus eos tempore libero fugiat ipsa quasi aperiam et? Quod.</p>
+            <h3>Who ?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus quas, tenetur obcaecati nam magnam voluptatibus, voluptatem dicta, aut exercitationem necessitatibus eos tempore libero fugiat ipsa quasi aperiam et? Quod.</p>
+            <h3>Why ?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo minus quas, tenetur obcaecati nam magnam voluptatibus, voluptatem dicta, aut exercitationem necessitatibus eos tempore libero fugiat ipsa quasi aperiam et? Quod.</p>
+        </div>
+    </div>
+    
+
+    <footer class="footer">
+        <h3>Designed by : Bhavin Thakar</h3>
+    </footer>
+</body>
+</html>
