@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        /* Mobile View */
+        [class*="col-"]{
+            width: 100%;
+            float: left;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .row::after{
+            clear: both;
+            content: "";
+            display: table;
+        }
+
+        /* header */
+
+        .header{
+            background-color: olive;
+            color: white;
+            text-align: center;
+            padding: 75px;
+        }
+
+        .footer{
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .menu{
+            background-color: powderblue;
+            padding: 10px;
+        }
+
+        .menu ul{
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .menu ul li a{
+            display:  block;
+            text-decoration: none;
+            color: black;
+            padding: 8px 16px;
+            text-align: center;
+            margin: 2px 0px;
+        }
+
+        .menu ul li :hover{
+            background-color: #333333;
+            color: white;
+        }
+
+        .data{
+            padding: 10px;
+            text-align: justify;
+        }
+
+        .sidebar{
+            text-align: center;
+            padding: 10px;
+            background-color: teal;
+            color: white;
+        }
+
+        /* media query Breakpoint for tablet */
+        @media screen and (min-width:768px){
+            .col-t-1{ width: 8.33%;}
+            .col-t-2{ width: 16.66%;}
+            .col-t-3{ width: 25%;}
+            .col-t-4{ width: 33.33%;}
+            .col-t-5{ width: 41.66%;}
+            .col-t-6{ width: 50%;}
+            .col-t-7{ width: 58.33%;}
+            .col-t-8{ width: 66.66%;}
+            .col-t-9{ width: 75%;}
+            .col-t-10{ width: 83.33%;}
+            .col-t-11{ width: 91.66%;}
+            .col-t-12{ width: 100%;}
+        }
+
+         /* media query Breakpoint for desktio */
+         @media screen and (min-width:992px){
+            .col-d-1{ width: 8.33%;}
+            .col-d-2{ width: 16.66%;}
+            .col-d-3{ width: 25%;}
+            .col-d-4{ width: 33.33%;}
+            .col-d-5{ width: 41.66%;}
+            .col-d-6{ width: 50%;}
+            .col-d-7{ width: 58.33%;}
+            .col-d-8{ width: 66.66%;}
+            .col-d-9{ width: 75%;}
+            .col-d-10{ width: 83.33%;}
+            .col-d-11{ width: 91.66%;}
+            .col-d-12{ width: 100%;}
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Welcome to World of Responsive web design</h1>
+    </header>
+
+    <main class="row">
+        <div class="menu col-t-3 col-d-3">
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+                <li><a href="#">Link 5</a></li>
+            </ul>
+        </div>
+
+        <div class="data col-t-9 col-d-6">
+            <h1>Welcome to our website</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo asperiores quas voluptate tempora eum fugiat qui, doloremque vitae est magni officia voluptas modi illum illo pariatur dolores consequuntur labore! Perferendis?
+            Quae sit accusamus harum beatae numquam vel ullam corporis. Iusto optio animi voluptatibus ab velit incidunt laboriosam sapiente perferendis dolor consequatur quo deserunt dolores, nostrum et quidem saepe maiores hic!
+            Facilis ipsam, possimus aspernatur dolorem esse voluptatum distinctio laudantium id mollitia repudiandae corrupti repellat labore assumenda alias maxime cum sapiente commodi quos perspiciatis cupiditate itaque inventore doloremque! Minima, totam sunt?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo asperiores quas voluptate tempora eum fugiat qui, doloremque vitae est magni officia voluptas modi illum illo pariatur dolores consequuntur labore! Perferendis? Quae sit accusamus harum beatae numquam vel ullam corporis. Iusto optio animi voluptatibus ab velit incidunt laboriosam sapiente perferendis dolor consequatur quo deserunt dolores, nostrum et quidem saepe maiores hic! Facilis ipsam, possimus aspernatur dolorem esse voluptatum distinctio laudantium id mollitia repudiandae corrupti repellat labore assumenda alias maxime cum sapiente commodi quos perspiciatis cupiditate itaque inventore doloremque! Minima, totam sunt?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo asperiores quas voluptate tempora eum fugiat qui, doloremque vitae est magni officia voluptas modi illum illo pariatur dolores consequuntur labore! Perferendis? Quae sit accusamus harum beatae numquam vel ullam corporis. Iusto optio animi voluptatibus ab velit incidunt laboriosam sapiente perferendis dolor consequatur quo deserunt dolores, nostrum et quidem saepe maiores hic! Facilis ipsam, possimus aspernatur dolorem esse voluptatum distinctio laudantium id mollitia repudiandae corrupti repellat labore assumenda alias maxime cum sapiente commodi quos perspiciatis cupiditate itaque inventore doloremque! Minima, totam sunt?</p>
+        </div>
+
+        <div class="sidebar col-t-12 col-d-3">
+            <h3>Rajkot</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni nobis amet quas unde aliquam aut quidem mollitia inventore hic optio facere porro laudantium soluta ea molestiae, error rerum laborum debitis?</p>
+            <h3>Ahamdabad</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum repudiandae at perspiciatis explicabo obcaecati enim voluptatibus cum voluptate quaerat? Quisquam placeat cupiditate et sequi? Deserunt nam aliquid in corrupti praesentium?</p>
+            <h3>Bhuj</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, ducimus cumque quisquam nam repellat quibusdam corrupti, ullam, nesciunt reprehenderit aspernatur illum dolores. Nam ducimus labore sit quidem natus autem optio?</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <h3>Designed by : Het Manani</h3>
+    </footer>
+</body>
+</html>
