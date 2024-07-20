@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-areas: 
+            'header header header header header'
+            'menu menu menu menu menu'
+            'sidebar1 main main main sidebar2'
+            'footer footer footer footer footer';
+            gap: 10px 20px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        @media screen and (max-width:776px){
+            .grid-container{
+                grid-template-areas: 
+                'header '
+                'menu '
+                'sidebar1'
+                'main'
+                'sidebar2'
+                'footer';
+            }
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .item1{           
+            grid-area: header;
+        }
+
+        .item2{           
+            grid-area: menu;
+        }
+
+        .item3{           
+            grid-area: sidebar1;
+        }
+
+        .item4{           
+            grid-area: main;
+        }
+
+        .item5{           
+            grid-area: sidebar2;
+        }
+
+        .item6{           
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-item item1">Website Header</div>
+        <div class="grid-item item2">Menu</div>
+        <div class="grid-item item3">Sidebar 1</div>
+        <div class="grid-item item4">Main</div>
+        <div class="grid-item item5">Sidebar 2</div>
+        <div class="grid-item item6">Footer</div>
+    </div>
+</body>
+</html>
