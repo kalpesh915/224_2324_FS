@@ -1,0 +1,177 @@
+/* 
+    Global Code
+*/
+
+*{
+    box-sizing: border-box;
+}
+
+/* phone view */
+[class*="col-"]{
+    float: left;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* row */
+.row::after{
+    clear: both;
+    display: table;
+    content: " ";
+}
+
+/* Tablet view */
+@media screen and (min-width:768px){
+    .col-t-1{ width: 8.33%; }
+    .col-t-2{ width: 16.66%; }
+    .col-t-3{ width: 25%; }
+    .col-t-4{ width: 33.33%; }
+    .col-t-5{ width: 41.66%; }
+    .col-t-6{ width: 50%; }
+    .col-t-7{ width: 58.33%; }
+    .col-t-8{ width: 66.66%; }
+    .col-t-9{ width: 75%; }
+    .col-t-10{ width: 83.33%; }
+    .col-t-11{ width: 91.66%; }
+    .col-t-12{ width: 100%; }
+}
+
+/* Desktop view */
+@media screen and (min-width:992px){
+    .col-d-1{ width: 8.33%; }
+    .col-d-2{ width: 16.66%; }
+    .col-d-3{ width: 25%; }
+    .col-d-4{ width: 33.33%; }
+    .col-d-5{ width: 41.66%; }
+    .col-d-6{ width: 50%; }
+    .col-d-7{ width: 58.33%; }
+    .col-d-8{ width: 66.66%; }
+    .col-d-9{ width: 75%; }
+    .col-d-10{ width: 83.33%; }
+    .col-d-11{ width: 91.66%; }
+    .col-d-12{ width: 100%; }
+}
+
+
+/* Intro class */
+.intro{
+    background-color: yellow;
+    color: black;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Header */
+#header{
+    background-color: purple;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+.header{
+    padding: 40px;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 5px black;
+    font-size: 45px;
+}
+
+/* navigation bar */
+.navbar{
+    background-color: #333333;
+    width: 100%;
+    overflow: auto;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+}
+
+.navbar ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.navbar ul li{
+    float: left;
+}
+
+.navbar ul li a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 16px;
+    color: white;
+}
+
+.navbar ul li a:hover{
+    background-color: #dddddd;
+    color: black;
+}
+
+/* About */
+
+
+/* Footer */
+#footer{
+    background-color: orangered;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#about img{
+    width: 100%;
+}
+
+/* Services */
+
+.service-box{
+    padding: 20px;
+}
+
+.service-box h3{
+    text-align: center;
+}
+
+.service-box img{
+    width: 100%;
+}
+
+.service-box p{
+    text-align: center;
+}
+
+.service-box:hover{
+    box-shadow: 0px 0px 3px 0px black;
+    transform: scale(0.9);
+}
+
+.service-box:hover img{
+    border-radius: 50% 20%;
+}
+
+/* Contact */
+.icon-box{
+    margin: 30px 0px;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.icon-box i{
+    font-size: 30px;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 50%;
+    color: white;
+    background-color: black;
+}
+
+.icon-box a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
