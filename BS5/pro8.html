@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body onresize="getWidth()">
+    <div class="container-fluid">
+        <h1 id="op"></h1>
+        <p>( Extra Small ) Screen Size Less than 576px then width of Container is 100%</p>
+        <p>( small class) Screen Size Greater than 576px and less than 768px then width of Container is 540px</p>
+        <p>( medium class) Screen Size Greater than 768px and less than 992px then width of Container is 720px</p>
+        <p>( large class) Screen Size Greater than 992px and less than 1200px then width of Container is 960px</p>
+        <p>( Extra Large class) Screen Size Greater than 1200px and less than 1400px then width of Container is 1140px</p>
+        <p>( XX Large class) Screen Size Greater than 1400px and above then width of Container is 1320px</p>
+    </div>
+</body>
+</html>
+
+<script>
+    let op = document.getElementById("op");
+
+    function getWidth(){
+        op.innerHTML = window.innerWidth;
+    }
+</script>
