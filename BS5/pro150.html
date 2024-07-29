@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid text-center">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate voluptatibus excepturi ipsa obcaecati corporis quis cum accusamus est quam perferendis ad iste deserunt, inventore, suscipit iure? Esse dicta ea vitae!
+        Veniam minus natus dicta atque quo pariatur hic qui non sequi sed voluptatem impedit odit doloribus voluptate vero ipsam, eaque cupiditate maiores beatae consequatur numquam dolorem rem at quod? Nisi.</p>
+        <button type="button" class="btn btn-primary" title="Simple Button of bootstrap" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="This is another example of sample text in bootstrap">Click me</button>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate voluptatibus excepturi ipsa obcaecati corporis quis cum accusamus est quam perferendis ad iste deserunt, inventore, suscipit iure? Esse dicta ea vitae!
+        Veniam minus natus dicta atque quo pariatur hic qui non sequi sed voluptatem impedit odit doloribus voluptate vero ipsam, eaque cupiditate maiores beatae consequatur numquam dolorem rem at quod? Nisi.</p>
+    </div>
+</body>
+
+<script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
+</script>
+
+</html>
