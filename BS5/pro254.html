@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body onresize="getWidth()">
+    <div class="container-fluid">
+        <h1 class="bg-dark text-white p-5 text-center" id="op"></h1>
+        <div class="row">
+            <div class="col-sm-3 col-md-6 col-lg-4 col-xl-2 col-xxl-10 p-3 text-white bg-primary">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quasi atque molestiae unde nihil numquam placeat nam totam, nobis, voluptatem, praesentium ea voluptate amet accusantium laudantium officia eum enim quidem.</p>
+            </div>
+            <div class="col-sm-9 col-md-6 col-lg-8 col-xl-10 col-xxl-2 p-3 text-white bg-danger">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quasi atque molestiae unde nihil numquam placeat nam totam, nobis, voluptatem, praesentium ea voluptate amet accusantium laudantium officia eum enim quidem.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    let op = document.getElementById("op");
+    function getWidth(){
+        let width = window.innerWidth;
+
+        if(width >= 1400){
+            text = "Screen Size is XXL and Witdh is "+width;
+        }else if(width >= 1200 && width < 1400){
+            text = "Screen Size is XL and Witdh is "+width;
+        }else if(width >= 992 && width < 1200){
+            text = "Screen Size is LG and Witdh is "+width;
+        }else if(width >= 768 && width < 992){
+            text = "Screen Size is MD and Witdh is "+width;
+        }else if(width >= 576 && width < 768){
+            text = "Screen Size is SM and Witdh is "+width;
+        }else if(width < 576){
+            text = "Screen Size is XSM and Witdh is "+width;
+        }
+        
+        op.innerHTML = text;
+    }
+</script>
