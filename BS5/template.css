@@ -1,0 +1,49 @@
+/* custom CSS code */
+
+.section-title{
+    text-align: center;
+    font-size: 50px;
+    text-shadow: 0px 0px 5px black;
+    color: white;
+    padding: 80px;
+}
+
+/* Service Box */
+.servicebox{
+    padding: 20px;
+    text-align: center;
+}
+
+.servicebox i{
+    text-align: center;
+    font-size: 50px;
+    border: 1px solid gray;
+    padding: 30px;
+    border-radius: 50%;
+}
+
+.servicebox:hover{
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Team Box */
+.teambox{
+
+}
+
+.teambox:hover{
+    transform: scale(1.1);
+}
+
+.teambox a{
+    border-radius: 50%;
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+    display: inline-block;
+}
+
+.teambox a:hover{
+    background-color: black;
+    color: white;
+}

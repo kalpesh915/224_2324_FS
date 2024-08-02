@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Templete</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custome CSS File -->
+    <link href="template.css" rel="stylesheet">
+</head>
+
+<body data-bs-spy="scroll">
+    <!-- Header Start -->
+    <header class="bg-primary text-white text-center p-5">
+        <h1>Welcome to World of Responsive Web Design with</h1>
+        <h1 class="display-1">Bootstrap 5</h1>
+    </header>
+    <!-- Header Complete -->
+
+    <!-- Navbar start -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top" id="home">
+        <a class="navbar-brand" href="#">Project1</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mymenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mymenu">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#team" class="nav-link">Team</a></li>
+                <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
+                <li class="nav-item"><a href="#products" class="nav-link">Products</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#login" data-bs-toggle="offcanvas" data-bs-target="#demo1" class="nav-link">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Slider Code -->
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/chicago.jpg" alt="Chicago" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="images/ny.jpg" alt="New York" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="images/la.jpg" alt="Los Angeles" class="d-block w-100">
+            </div>
+        </div>
+
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+    <!-- Navbar Complete -->
+
+    <!-- Main Content Start -->
+    <main>
+        <div class="container-fluid" id="about">
+            <h1 class="section-title">About us</h1>
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="images/about us.svg" class="mw-100" data-aos="zoom-in" data-aos-delay="500">
+                </div>
+                <div class="col-lg-6 px-4" style="text-align: justify;">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi possimus laboriosam ad dolores
+                        laudantium delectus. Iure, ipsum ab dicta nam doloremque ipsam, dolores modi vero soluta
+                        perferendis unde sequi ut.
+                        Enim dolorem ratione fugit ipsam quidem delectus aspernatur quibusdam facilis, blanditiis natus
+                        inventore reprehenderit officiis minus voluptate porro molestias! Enim voluptates officia
+                        consequatur facilis aut assumenda, facere iusto consectetur ullam!</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi possimus laboriosam ad dolores
+                        laudantium delectus. Iure, ipsum ab dicta nam doloremque ipsam, dolores modi vero soluta
+                        perferendis unde sequi ut.
+                        Enim dolorem ratione fugit ipsam quidem delectus aspernatur quibusdam facilis, blanditiis natus
+                        inventore reprehenderit officiis minus voluptate porro molestias! Enim voluptates officia
+                        consequatur facilis aut assumenda, facere iusto consectetur ullam!</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi possimus laboriosam ad dolores
+                        laudantium delectus. Iure, ipsum ab dicta nam doloremque ipsam, dolores modi vero soluta
+                        perferendis unde sequi ut.
+                        Enim dolorem ratione fugit ipsam quidem delectus aspernatur quibusdam facilis, blanditiis natus
+                        inventore reprehenderit officiis minus voluptate porro molestias! Enim voluptates officia
+                        consequatur facilis aut assumenda, facere iusto consectetur ullam!</p>
+                </div>
+            </div>
+
+            <div class="container border border-2 my-5">
+                <ul class="nav nav-tabs nav-justified">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#office">Office</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#home1">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#vacation">Vacation</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content my-3">
+                    <div class="tab-pane container active" id="office">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="images/office.svg" class="mw-100">
+                            </div>
+                            <div class="col-md-6">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt sapiente, dolorem
+                                    harum eos atque iusto architecto fugit totam illum, qui voluptates quas possimus,
+                                    facilis nisi obcaecati tenetur repellat hic debitis.</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt sapiente, dolorem
+                                    harum eos atque iusto architecto fugit totam illum, qui voluptates quas possimus,
+                                    facilis nisi obcaecati tenetur repellat hic debitis.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane container fade" id="home1">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="images/coffee.svg" class="mw-100">
+                            </div>
+                            <div class="col-md-6">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt sapiente, dolorem
+                                    harum eos atque iusto architecto fugit totam illum, qui voluptates quas possimus,
+                                    facilis nisi obcaecati tenetur repellat hic debitis.</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt sapiente, dolorem
+                                    harum eos atque iusto architecto fugit totam illum, qui voluptates quas possimus,
+                                    facilis nisi obcaecati tenetur repellat hic debitis.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane container fade" id="vacation">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="images/travel.svg" class="mw-100">
+                            </div>
+                            <div class="col-md-6">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt sapiente, dolorem
+                                    harum eos atque iusto architecto fugit totam illum, qui voluptates quas possimus,
+                                    facilis nisi obcaecati tenetur repellat hic debitis.</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt sapiente, dolorem
+                                    harum eos atque iusto architecto fugit totam illum, qui voluptates quas possimus,
+                                    facilis nisi obcaecati tenetur repellat hic debitis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="container-fluid p-5" id="services" data-aos="fade-up" data-aos-delay="1000">
+            <h1 class="section-title">Services</h1>
+            <div class="row">
+                <div class="col-lg-4 servicebox">
+                    <i class="fa fa-home"></i>
+                    <h3>Home</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptas deleniti qui,
+                        itaque, neque iste nam sit eum eos animi reprehenderit vitae facilis consequuntur consectetur.
+                        Culpa esse optio error dolore.</p>
+                </div>
+                <div class="col-lg-4 servicebox">
+                    <i class="fa fa-car"></i>
+                    <h3>Car</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptas deleniti qui,
+                        itaque, neque iste nam sit eum eos animi reprehenderit vitae facilis consequuntur consectetur.
+                        Culpa esse optio error dolore.</p>
+                </div>
+                <div class="col-lg-4 servicebox">
+                    <i class="fa fa-user"></i>
+                    <h3>User</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptas deleniti qui,
+                        itaque, neque iste nam sit eum eos animi reprehenderit vitae facilis consequuntur consectetur.
+                        Culpa esse optio error dolore.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team -->
+        <h1 class="section-title">Team</h1>
+        <div class="container-fluid p-5" id="team" data-aos="fade-up" data-aos-duration="300" data-aos-delay="100">
+            <div class="row">
+                <div class="col-md-3 my-5 teambox">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="text-center">Het Manani</h3>
+                        </div>
+                        <img src="images/img_avatar1.png" class="mw-100">
+                        <div class="card-body">
+                            <h4>Manager</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est natus fuga illum quaerat
+                                minima quae labore nostrum totam architecto delectus! Similique, at autem? Tempora
+                                dolorum porro culpa error possimus veniam?</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="#"><i class="fa fa-phone"></i></a>
+                            <a href="#"><i class="fa fa-envelope"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-whatsapp"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 my-5 teambox">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="text-center">Het Manani</h3>
+                        </div>
+                        <img src="images/img_avatar1.png" class="mw-100">
+                        <div class="card-body">
+                            <h4>Manager</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est natus fuga illum quaerat
+                                minima quae labore nostrum totam architecto delectus! Similique, at autem? Tempora
+                                dolorum porro culpa error possimus veniam?</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="#"><i class="fa fa-phone"></i></a>
+                            <a href="#"><i class="fa fa-envelope"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-whatsapp"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 my-5 teambox">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="text-center">Het Manani</h3>
+                        </div>
+                        <img src="images/img_avatar1.png" class="mw-100">
+                        <div class="card-body">
+                            <h4>Manager</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est natus fuga illum quaerat
+                                minima quae labore nostrum totam architecto delectus! Similique, at autem? Tempora
+                                dolorum porro culpa error possimus veniam?</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="#"><i class="fa fa-phone"></i></a>
+                            <a href="#"><i class="fa fa-envelope"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-whatsapp"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 my-5 teambox">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="text-center">Het Manani</h3>
+                        </div>
+                        <img src="images/img_avatar1.png" class="mw-100">
+                        <div class="card-body">
+                            <h4>Manager</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est natus fuga illum quaerat
+                                minima quae labore nostrum totam architecto delectus! Similique, at autem? Tempora
+                                dolorum porro culpa error possimus veniam?</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="#"><i class="fa fa-phone"></i></a>
+                            <a href="#"><i class="fa fa-envelope"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-whatsapp"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <h1 class="section-title">FAQ</h1>
+        <div class="container" id="faq">
+            <div id="accordion">
+
+                <div class="card">
+                    <div class="card-header">
+                        <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+                            Collapsible Group Item #1
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod, numquam consequuntur
+                            corrupti vitae incidunt distinctio ab rerum eius, autem a velit vel voluptates, libero
+                            quidem perferendis sequi. Consequuntur, sunt amet.
+                            Quasi cupiditate exercitationem quia eligendi itaque quaerat minima sint voluptas! Assumenda
+                            quibusdam, molestiae voluptate numquam dolores non. Minima dolor commodi magni dolorum at
+                            dolore, veniam esse, rerum amet quidem illo.
+                            Provident tempore unde ullam, delectus dolorem ducimus illum soluta molestias ut porro
+                            suscipit repellat odit numquam dolores harum vel voluptatum eaque, libero totam. Iusto
+                            libero at, voluptate aliquid sed a?
+                            Unde voluptatum magnam nam fugit ipsa repellendus iusto sint, nostrum officiis aut at?
+                            Corrupti recusandae sunt inventore, debitis sequi quaerat nulla quisquam iure quo eum fugiat
+                            similique aliquid! Est, dolor?
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
+                            Collapsible Group Item #2
+                        </a>
+                    </div>
+                    <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod, numquam consequuntur
+                            corrupti vitae incidunt distinctio ab rerum eius, autem a velit vel voluptates, libero
+                            quidem perferendis sequi. Consequuntur, sunt amet.
+                            Quasi cupiditate exercitationem quia eligendi itaque quaerat minima sint voluptas! Assumenda
+                            quibusdam, molestiae voluptate numquam dolores non. Minima dolor commodi magni dolorum at
+                            dolore, veniam esse, rerum amet quidem illo.
+                            Provident tempore unde ullam, delectus dolorem ducimus illum soluta molestias ut porro
+                            suscipit repellat odit numquam dolores harum vel voluptatum eaque, libero totam. Iusto
+                            libero at, voluptate aliquid sed a?
+                            Unde voluptatum magnam nam fugit ipsa repellendus iusto sint, nostrum officiis aut at?
+                            Corrupti recusandae sunt inventore, debitis sequi quaerat nulla quisquam iure quo eum fugiat
+                            similique aliquid! Est, dolor?
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+                            Collapsible Group Item #3
+                        </a>
+                    </div>
+                    <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod, numquam consequuntur
+                            corrupti vitae incidunt distinctio ab rerum eius, autem a velit vel voluptates, libero
+                            quidem perferendis sequi. Consequuntur, sunt amet.
+                            Quasi cupiditate exercitationem quia eligendi itaque quaerat minima sint voluptas! Assumenda
+                            quibusdam, molestiae voluptate numquam dolores non. Minima dolor commodi magni dolorum at
+                            dolore, veniam esse, rerum amet quidem illo.
+                            Provident tempore unde ullam, delectus dolorem ducimus illum soluta molestias ut porro
+                            suscipit repellat odit numquam dolores harum vel voluptatum eaque, libero totam. Iusto
+                            libero at, voluptate aliquid sed a?
+                            Unde voluptatum magnam nam fugit ipsa repellendus iusto sint, nostrum officiis aut at?
+                            Corrupti recusandae sunt inventore, debitis sequi quaerat nulla quisquam iure quo eum fugiat
+                            similique aliquid! Est, dolor?
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Products -->
+        <h1 class="section-title" id="products">Products</h1>
+        <div class="container-fluid p-5">
+            <div class="card">
+                <div class="card-header">
+                    Products 1
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="images/sanfran.jpg" class="mw-100">
+                        </div>
+                        <div class="col-lg-8">
+                            <h1>Products Name</h1>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim doloremque inventore vero
+                                qui veniam totam sit, fugit odio omnis recusandae tempora maiores libero minima
+                                perspiciatis doloribus, rerum ea. Nemo, quaerat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Products 1
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="images/sanfran.jpg" class="mw-100">
+                        </div>
+                        <div class="col-lg-8">
+                            <h1>Products Name</h1>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim doloremque inventore vero
+                                qui veniam totam sit, fugit odio omnis recusandae tempora maiores libero minima
+                                perspiciatis doloribus, rerum ea. Nemo, quaerat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Products 1
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="images/sanfran.jpg" class="mw-100">
+                        </div>
+                        <div class="col-lg-8">
+                            <h1>Products Name</h1>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim doloremque inventore vero
+                                qui veniam totam sit, fugit odio omnis recusandae tempora maiores libero minima
+                                perspiciatis doloribus, rerum ea. Nemo, quaerat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Products 1
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="images/sanfran.jpg" class="mw-100">
+                        </div>
+                        <div class="col-lg-8">
+                            <h1>Products Name</h1>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim doloremque inventore vero
+                                qui veniam totam sit, fugit odio omnis recusandae tempora maiores libero minima
+                                perspiciatis doloribus, rerum ea. Nemo, quaerat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Products 1
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="images/sanfran.jpg" class="mw-100">
+                        </div>
+                        <div class="col-lg-8">
+                            <h1>Products Name</h1>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim doloremque inventore vero
+                                qui veniam totam sit, fugit odio omnis recusandae tempora maiores libero minima
+                                perspiciatis doloribus, rerum ea. Nemo, quaerat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Products 1
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="images/sanfran.jpg" class="mw-100">
+                        </div>
+                        <div class="col-lg-8">
+                            <h1>Products Name</h1>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim doloremque inventore vero
+                                qui veniam totam sit, fugit odio omnis recusandae tempora maiores libero minima
+                                perspiciatis doloribus, rerum ea. Nemo, quaerat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Products 1
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="images/sanfran.jpg" class="mw-100">
+                        </div>
+                        <div class="col-lg-8">
+                            <h1>Products Name</h1>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim doloremque inventore vero
+                                qui veniam totam sit, fugit odio omnis recusandae tempora maiores libero minima
+                                perspiciatis doloribus, rerum ea. Nemo, quaerat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact us Section -->
+        <h1 class="section-title">Contatc US</h1>
+
+        <div class="container" id="contact">
+            <div class="row text-center">
+                <div class="shadow-lg p-5">
+                    <i class="fa fa-user fa-5x"></i>
+                    <h3 class="my-3">Contact Person</h3>
+                    <h4>Bhavya Dava From Morbi</h4>
+                </div>
+
+                <div class="shadow-lg col-lg-4 p-5 my-4">
+                    <i class="fa fa-location fa-5x"></i>
+                    <h3 class="my-3">Address</h3>
+                    <h4>Morbi</h4>
+                </div>
+
+                <div class="shadow-lg col-lg-4 p-5 my-4">
+                    <i class="fa fa-phone fa-5x"></i>
+                    <h3 class="my-3">Phone</h3>
+                    <h4>+99 9999 9999 99</h4>
+                </div>
+
+                <div class="shadow-lg col-lg-4 p-5 my-4">
+                    <i class="fa fa-envelope fa-5x"></i>
+                    <h3 class="my-3">Email</h3>
+                    <h4>info@davafamily.com</h4>
+                </div>
+
+                <div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117686.88581558327!2d70.73208332061768!3d22.813015255079463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39598d3c0788bb5d%3A0xf54b3b4d4c7327ff!2sSayaji%20Hotel%20Morbi!5e0!3m2!1sen!2sin!4v1722593835355!5m2!1sen!2sin"
+                        style="border:0; height: 300px;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" class="w-100"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Main Content Over -->
+
+
+    <!-- footer Start -->
+    <footer>
+        <div class="bg-dark text-center p-5 text-white">
+            <h5>Designed By : Yash Singal (Rajkot) </h5>
+        </div>
+    </footer>
+    <!-- Footer Complete -->
+</body>
+
+<!-- Offcanvas Sidebar -->
+<div class="offcanvas offcanvas-start" id="demo1">
+    <div class="offcanvas-header">
+        <h1 class="offcanvas-title">Login</h1>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <form>
+            <div class="form-floating mb-3 mt-3">
+                <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+                <label for="email">Email</label>
+            </div>
+
+            <div class="form-floating mt-3 mb-3">
+                <input type="text" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                <label for="pwd">Password</label>
+            </div>
+            <div class="my-3">
+                <input type="submit" value="Login" class="btn btn-primary">
+                <input type="reset" value="Reset" class="btn btn-danger">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+</html>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    AOS.init();
+</script>
