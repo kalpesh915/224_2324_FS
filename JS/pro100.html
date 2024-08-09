@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="op"></h1>
+</body>
+
+</html>
+
+<script>
+    const student = {
+        roll : 1,
+        fname : "Keyur",
+        lname : "Ramani",
+        city : "Rajkot",
+        gender : "Male",
+        getName : function(){
+            // return this.fname + " "+ this.lname;
+            let fname = "Het";
+            let lname = "Manani";
+            return fname + " "+ lname;
+        }
+    };
+
+    document.getElementById("op").innerHTML = student.getName();
+</script>

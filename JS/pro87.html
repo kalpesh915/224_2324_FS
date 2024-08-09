@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="op"></h1>
+</body>
+
+</html>
+
+<script>
+    let op = document.getElementById("op");
+
+    // anonymus function
+    document.body.onresize = function () {
+        op.innerHTML = window.innerWidth;
+    }
+
+</script>
