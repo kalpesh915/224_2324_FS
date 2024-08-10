@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="op"></h1>
+</body>
+
+</html>
+
+<script>
+    // Property = variables
+    const student = {
+        roll : 1,
+        fname : "Keyur",
+        lname : "Ramani",
+        city : "Rajkot",
+        gender : "Male",
+        marks : {
+            sub1 : 90,
+            sub2 : 80,
+            sub3 : 96,
+            sub4 : 99,
+            sub5 : 90,
+        }
+    };
+
+
+    document.write("<hr>"+student.marks.sub1);
+    document.write("<hr>"+student["marks"]["sub1"]);
+</script>

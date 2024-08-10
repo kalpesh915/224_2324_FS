@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="op"></h1>
+</body>
+
+</html>
+
+<script>
+    // function for create new objects
+
+    /*
+        Note: In the constructor function, this has no value. The value of this will become the new object when a new object is created.
+    */ 
+
+    function Student(roll, fname, lname, city){
+        this.roll = roll;
+        this.fname = fname;
+        this.lname = lname;
+        this.city = city;
+        this.gender = "Male";
+        this.country = "India";
+        this.getData = function(){
+            return "Welcome : "+this.fname+" "+this.lname+" "+this.city+" "+this.country;
+        }
+    }
+
+
+    let student1 = new Student(1, "Yash", "Chavda", "Rajkot");
+    let student2 = new Student(2, "Keyur", "Ramani", "Rajkot");
+    let student3 = new Student(1, "Yash", "Singal", "Rajkot");
+    let student4 = new Student(1, "Rajiv", "Shekh", "Rajkot");
+    let student5 = new Student(1, "Het", "Manani", "Rajkot");
+
+    student1.country = "UAE";
+    student1.color = "Orange";
+
+    document.write("<hr> "+student1.getData());
+    document.write("<hr> "+student2.getData());
+    document.write("<hr> "+student3.getData());
+    document.write("<hr> "+student4.getData());
+    document.write("<hr> "+student5.getData());
+</script>
