@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        JavaScript String substr()
+        substr() is similar to slice().
+        The difference is that the second parameter specifies the length of the extracted part.
+    */
+
+            ///012345678901234567890123456789012345678901
+    let ip1 = "welcome to world of strings in java script";
+
+    document.write("<hr>"+ip1);
+    document.write("<hr>"+ip1.substring(0, 5));
+    document.write("<hr>"+ip1.substr(0, 5));
+
+    document.write("<hr>"+ip1.substring(10, 15)); // index, index
+    document.write("<hr>"+ip1.substr(10, 15)); // index, length
+
+    document.write("<hr>"+ip1.substr(-15));
+</script>
