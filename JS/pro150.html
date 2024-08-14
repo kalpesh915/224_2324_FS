@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        In JavaScript, a number can be a primitive value (typeof = number) or an object (typeof = object).
+        The valueOf() method is used internally in JavaScript to convert Number objects to primitive values.
+    */ 
+    let ip1 = new Number(111);
+
+    document.write("<hr> Type of ip1 is "+typeof(ip1));
+    let ip2 = ip1.valueOf();
+    document.write("<hr> Type of ip2 is "+typeof(ip2));
+</script>
