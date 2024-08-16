@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        Many languages allows negative bracket indexing like [-1] to access elements from the end of an object / array / string.
+        This is not possible in JavaScript, because [] is used for accessing both arrays and objects. obj[-1] refers to the value of key -1, not to the last property of the object.
+        The at() method was introduced in ES2022 to solve this problem.
+    */
+
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    document.write("<hr>"+fruits.at(-1));
+    document.write("<hr>"+fruits[-1]);
+</script>

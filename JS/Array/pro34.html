@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript Array flatMap()
+        ES2019 added the Array flatMap() method to JavaScript.
+        The flatMap() method first maps all elements of an array and then creates a new array by flattening the array.
+    */
+
+    const fruits1 = ["Apple", "Mango","Kiwi", "Lichi","Banana", "Orange"];
+    
+    document.write("<hr>"+fruits1);
+    console.log(fruits1.flatMap(fruit => [fruit.toUpperCase()]));
+    
+</script>

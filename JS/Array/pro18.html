@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        WARNING ! : Adding elements with high indexes can create undefined "holes" in an array:
+    */
+    
+    const cars = ["Mahindra", "Toyota", "Tata", "Hyundai", "Ford", "BMW", "Audi", "Kia", "MG", "Nissan", "Mitshubishi", "opel"];
+    
+    document.write("<hr>"+cars);
+    cars[cars.length] = "Farari";
+    cars[cars.length] = "Volvo";
+    cars[30] = "GM";
+    document.write("<hr>"+cars);
+</script>

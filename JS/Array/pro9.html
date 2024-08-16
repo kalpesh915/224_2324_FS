@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        Array Elements Can Be Objects
+        JavaScript variables can be objects. Arrays are special kinds of objects.   
+        Because of this, you can have variables of different types in the same Array.
+        You can have objects in an Array. You can have functions in an Array. You can have arrays in an Array:
+    */
+    //              0              1      2       3           4      5      6      7 
+    const cars = ["Mahindra", "Toyota", "Tata", "Hyundai", "Ford", "BMW", "Audi", "Kia"];
+    
+    const data = [cars, new Date(), 12, true, [11, 22, 33]];
+
+    document.write(data[0][0]);
+</script>
