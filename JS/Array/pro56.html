@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        Numerical sort / Numeric Sort
+        By default, the sort() function sorts values as strings. This works well for strings ("Apple" comes before "Banana"). If numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1". Because of this, the sort() method will produce incorrect result when sorting numbers. You can fix this by providing a compare function:
+    */
+
+    let numbers = [100, 10, 5, 15, 222, 34, 12, 67, 78, 90, 87, 78, 67];
+    
+    document.write("<hr>"+numbers);
+    numbers.sort(function(a, b) { return a-b});
+    document.write("<hr>"+numbers);
+    numbers.sort(function(a, b) { return b-a});
+    document.write("<hr>"+numbers);
+
+    /*
+        <=>  = three posiblity
+
+        a < b
+        a = b
+        a > b
+
+        The Compare Function
+        The purpose of the compare function is to define an alternative sort order.
+        The compare function should return a negative, zero, or positive value, depending on the arguments:
+
+        ex.     ip1, ip2
+
+        ip1 = 10, ip2 = 7;
+        ip1 < ip2
+        ip1 - ip2   =   10 - 7  =   3
+
+
+        ip1 = 1, ip2 = 7;
+        ip1 > ip2
+        ip1 - ip2   =   1 - 7  =   -6
+
+        ip1 = 10, ip2 = 10;
+        ip1 = ip2
+        ip1 - ip2   =   10 - 10  =   0
+    */ 
+</script>

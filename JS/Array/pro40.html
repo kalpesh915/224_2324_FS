@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript Array toSpliced()
+        ES2023 added the Array toSpliced() method as a safe way to splice an array without altering the original array.
+        
+        The difference between the new toSpliced() method and the old splice() method is that the new method creates a new array, keeping the original array unchanged, while the old method altered the original array.
+    */
+
+    const fruits1 = ["Apple", "Mango","Kiwi", "Lichi","Banana", "Orange"];
+    
+    console.log(fruits1);
+    // splice(start index, number of element to delete, new values)
+    const fruits2 = fruits1.toSpliced(2, 3);
+    console.log(fruits2);
+    
+</script>

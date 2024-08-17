@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript Array toReversed() Method
+        ES2023 added the toReversed() method as a safe way to reverse an array without altering the original array. 
+        The difference between toReversed() and reverse() is that the first method creates a new array, keeping the original array unchanged, while the last method alters the original array.
+    */
+
+    let students = ["Het", "Bhavin", "Bhavya", "Rajiv", "Yash", "Keyur", "Yash", "Yashvi", "Dhruna", "Sahil"];
+    
+    document.write("<hr>"+students);
+    let newArray = students.toReversed();
+    document.write("<hr>"+students);
+    document.write("<hr>"+newArray);
+</script>

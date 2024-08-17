@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        Sort Array of Objects
+    */
+
+    let cars = [
+        {name: "Mahindra XUV", make: 2010},
+        {name: "Tata Nexon", make: 2017},
+        {name: "Hyundai I20", make: 2021},
+        {name: "ford EcoSport", make: 2018},
+        {name: "Volvo XC60", make: 2020},
+    ];
+    
+    console.log(cars);
+    cars.sort(function(a, b) {
+        if(a.name > b.name){
+            return 1;
+        }else if(a.name < b.name){
+            return -1;
+        }else{
+            return 0;
+        }
+    });
+    console.log(cars);
+</script>
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        Numerical sort / Numeric Sort
+        By default, the sort() function sorts values as strings. This works well for strings ("Apple" comes before "Banana"). If numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1". Because of this, the sort() method will produce incorrect result when sorting numbers. You can fix this by providing a compare function:
+    */
+
+    let numbers = [100, 10, 5, 15, 222, 34, 12, 67, 78, 90, 87, 78, 67];
+    
+    document.write("<hr>"+numbers);
+    numbers.sort(function() { return 0.5 - Math.random() });
+    document.write("<hr>"+numbers);
+
+</script>

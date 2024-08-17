@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript Array indexOf()
+        The indexOf() method searches an array for an element value and returns its position.
+        Note: The first item has position 0, the second item has position 1, and so on.
+    */
+
+    const fruits1 = ["Apple", "Mango", "Kiwi", "Lichi","Banana", "Orange", "Pineapple", "Apple", "Kiwi"];
+    
+    document.write("<hr>"+fruits1);
+    document.write("<hr>"+fruits1.indexOf("Mango"));
+    document.write("<hr>"+fruits1.indexOf("Kiwi"));
+    document.write("<hr>"+fruits1.indexOf("Kiwi", 5));
+    document.write("<hr>"+fruits1.indexOf("Watermalon"));
+    document.write("<hr>"+fruits1.lastIndexOf("Kiwi"));
+
+    /*
+        array.indexOf(item, start)
+        item 	Required. The item to search for.
+        start 	Optional. Where to start the search. Negative values will start at the given position counting from the end, and search to the end.
+    */
+</script>

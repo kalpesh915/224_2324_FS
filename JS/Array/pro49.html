@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript Array findLast() Method
+        ES2023 added the findLast() method that will start from the end of an array and return the value of the first element that satisfies a condition.
+    */
+
+    let numbers = [11, 23, 45, 43, 12, 75, 45, 78, 56, 89, 78, 90, 87, 79];
+    
+    let answer = numbers.findLast((value) => value > 75);
+
+    document.write("<hr> Original Array is : "+numbers);
+    document.write("<hr> Answer is : "+answer);
+    
+</script>

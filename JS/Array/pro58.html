@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        Highest and lowest value
+    */
+
+    let numbers = [100, 10, 5, 15, 222, 34, 12, 67, 78, 90, 87, 78, 67];
+    
+    document.write("<hr>"+numbers);
+    numbers.sort(function(a, b) { return a - b });
+    document.write("<hr>"+numbers);
+    document.write("<hr>"+numbers[0]);
+    document.write("<hr>"+numbers[numbers.length - 1]);
+</script>
