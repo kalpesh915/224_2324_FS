@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        Cannot be Reassigned    An array declared with const cannot be reassigned:
+    */
+    
+    let quarter1 = ["January", "February", "March"];
+    let quarter2 = ["April", "May", "June"];
+    let quarter3 = ["July", "August", "September"];
+    let quarter4 = ["October", "November", "December"];
+
+    const fullYear = [...quarter1, ...quarter2, ...quarter3, ...quarter4];
+    
+    document.write("<hr>"+fullYear);
+    fullYear = 2025;
+    document.write("<hr>"+fullYear);
+</script>

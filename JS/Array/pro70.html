@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript Array flatMap()
+        ES2019 added the Array flatMap() method to JavaScript.
+        The flatMap() method first maps all elements of an array and then creates a new array by flattening the array.
+    */
+
+    let numbers = [12, 32, 4, 23, 45, 45, 67, 89, 98, 89, 90, 65, 23, 44];
+    
+    let answer = numbers.flatMap((x)=> x * 2);
+
+    document.write(answer);
+    
+</script>

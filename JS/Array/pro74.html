@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript Array reduce()
+        The reduce() method runs a function on each array element to produce (reduce it to) a single value.
+        The reduce() method works from left-to-right in the array. See also reduceRight().
+    */
+
+    let numbers = [11, 22, 33, 44, 55];
+    
+    let answer = numbers.reduce((total, value)=> total += value);
+    
+    document.write(answer);
+    
+</script>

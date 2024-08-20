@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        Arrays are Not Constants
+        The keyword const is a little misleading.
+        It does NOT define a constant array. It defines a constant reference to an array.
+        Because of this, we can still change the elements of a constant array.
+    */
+    
+    let quarter1 = ["January", "February", "March"];
+    let quarter2 = ["April", "May", "June"];
+    let quarter3 = ["July", "August", "September"];
+    let quarter4 = ["October", "November", "December"];
+
+    const fullYear = [...quarter1, ...quarter2, ...quarter3, ...quarter4];
+    
+    document.write("<hr>"+fullYear);
+    fullYear.pop();
+    document.write("<hr>"+fullYear);
+    fullYear.pop();
+    document.write("<hr>"+fullYear);
+    fullYear.pop();
+    document.write("<hr>"+fullYear);
+    fullYear.pop();
+    document.write("<hr>"+fullYear);
+    fullYear.pop();
+    document.write("<hr>"+fullYear);
+</script>

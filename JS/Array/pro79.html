@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript Array keys()
+        The Array.keys() method returns an Array Iterator object with the keys of an array.
+    */
+    
+    let cars = ["Mahindara", "Hyundai", "Tata", "Toyota", "BMW", "Audi", "Volvo"];
+
+    let answer = cars.keys(); // get index of array
+    
+    document.write(answer);
+
+    for(let x of answer){
+        document.write("<hr>"+x);
+    }
+    
+</script>
