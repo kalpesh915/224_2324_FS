@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        The switch statement is used to perform different actions based on different conditions.
+        The JavaScript Switch Statement
+        Use the switch statement to select one of many code blocks to be executed.
+    */
+
+    let ip1 = new Date().getDay();
+    //alert(ip1);
+    switch(ip1){
+        case 0:{
+            document.write("<hr> Sunday");
+            break;
+        }
+        case 1:{
+            document.write("<hr> Monday");
+            break;
+        }
+        case 2:{
+            document.write("<hr> Tuesday");
+            break;
+        }
+        case 3:{
+            document.write("<hr> Wednesday");
+            break;
+        }
+        case 4:{
+            document.write("<hr> Thursday");
+            break;
+        }
+        case 5:{
+            document.write("<hr> Friday");
+            break;
+        }
+        case 6:{
+            document.write("<hr> Saturday");
+            break;
+        }
+        default:{
+            document.write("<hr> Default Case");
+            break;
+        }
+    }
+</script>

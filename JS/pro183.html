@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /* 
+        The Nullish Coalescing Operator (??)
+        The ?? operator returns the first argument if it is not nullish (null or undefined).
+        Otherwise it returns the second argument.
+    */
+
+    // let prefix = "Mr.";
+    let prefix = null;
+    let fname = "Het";
+    let lname = "Manani";
+
+    let fullName = prefix??"Dear."+" "+fname+" "+lname;
+
+    document.write(fullName);
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        nested if
+    */
+
+    let ip1 = Number(prompt("Enter any Number "));
+    let ip2 = Number(prompt("Enter any Number "));
+    let ip3 = Number(prompt("Enter any Number "));
+
+    let ans; 
+    /// ip1 =   1100,     ip2 =   220,     ip3 =   3300
+
+    if(ip1 > ip2){
+        if(ip1 > ip3){
+            ans = ip1;
+        }else{
+            ans = ip3;
+        }
+    }else{
+        if(ip2 > ip3){
+            ans = ip2;
+        }else{
+            ans = ip3;
+        }
+    }
+    
+    
+    document.write(`<hr> Maximum out of is ${ip1}, ${ip2} and ${ip3} is ${ans}`);
+</script>

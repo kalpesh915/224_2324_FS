@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        The else Statement
+
+        Use the else statement to specify a block of code to be executed if the condition is false.
+        if (condition) {
+            //  block of code to be executed if the condition is true
+        } else {
+            //  block of code to be executed if the condition is false
+        }
+
+    */
+
+    let ip1 = Number(prompt("Enter any Number "));
+    let ip2 = Number(prompt("Enter any Number "));
+    let ans; 
+
+    if(ip1 > ip2){
+        ans = ip1;    
+    }else{
+        ans = ip2;
+    }
+    
+    // document.write("<hr> Maximum is "+ans);
+    document.write(`<hr> Maximum out of is ${ip1} and ${ip2} is ${ans}`);
+</script>

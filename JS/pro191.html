@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+    /*
+        The else if Statement
+        Use the else if statement to specify a new condition if the first condition is false.
+        ladder if
+    */
+
+    let ip1 = Number(prompt("Enter any Number "));
+    let ip2 = Number(prompt("Enter any Number "));
+    let ip3 = Number(prompt("Enter any Number "));
+
+    let ans; 
+
+    if(ip1 > ip2 && ip1 > ip3){
+        ans = ip1;
+    }else if(ip2 > ip1 && ip2 > ip3){
+        ans = ip2;
+    }else{
+        ans = ip3;
+    }
+    
+    
+    document.write(`<hr> Maximum out of is ${ip1}, ${ip2} and ${ip3} is ${ans}`);
+</script>
