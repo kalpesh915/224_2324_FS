@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript Labels
+        To label JavaScript statements you precede the statements with a label name and a colon:
+    */
+
+    outer:
+    for (let x = 1; x <= 10; x++){
+        inner:
+        for(let y = 1; y <= 10; y++){
+            if(x == 5){
+                break outer; // unconditional jump
+            }
+            document.write(`x : ${x} y : ${y} `);
+        }
+        document.write("<hr>");
+    }
+</script>
