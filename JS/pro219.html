@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        
+    */
+
+    let data = new Set();
+    data.add("Het");
+    data.add("Bhavin");
+    data.add("Bhavya");
+    data.add("Keyur");
+    data.add("Yash");
+
+    document.write("<hr> "+(data.has("Kalpesh")));
+    data.add("Kalpesh");
+    document.write("<hr> "+(data.has("Kalpesh")));
+    data.delete("Kalpesh");
+    document.write("<hr> "+(data.has("Kalpesh")));
+    document.write("<hr> "+(data.size));
+    data.clear();
+    document.write("<hr> "+(data.size));
+</script>

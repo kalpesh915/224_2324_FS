@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+
+    let myNumbers = {};
+
+    myNumbers[Symbol.iterator] = function() {
+        let x = 0;
+
+        return {
+            next: function () {
+                x += 10;
+
+                if (x >= 100) {
+                    return {
+                        value: x,
+                        done: true
+                    }
+                }
+                else {
+                    return {
+                        value: x,
+                        done: false
+                    }
+                }
+
+            }
+        }
+    }
+
+    for(let x of myNumbers){
+        document.write(" "+x);
+    }
+</script>

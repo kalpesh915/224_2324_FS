@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript Maps
+        A Map holds key-value pairs where the keys can be any datatype.
+        A Map remembers the original insertion order of the keys.
+
+    */
+
+    let students = new Map([
+        [13, "Het"],
+        [16, "Bhavin"],
+        [19, "Bhavya"],
+        [11, "Yash"],
+        [4, "Rajiv"]
+    ]);
+
+    /*for(let x of students.keys()){
+        document.write("<hr>"+x);
+    }*/
+
+    /*for(let x of students.values()){
+        document.write("<hr>"+x);
+    }*/
+
+    for(let x of students.entries()){
+        document.write("<hr>"+x);
+    }
+</script>

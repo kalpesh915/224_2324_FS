@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript Map.groupBy()
+        ES2024 added the Map.groupBy() method to JavaScript.
+        The Map.groupBy() method groups elements of an object according to string values returned from a callback function.
+        The Map.groupBy() method does not change the original object.
+    */
+
+    const fruits = [
+        { name: "apples", quantity: 300 },
+        { name: "bananas", quantity: 500 },
+        { name: "oranges", quantity: 200 },
+        { name: "kiwi", quantity: 150 }
+    ];
+
+    // Callback function to select low volumes 
+    function myCallback({ quantity }) {
+        return quantity >= 200 ? "ok" : "low";
+    }
+
+    // Group by ok and low
+    const result = Map.groupBy(fruits, myCallback);
+
+    document.write("<hr> Quantity OK ");
+    for(let x of result.get("ok")){
+        document.write(" "+x.name);
+    }
+
+    document.write("<hr> Quantity Low ");
+    for(let x of result.get("low")){
+        document.write(" "+x.name);
+    }
+
+</script>
