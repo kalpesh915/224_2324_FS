@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    document.write("<hr> Before Alert Messge");
+    
+    function makeDiv(ip1, ip2){
+        if(ip2 === null || ip2 === 0){
+            throw "Division not possible";
+        }else{
+            document.write("<hr> Div is "+( ip1 / ip2));
+        }
+    }
+
+    let ip1 = Number(prompt("Enter any Number"));
+    let ip2 = Number(prompt("Enter any Number"));
+
+    try{
+        makeDiv(ip1, ip2);
+    }catch(error){
+        document.write("<hr> Error is "+error);
+    }finally{
+        console.log("completed ");
+    }
+    
+    
+    document.write("<hr> After Alert Messge");
+</script>
