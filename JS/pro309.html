@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    class Student {
+        constructor(id, fname, lname) {
+            this.id = id;
+            this.fname = fname;
+            this.lname = lname;
+        }
+
+        GetData(){
+            return "Welcome "+this.fname+" "+this.lname+" ID is "+this.id;
+        }
+    }
+
+    let student1 = new Student(1, "Thakar", "Bhavin");
+    let student2 = new Student(2, "Dava", "Bhavya");
+    let student3 = new Student(3, "Manani", "Het");
+
+    console.log(student1.GetData(), student2.GetData(), student3.GetData());
+</script>

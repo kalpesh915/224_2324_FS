@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        Local Scope
+        Variables declared within a JavaScript function, are LOCAL to the function:
+    */
+
+    function msg(){
+        var x = 10;
+        document.write("<hr> x is "+x);
+    }
+    
+    msg();
+    document.write("<hr> x is "+x);
+
+    /*
+        Local variables have Function Scope:
+        They can only be accessed from within the function.
+        Since local variables are only recognized inside their functions, variables with the same name can be used in different functions.
+        Local variables are created when a function starts, and deleted when the function is completed.
+
+        Function Scope
+        JavaScript has function scope: Each function creates a new scope. Variables defined inside a function are not accessible (visible) from outside the function. Variables declared with var, let and const are quite similar when declared inside a function. They all have Function Scope:
+    */
+    
+</script>

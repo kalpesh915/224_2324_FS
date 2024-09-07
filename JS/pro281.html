@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        Scope determines the accessibility (visibility) of variables.
+        JavaScript variables have 3 types of scope:
+        Block scope, Function scope, Global scope
+        
+        Block Scope
+        Before ES6 (2015), JavaScript variables had only Global Scope and Function Scope.
+        ES6 introduced two important new JavaScript keywords: let and const.
+        These two keywords provide Block Scope in JavaScript.
+        Variables declared inside a { } block cannot be accessed from outside the block:
+    */
+
+    {
+        let x = 10;
+        document.write("<hr> x is "+x);
+    }
+
+    document.write("<hr> x is "+x);
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        this keyword
+    */
+    
+    let student = {
+        id: 1,
+        fname: "Yash",
+        lname: "Chavda",
+        city: "Rajkot",
+        getData : function(){
+            let fname = "Het", lname = "Manani", city = "Rajkot";
+            return this.fname +" "+ this.lname+" "+this.city;
+        }
+    }
+
+    document.write(student.getData());
+</script>
