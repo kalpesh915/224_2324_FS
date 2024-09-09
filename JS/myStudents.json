@@ -1,0 +1,6 @@
+{
+    "students" : [
+        {"roll": 1, "fname": "Het", "lname": "Manani", "city": "Rajkot"},
+        {"roll": 2, "fname": "Yash", "lname": "SIngal", "city": "Rajkot"}
+    ]
+}
