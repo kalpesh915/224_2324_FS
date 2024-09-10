@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        JavaScript Object.fromEntries()
+        The fromEntries() method creates an object from a list of key/value pairs.  
+    */ 
+
+    Student = [
+        ["roll",  1],
+        ["fname", "Het"],
+        ["lname",  "Manani"],
+        ["city", "Rajkot"],
+        ["gender", "Male"]
+    ]
+
+        
+    const student1 = Object.fromEntries(Student);
+    
+    for(let x of Object.entries(student1)){
+        document.write("<hr>"+x);
+    }
+
+    console.log(student1);
+</script>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        Counter Example
+    */
+
+    const myObject = {
+        counter : 0
+    }
+
+    // reset key
+    Object.defineProperty(myObject, "reset", {
+        get : function(){
+            this.counter = 0;
+        }
+    });
+
+    Object.defineProperty(myObject, "increment", {
+        get : function(){
+            this.counter++;
+        }
+    });
+
+    Object.defineProperty(myObject, "decrement", {
+        get : function(){
+            this.counter--;
+        }
+    });
+
+    Object.defineProperty(myObject, "add", {
+        set : function(value){
+            this.counter += value;
+        }
+    });
+
+    Object.defineProperty(myObject, "less", {
+        set : function(value){
+            this.counter -= value;
+        }
+    });
+
+
+    myObject.reset;
+    console.log(myObject.counter);
+    myObject.increment;
+    myObject.increment;
+    myObject.increment;
+    myObject.increment;
+    myObject.increment;
+    console.log(myObject.counter);
+    myObject.reset;
+    console.log(myObject.counter);
+    myObject.decrement;
+    myObject.decrement;
+    myObject.decrement;
+    myObject.decrement;
+    myObject.decrement;
+    console.log(myObject.counter);
+    myObject.reset;
+    console.log(myObject.counter);
+    myObject.add = 50;
+    console.log(myObject.counter);
+    myObject.less = 20;
+    console.log(myObject.counter);
+</script>

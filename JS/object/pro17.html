@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript Object.groupBy()
+        ES2024 added the Object.groupBy() method to JavaScript.
+        The Object.groupBy() method groups elements of an object according to string values returned from a callback function.
+        The Object.groupBy() method does not change the original object.
+    */
+
+
+    const students = [
+        { fname: "Het", lname: "Manani", marks: 190 },
+        { fname: "Bhavya", lname: "Dava", marks: 198 },
+        { fname: "Bhavin", lname: "Thakor", marks: 120 },
+        { fname: "Rajiv", lname: "Shekh", marks: 110 },
+        { fname: "Yash", lname: "Chavda", marks: 100 },
+        { fname: "Yash", lname: "Singal", marks: 110 },
+        { fname: "Keyur", lname: "Ramani", marks: 100 },
+    ];
+
+    function myCallBackFunction({ marks }) {
+        return marks >= 100 ? "pass" : "fail";
+    }
+
+    const result = Object.groupBy(students, myCallBackFunction);
+
+    //console.log(result.pass.entries());
+
+    document.write("<hr> Pass Students : ");
+
+    for (let [key, tmp] of result.pass.entries()) {
+        document.write(`<hr> ${tmp.fname} ${tmp.lname} ${tmp.marks}`);
+    }
+
+    document.write("<hr> Fail Students : ");
+
+    for (let [key, tmp] of result.fail.entries()) {
+        document.write(`<hr> ${tmp.fname} ${tmp.lname} ${tmp.marks}`);
+    }
+</script>

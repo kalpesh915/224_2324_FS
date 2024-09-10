@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        Using const
+        The most common way to protect an object from being changed is by using the const keyword.With const you can not re-assign the object, but you can still change the value of a property, delete a property or create a new property.
+    */ 
+
+    function Student(roll, fname, lname, city, gender){
+        this.roll = roll;
+        this.fname = fname;
+        this.lname =  lname;
+        this.city = city;
+        this.gender = gender;
+        this.country = "India"
+    }
+
+        
+    const student1 = new Student(1, "Bhavin", "Thakor", "Rajkot", "Male");
+    console.log(student1);
+    student1 = "Rajkot";
+    console.log(student1);
+</script>

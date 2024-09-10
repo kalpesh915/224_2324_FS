@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        
+    */ 
+
+    function Student(roll, fname, lname, city, gender){
+        this.roll = roll;
+        this.fname = fname;
+        this.lname =  lname;
+        this.city = city;
+        this.gender = gender;
+    }
+
+        
+    const student1 = new Student(1, "Bhavin", "Thakor", "Rajkot", "Male");
+    const student2 = new Student(2, "Keyur", "Ramani", "Rajkot", "Male");
+
+    // method = function | property = variable
+
+    Student.prototype.getData = function(){
+        return this.fname+" "+this.lname+" From "+this.city
+    }
+
+    console.log(student1.getData(), student2.getData());
+</script>

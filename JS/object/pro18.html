@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript for...in Loop
+        The JavaScript for...in statement loops through the properties of an object.
+        Syntax
+        for (let variable in object) {
+            // code to be executed
+        }
+        The block of code inside of the for...in loop will be executed once for each property.
+        Looping through the properties of an object:
+    */
+
+
+    const student = { fname: "Het", lname: "Manani", marks: 190 }
+
+    for(let x in student){
+        document.write("<hr>" + x+" is "+student[x]);
+    }
+</script>

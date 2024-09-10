@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        Object Constructor Functions
+        Sometimes we need to create many objects of the same type. To create an object type we use an object constructor function. It is considered good practice to name constructor functions with an upper-case first letter.
+
+    */ 
+
+    function Student(roll, fname, lname, city, gender){
+        this.roll = roll;
+        this.fname = fname;
+        this.lname =  lname;
+        this.city = city;
+        this.gender = gender;
+    }
+
+        
+    let student1 = new Student(1, "Bhavin", "Thakor", "Rajkot", "Male");
+    let student2 = new Student(2, "Bhavya", "Dava", "Rajkot", "Male");
+    console.log(student1, student2);
+
+    /*
+        Note:
+        In the constructor function, this has no value. The value of this will become the new object when a new object is created.
+    */ 
+</script>

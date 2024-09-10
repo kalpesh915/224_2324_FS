@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        Property Attributes
+        All properties have a name. In addition they also have a value. The value is one of the property's attributes. Other attributes are: enumerable, configurable, and writable. These attributes define how the property can be accessed (is it readable?, is it writable?) In JavaScript, all attributes can be read, but only the value attribute can be changed (and only if the property is writable).
+    */
+
+
+    const student = { fname: "Het", lname: "Manani", marks: 190 }
+
+    for(let x in student){
+        document.write("<hr>" + x+" is "+student[x]);
+    }
+
+    Object.defineProperty(student, "fname", { value: "HET", writable: false});
+
+    console.log(student);
+
+    student.fname = "Bhavya";
+    console.log(student);
+</script>

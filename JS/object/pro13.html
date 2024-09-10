@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        JavaScript Object.entries() 
+        ECMAScript 2017 added the Object.entries() method to objects.
+        Object.entries() returns an array of the key/value pairs in an object:     
+    */ 
+
+    function Student(roll, fname, lname, city, gender){
+        this.roll = roll;
+        this.fname = fname;
+        this.lname =  lname;
+        this.city = city;
+        this.gender = gender;
+    }
+
+        
+    const student1 = new Student(1, "Bhavin", "Thakor", "Rajkot", "Male");
+    
+    for(let x of Object.entries(student1)){
+        document.write("<hr>"+x);
+    }
+</script>

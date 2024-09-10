@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript Object.defineProperty()
+
+        The Object.defineProperty() method can be used to:
+        Adding a new property to an object
+        Changing property values
+        Changing property metadata
+        Changing object getters and setters
+    */
+
+
+    const student = { fname: "Het", lname: "Manani", marks: 190 }
+
+    for(let x in student){
+        document.write("<hr>" + x+" is "+student[x]);
+    }
+
+    Object.defineProperty(student, "city", { value: "Rajkot"});
+
+    console.log(student);
+</script>
