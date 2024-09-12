@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        Default Parameters
+        If a function is called with missing arguments (less than declared), the missing values are set to undefined. Sometimes this is acceptable, but sometimes it is better to assign a default value to the parameter:
+    */
+
+    
+    function makeSum(ip1 = 0, ip2 = 0){ 
+        document.write("<hr>Sum is "+( ip1 + ip2));
+    }
+
+    makeSum(); 
+    makeSum(11); 
+    makeSum(11, 22); 
+</script>

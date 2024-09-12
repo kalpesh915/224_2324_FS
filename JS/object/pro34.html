@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        JavaScript Object.freeze()
+        The Object.freeze() method prevents any changes to an object.
+        Frozen objects are read-only.
+        No modification, addition or deletion of properties are allowed.
+    */
+    const student = {
+        roll: 1,
+        fname: "Het",
+        lname: "Manani",
+        city: "Rajkot",
+    }
+
+    console.log(student);
+    Object.freeze(student);
+    console.log(Object.isFrozen(student));
+    student.fname = "HET";
+    console.log(student);
+</script>

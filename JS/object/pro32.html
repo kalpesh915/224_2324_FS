@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        JavaScript Object.seal()    
+        The Object.seal() method prevents additions or deletions of new properties.
+        The Object.seal() method makes existing properties non-configurable.
+        The Object.isSealed() method can be used to check if an object is sealed.
+    */
+    const student = {
+        roll: 1,
+        fname: "Het",
+        lname: "Manani",
+        city: "Rajkot",
+    }
+
+    console.log(student);
+    console.log(Object.isSealed(student));
+    Object.seal(student);
+    console.log(Object.isSealed(student));
+    student.gender = "Male";
+    console.log(student);
+    delete student.fname;
+    console.log(student);
+</script>

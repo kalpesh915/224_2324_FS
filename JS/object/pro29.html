@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    const student = {
+        roll: 1,
+        fname: "Het",
+        lname: "Manani",
+        city: "Rajkot",
+        getfn : function(){
+            return this.fname;
+        },
+        setfn : function(tmp){
+            this.fname = tmp;
+        }
+    }
+
+    document.write(student.getfn());
+    student.setfn("HET");
+    document.write(student.getfn());
+</script>

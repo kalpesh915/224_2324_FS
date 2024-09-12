@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        Arguments are Passed by Value
+        The parameters, in a function call, are the function's arguments.   
+        JavaScript arguments are passed by value: The function only gets to know the values, not the argument's locations.
+        If a function changes an argument's value, it does not change the parameter's original value.
+        Changes to arguments are not visible (reflected) outside the function.
+    */
+
+    
+    function add10(ip){
+        ip = ip + 10;
+    }
+
+    let ip = 1;
+    add10(ip);
+    document.write(ip);
+</script>

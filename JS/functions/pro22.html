@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        Objects are Passed by Reference
+        In JavaScript, object references are values. Because of this, objects will behave like they are passed by reference: If a function changes an object property, it changes the original value. Changes to object properties are visible (reflected) outside the function.
+    */
+
+    
+    function add10(ip){
+        ip.x = ip.x + 10;
+    }
+
+    let ip = {x : 1};
+    add10(ip);
+    document.write(ip.x);
+</script>

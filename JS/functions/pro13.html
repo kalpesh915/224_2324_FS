@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        arrow function with return
+    */
+
+    // Curried function
+    function curriedFunction(param1) {
+        return function (param2) {
+            return function (param3) {
+                return param1 + param2 + param3;
+            };
+        };
+    }
+
+    console.log(curriedFunction(11)(22)(33));
+</script>

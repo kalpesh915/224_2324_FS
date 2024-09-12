@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        Self-Invoking Functions
+        Function expressions can be made "self-invoking". A self-invoking expression is invoked (started) automatically, without being called. Function expressions will execute automatically if the expression is followed by (). You cannot self-invoke a function declaration. You have to add parentheses around the function to indicate that it is a function expression:
+    */
+    
+    /*(msg = () => {
+        document.write("Welcome to JS Functions");
+    })();*/
+
+
+    (msg = (username) => {
+        document.write("Welcome "+username+" to JS Functions");
+    })("Bhavin Thakar");
+</script>

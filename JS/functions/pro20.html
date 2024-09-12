@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        Function Rest Parameter
+        The rest parameter (...) allows a function to treat an indefinite number of arguments as an array:
+    */
+
+    
+    function makeSum(){ 
+        let length = arguments.length;
+        let ans = 0;
+        for(let i = 0; i< length; i++){
+            ans += arguments[i];
+        }
+
+        document.write("<hr> Sum is "+ans);
+    }
+
+    makeSum(); 
+    makeSum(11); 
+    makeSum(11, 22); 
+    makeSum(11, 22, 33); 
+    makeSum(11, 22, 33, 44); 
+    makeSum(11, 22, 33, 44, 55); 
+</script>

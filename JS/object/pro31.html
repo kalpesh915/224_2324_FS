@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        JavaScript Object.preventExtensions()
+        The Object.preventExtensions() method prevents adding properties to an object.
+    */
+    const student = {
+        roll: 1,
+        fname: "Het",
+        lname: "Manani",
+        city: "Rajkot",
+    }
+
+    console.log(student);
+    console.log(Object.isExtensible(student));
+    Object.preventExtensions(student);
+    console.log(Object.isExtensible(student));
+    student.gender = "Male";
+    console.log(student);
+</script>
