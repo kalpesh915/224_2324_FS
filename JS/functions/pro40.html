@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        A Counter Dilemma
+        Suppose you want to use a variable for counting something, and you want this counter to be available to all functions.
+        You could use a global variable, and a function to increase the counter:
+    */
+
+    
+    // Function to increment counter
+    function add() {
+        // Initiate counter
+        let counter = 0; // local
+        counter += 1;
+        return counter;
+    }
+    
+    console.log(add());
+    console.log(add());
+    console.log(add());
+    
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript Function Invocation
+        The code inside a JavaScript function will execute when "something" invokes it.
+        The Global Object
+        When a function is called without an owner object, the value of this becomes the global object. In a web browser the global object is the browser window. This example returns the window object as the value of this:
+    */
+
+    function makeSum() {
+        document.write(this);
+    }
+
+    makeSum(); 
+</script>

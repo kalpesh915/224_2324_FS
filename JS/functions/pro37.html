@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript variables can belong to the local or global scope. Global variables can be made local (private) with closures.
+        Global Variables : A function can access all variables defined inside the function, like this:
+
+        Global and local variables with the same name are different variables. Modifying one, does not modify the other. 
+    */
+    let a = 5; // global
+    function myFunction() {   
+        let a = 7; // local  
+        return a * a;
+    }
+
+    console.log(myFunction());
+</script>

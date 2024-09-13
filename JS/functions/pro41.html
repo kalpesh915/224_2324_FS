@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        JavaScript Nested Functions
+        All functions have access to the global scope. In fact, in JavaScript, all functions have access to the scope "above" them. JavaScript supports nested functions. Nested functions have access to the scope "above" them. In this example, the inner function plus() has access to the counter variable in the parent function:
+    */
+
+    
+    const add = (function(){
+        let counter = 0;
+        return function() { counter += 1; return counter; }
+    })();
+
+    console.log(add());
+    console.log(add());
+    console.log(add());
+    console.log(add());
+    console.log(add());
+
+    // This could have solved the counter dilemma, if we could reach the plus() function from the outside.
+</script>

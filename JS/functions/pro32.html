@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        Method Reuse
+        With the apply() method, you can write a method that can be used on different objects.
+        The JavaScript apply() Method The apply() method is similar to the call() method 
+
+        The Difference Between call() and apply()
+        The difference is:
+        The call() method takes arguments separately. The apply() method takes arguments as an array.
+    */
+
+    let Student = {
+        fullName : function(city, state){
+            // city, state local varible of fullname method and does not reqired to apply this
+            return "Welcome"+this.fname+" "+this.lname+" to "+city+ " of "+state;
+        }
+    };
+
+    let Student1 = { fname: "Het", lname: "Manani" };
+    let Student2 = { fname: "Yash", lname: "Chavda" };
+    let Student3 = { fname: "Rajiv", lname: "Shekh" };
+    let Student4 = { fname: "Keyur", lname: "Ramani" };
+    let Student5 = { fname: "Yash", lname: "Singal" };
+
+    console.log(Student.fullName.apply(Student1, ["Rajkot", "Gujarat"]));
+    console.log(Student.fullName.apply(Student2, ["Rajkot", "Gujarat"]));
+    console.log(Student.fullName.apply(Student3, ["Rajkot", "Gujarat"]));
+    console.log(Student.fullName.apply(Student4, ["Rajkot", "Gujarat"]));
+    console.log(Student.fullName.apply(Student5, ["Rajkot", "Gujarat"]));
+</script>

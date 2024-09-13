@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        Call Method
+    */
+
+    let Student1 = {
+        fname: "Bhavya",
+        lname: "Dava",
+        fullName : function(){
+            return this.fname+" "+this.lname;
+        }
+    };
+
+    let Student2 = {
+        fname: "Yash",
+        lname: "Chavda",
+        fullName : function(){
+            return this.fname+" "+this.lname;
+        }
+    };
+
+    console.log(Student1.fullName());
+    console.log(Student2.fullName());
+</script>

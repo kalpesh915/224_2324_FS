@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    /*
+        Call Method
+    */
+
+    let Student = {
+        fullName : function(city, state){
+            // city, state local varible of fullname method and does not reqired to apply this
+            return "Welcome"+this.fname+" "+this.lname+" to "+city+ " of "+state;
+        }
+    };
+
+    let Student1 = { fname: "Het", lname: "Manani" };
+    let Student2 = { fname: "Yash", lname: "Chavda" };
+    let Student3 = { fname: "Rajiv", lname: "Shekh" };
+    let Student4 = { fname: "Keyur", lname: "Ramani" };
+    let Student5 = { fname: "Yash", lname: "Singal" };
+
+    console.log(Student.fullName.call(Student1, "Rajkot", "Gujarat"));
+    console.log(Student.fullName.call(Student2, "Rajkot", "Gujarat"));
+    console.log(Student.fullName.call(Student3, "Rajkot", "Gujarat"));
+    console.log(Student.fullName.call(Student4, "Rajkot", "Gujarat"));
+    console.log(Student.fullName.call(Student5, "Rajkot", "Gujarat"));
+</script>
