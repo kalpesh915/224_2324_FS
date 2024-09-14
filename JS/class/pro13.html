@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        
+    */
+
+    class Student{
+        constructor(fname, lname){
+            this.fname = fname;
+            this.lname = lname;
+        }
+
+        static greetings(tmp){
+            document.write("Welcome to Static Function "+tmp.fname+" "+tmp.lname);
+        }
+    }
+
+    student1 = new Student("Yash", "Singal");
+    Student.greetings(student1);
+</script>

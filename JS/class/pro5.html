@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        Class Methods
+        Class methods are created with the same syntax as object methods. Use the keyword class to create a class. Always add a constructor() method. Then add any number of methods.
+    */
+    class Student{
+        constructor(roll, fname, lname){
+            document.write("<hr> Parameterized Constructor Called");
+            this.roll = roll;
+            this.fname = fname;
+            this.lname = lname;
+        }
+
+        printData(){
+            return this.fname +" "+this.lname+" "+this.roll;
+        }
+    }
+
+    // The constructor method is called automatically when a new object is created.
+    const student1 = new Student(1, "Het", "Manani");
+    const student2 = new Student(2, "Bhavya", "Dava");
+    const student3 = new Student(3, "Bhavin", "Thakar");
+
+    console.log(student1.printData());
+    console.log(student2.printData());
+    console.log(student3.printData());
+</script>

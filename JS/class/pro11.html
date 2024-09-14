@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    /*
+       Hoisting : Unlike functions, and other JavaScript declarations, class declarations are not hoisted. That means that you must declare a class before you can use it:
+    */ 
+
+    // object
+    let student1 = new Student(111, "Het", "Manani");
+    document.write("<hr>"+student1.fname);
+    student1.fname = "HET";
+    document.write("<hr>"+student1.fname);
+
+    // class
+    class Student{
+        constructor(roll, fname, lname){
+            this._roll = roll;
+            this._fname = fname;
+            this._lname = lname;
+        }
+
+        intro(){
+            return `<hr> Hello I am ${this._fname} ${this._lname} My Roll No. is ${this._roll}`;
+        }
+
+        get fname(){
+            return this._fname;
+        }
+
+        set fname(value){
+            this._fname = value;
+        }
+    }
+
+    
+</script>

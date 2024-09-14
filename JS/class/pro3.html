@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /*
+        The Constructor Method
+        The constructor method is a special method:
+        1 It has to have the exact name "constructor"
+        2 It is executed automatically when a new object is created
+        3 It is used to initialize object properties
+        If you do not define a constructor method, JavaScript will add an empty constructor method. 
+    */
+    class Student{
+        constructor(){
+            document.write("<hr> Default Constructor Called");
+            this.roll = 1;
+            this.fname = "Bhavya";
+            this.lname = "Dava";
+        }
+    }
+
+    // The constructor method is called automatically when a new object is created.
+    const student1 = new Student();
+    const student2 = new Student();
+    const student3 = new Student();
+
+    console.log(student1);
+    console.log(student2);
+    console.log(student3);
+</script>

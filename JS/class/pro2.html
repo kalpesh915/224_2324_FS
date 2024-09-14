@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    class Student{
+        constructor(roll, fname, lname){
+            document.write("Constructor Called");
+            this.roll = roll;
+            this.fname = fname;
+            this.lname = lname;
+        }
+    }
+
+    // The constructor method is called automatically when a new object is created.
+    const student1 = new Student(1, "Het", "Manani");
+    const student2 = new Student(2, "Bhavin", "Thakar");
+
+    console.log(student1);
+    console.log(student2);
+</script>

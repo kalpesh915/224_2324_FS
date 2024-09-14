@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    class Math1{
+        makeSum(ip1, ip2){
+            document.write("<hr> Sum is "+(ip1 + ip2));
+        }
+
+        makeSub(ip1, ip2){
+            document.write("<hr> Sub is "+(ip1 - ip2));
+        }
+    }
+
+    class Math2 extends Math1{
+        makeMul(ip1, ip2){
+            document.write("<hr> Mul is "+(ip1 * ip2));
+        } 
+
+        makeDiv(ip1, ip2){
+            document.write("<hr> Div is "+(ip1 / ip2));
+        }
+    }
+
+
+    const obj1 = new Math2();
+
+    obj1.makeSum(111, 22);
+    obj1.makeSub(111, 22);
+    obj1.makeMul(111, 22);
+    obj1.makeDiv(111, 22);
+</script>

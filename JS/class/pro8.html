@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    class Student{
+        constructor(roll, fname, lname){
+            this.roll = roll;
+            this.fname = fname;
+            this.lname = lname;
+        }
+
+        intro(){
+            return `<hr> Hello I am ${this.fname} ${this.lname} My Roll No. is ${this.roll}`;
+        }
+    }
+
+    class Marks extends Student{
+        constructor(roll, fname, lname, total, percentage){
+            // pass in super class
+            super(roll, fname, lname);
+            this.total = total;
+            this.percentage = percentage;
+        }
+
+        printMessage(){
+            return this.intro()+" Marks are "+this.total+" Percentage is "+this.percentage;
+        }
+    }
+
+    let Het = new Marks(1, "Het", "Manani", 123, 78.90);
+    document.write(Het.printMessage());
+</script>

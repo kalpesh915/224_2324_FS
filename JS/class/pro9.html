@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    /*
+        Getters and Setters
+        Classes also allows you to use getters and setters. 
+        It can be smart to use getters and setters for your properties, especially if you want to do something special with the value before returning them, or before you set them.
+        To add getters and setters in the class, use the get and set keywords.
+    */ 
+    class Student{
+        constructor(roll, fname, lname){
+            this.roll = roll;
+            this.fname = fname;
+            this.lname = lname;
+        }
+
+        intro(){
+            return `<hr> Hello I am ${this.fname} ${this.lname} My Roll No. is ${this.roll}`;
+        }
+
+        get fn(){
+            return this.fname;
+        }
+
+        set fn(value){
+            this.fname = value;
+        }
+    }
+
+    let student1 = new Student(111, "Het", "Manani");
+    document.write("<hr>"+student1.fn);
+    student1.fn = "HET";
+    document.write("<hr>"+student1.fn);
+</script>
