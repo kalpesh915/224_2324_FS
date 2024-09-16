@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="op"></h1>
+</body>
+
+</html>
+
+<script>
+    function printer(msg) {
+        document.getElementById("op").innerHTML = msg;
+    }
+
+    // producing code
+    let findAge = new Promise(function(myResolve, myReject){
+        let age = Number(prompt("Enter your age "));
+
+        if(age >= 18){
+            myResolve("Valid Age");
+        }else{
+            myReject("Invalid Age");
+        }
+    });
+
+    // consuming code
+    findAge.then((msg)=>{
+        printer(msg)
+    }, (error)=>{
+        printer(error)
+    });
+</script>

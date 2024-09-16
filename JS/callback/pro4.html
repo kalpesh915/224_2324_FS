@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="op"></h1>
+</body>
+</html>
+
+<script>
+    /*
+        Sequence Control
+        Sometimes you would like to have better control over when to execute a function. Suppose you want to do a calculation, and then display the result.
+    */
+   
+    function printer(value){
+        document.getElementById("op").innerHTML = value;
+    }
+
+    function makeSum(ip1, ip2){
+        let tmp = ip1 + ip2;
+        return tmp;
+    }
+
+    let ans = makeSum(111, 22);
+    printer(ans);
+</script>

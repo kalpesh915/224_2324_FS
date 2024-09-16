@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // Remove Duplicate numbers with callback function
+
+    data = [11, 22, -12, -45, 56, 78, -90, -45, -5, 34, 56, -767, -54, 35];
+
+    const positiveNumbers = removeNegative(data, (x) => x >= 0);
+
+    function removeNegative(data, callback){
+        const ans = [];
+
+        for(let x of data){
+            if(callback(x)){
+                ans.push(x);
+            }
+        }
+        return ans;
+    }
+
+    document.write(positiveNumbers);
+</script>

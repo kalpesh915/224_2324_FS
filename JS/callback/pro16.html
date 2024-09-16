@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="op"></h1>
+</body>
+
+</html>
+
+<script>
+    function printer(msg) {
+        document.getElementById("op").innerHTML = msg;
+    }
+
+    // producing code
+    let findAge = new Promise(function(myResolve, myReject){
+        let APIURL = "https://dummyjson.com/products/1";
+
+        let XMLHttp = new XMLHttpRequest();
+        XMLHttp.open("GET", APIURL, true);
+        XMLHttp.send();
+
+        XMLHttp.onload = function(){
+            if(XMLHttp.status == 200){
+                myResolve(XMLHttp.responseText);
+            }else{
+                myReject(XMLHttp.responseText);
+            }
+        }
+    });
+
+    // consuming code
+    findAge.then((msg)=>{
+        printer(msg)
+    }, (error)=>{
+        printer(error)
+    });
+</script>
