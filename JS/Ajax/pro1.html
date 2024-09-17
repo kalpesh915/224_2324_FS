@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="loadData()">Load Data</button>
+    <hr>
+    <div id="op"></div>
+</body>
+</html>
+
+<script>
+    function loadData(){
+        const XMLHttp = new XMLHttpRequest();
+        XMLHttp.open("GET", "data.html", true);
+        XMLHttp.send();
+
+        XMLHttp.onload = function(){
+            document.getElementById("op").innerHTML = XMLHttp.responseText;
+        }
+    }
+</script>

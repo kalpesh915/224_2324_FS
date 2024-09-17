@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="loadData()">Load Data</button>
+    <hr>
+    <div id="op"></div>
+</body>
+</html>
+
+<script>
+    function loadData(){
+        /*
+            create new object of XMLHttpRequest class of Java script, used to generate HTTP request by js.
+        */    
+
+        const XMLHttp = new XMLHttpRequest();
+
+        // Open request for sending data
+
+        XMLHttp.open("GET", "https://dummyjson.com/products/1", true);
+        /*
+            GET : HTTP Rrequest,
+            URL : Location of Server / page
+            Async : True = Asysc, False = Sysc
+        */ 
+
+        // send request to server
+        XMLHttp.send();
+
+        // handle resonse
+        XMLHttp.onload = function(){
+            // get op div and store received response to div
+            document.getElementById("op").innerHTML = XMLHttp.responseText;
+        }
+    }
+</script>
