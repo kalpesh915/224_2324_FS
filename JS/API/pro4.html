@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="number" max="100" min="1" step="1" required name="age" id="age">
+        <input type="button" value="Send Data" onclick="validateForm()">
+    </form>
+
+    <h1 id="op"></h1>
+</body>
+</html>
+
+<script>
+    function validateForm(){
+        let age = document.getElementById("age");
+        let op = document.getElementById("op");
+
+        if(age.validity.rangeOverflow){
+            op.innerHTML = age.validationMessage;
+        }
+    }
+</script>

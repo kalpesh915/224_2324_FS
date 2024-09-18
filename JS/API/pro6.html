@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" required name="fname" id="fname" pattern="[a-z]{3}">
+        <input type="button" value="Send Data" onclick="validateForm()">
+    </form>
+
+    <h1 id="op"></h1>
+</body>
+</html>
+
+<script>
+    function validateForm(){
+        let fname = document.getElementById("fname");
+        let op = document.getElementById("op");
+
+        if(fname.validity.patternMismatch){
+            op.innerHTML = fname.validationMessage;
+        }
+    }
+</script>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Session Storage</h1>
+    <hr>
+    <button onclick="setFname()">Set Fname</button>
+    <button onclick="setLname()">Set Lname</button>
+
+    <button onclick="getFname()">Get Fname</button>
+    <button onclick="getLname()">Get Lname</button>
+
+    <button onclick="updateFname()">Update Fname</button>
+    <button onclick="updateLname()">Update Lname</button>
+
+    <button onclick="removeFname()">Remove Fname</button>
+    <button onclick="removeLname()">Remove Lname</button>
+
+    <button onclick="countValues()">Count</button>
+    <button onclick="clearValues()">Clear</button>
+</body>
+</html>
+
+
+<script>
+    function setFname(){
+        let fname = prompt("Enter your first name");
+        sessionStorage.setItem("fname", fname);
+    }
+
+    function setLname(){
+        let lname = prompt("Enter your Last name");
+        sessionStorage.setItem("lname", lname);
+    }
+
+    function getFname(){
+        alert(sessionStorage.getItem("fname"));
+    }
+
+    function getLname(){
+        alert(sessionStorage.getItem("lname"));
+    }
+
+    function removeFname(){
+        sessionStorage.removeItem("fname");
+    }
+
+    function removeLname(){
+        sessionStorage.removeItem("lname");
+    }
+
+    function countValues(){
+        alert(sessionStorage.length);
+    }
+
+    function clearValues(){
+        sessionStorage.clear();
+    }
+
+    function updateFname(){
+        let fname = prompt("Enter your first name");
+        sessionStorage.setItem("fname", fname);
+    }
+
+    function updateLname(){
+        let lname = prompt("Enter your last name");
+        sessionStorage.setItem("lname", lname);
+    }
+</script>

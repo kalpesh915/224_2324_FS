@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Page 2</h1>
+    <br>
+    <a href="history3.html">Page 3</a>
+    <hr>
+    <button onclick="historyBack()">Back</button>
+    <button onclick="historyForward()">Forward</button>
+    <button onclick="historyCount()">Count</button>
+    <button onclick="historyGo()">Go</button>
+</body>
+</html>
+
+<script>
+    function historyBack(){
+        history.back();
+    }
+
+    function historyForward(){
+        history.forward();
+    }
+
+    function historyCount(){
+        alert("Length of History is "+history.length);
+    }
+
+    function historyGo(){
+        history.go(-2);
+    }
+</script>
