@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="loadText()">Load Text</button>
+    <hr>
+    <div id="op"></div>
+</body>
+</html>
+
+<script>
+    function loadText(){
+        fetch("https://dummyjson.com/products").then((response) => {
+            //console.log(response);
+            response.json().then((result)=>{
+                console.log(result);
+            });
+        });
+        
+    }
+</script>

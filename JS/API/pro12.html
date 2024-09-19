@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="loadText()">Load Text</button>
+    <hr>
+    <div id="op"></div>
+</body>
+</html>
+
+<script>
+    async function loadText(){
+        let data = await fetch("https://dummyjson.com/products");
+        // let text = await data.text();
+        let jsonText = await data.json();
+        console.log(jsonText.products);
+    }
+</script>
