@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .outer{
+            height: 600px;
+            width: 600px;
+            position: relative;
+            background-color: yellow;
+        }
+
+        .inner{
+            height: 50px;
+            width: 50px;
+            background-color: red;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+<body onload="move()">
+    <div class="outer">
+        <div class="inner" id="inner"></div>
+    </div>
+</body>
+</html>
+
+<script>
+    let inner = document.getElementById("inner");
+    let x = 0, y = 0, animation = undefined;
+
+    function move(){
+        if(animation == undefined){
+            animation = setInterval(moveBox, 500);
+        }
+    }
+
+    function moveBox(){
+        inner.style.left = x+"px";
+        inner.style.top = y+"px";
+
+        x += 50;
+        y += 50;
+
+        if(x >= 600){
+            clearInterval(animation);
+            animation = undefined;
+        }
+    }
+</script>
