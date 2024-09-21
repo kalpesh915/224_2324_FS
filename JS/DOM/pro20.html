@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 150px; background-color: red; color: yellow; padding: 20px; text-align: center;" id="div1" onclick="animateNow()">
+        Click me
+    </div>
+</body>
+</html>
+
+<script>
+    let count = 1;
+    let div1 = document.getElementById("div1");
+
+    function animateNow(){
+        if(count == 1){
+            div1.innerHTML = "Click Me Again";
+            count++;
+        }else if(count == 2){
+            div1.innerHTML = "Good Bye";
+            count++;
+        }else if(count == 3){
+            div1.style.display = "none";
+        }
+    }
+</script>

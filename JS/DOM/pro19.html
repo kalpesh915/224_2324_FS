@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Select Backgroud :
+    <select onchange="setBGColor(this.value)">
+      <option>Red</option>
+      <option>Green</option>
+      <option>Blue</option>
+      <option>Orange</option>
+      <option>Gray</option>
+      <option>Purple</option>
+      <option>Pink</option>
+      <option>Brown</option>
+      <option>Yellow</option>
+    </select>
+    | Select Forground:
+    <select onchange="setFGColor(this.value)">
+      <option>Red</option>
+      <option>Green</option>
+      <option>Blue</option>
+      <option>Orange</option>
+      <option>Gray</option>
+      <option>Purple</option>
+      <option>Pink</option>
+      <option>Brown</option>
+      <option>Yellow</option>
+    </select>
+    Font Size :
+    <select onchange="setFontSize(this.value)">
+      <option>10</option>
+      <option>15</option>
+      <option>20</option>
+      <option>25</option>
+      <option>30</option>
+      <option>35</option>
+      <option>40</option>
+      <option>45</option>
+      <option>50</option>
+    </select>
+    <hr />
+    <div id="op">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos officia non
+      sint, esse excepturi fuga aliquid, corrupti inventore tempora, explicabo
+      cupiditate incidunt obcaecati nam dignissimos repellat et eos quia!
+      Quibusdam. Optio placeat earum ipsum sequi delectus eaque velit iure. Sunt
+      quasi beatae cupiditate neque voluptatibus fuga facere voluptates porro
+      quis asperiores iusto suscipit molestiae odit, a, itaque autem harum ab.
+      Labore quod illo odio alias eligendi praesentium accusantium, atque iure
+      iste quis corrupti error sapiente dolore esse sequi ipsam unde soluta enim
+      repellendus dolorum reprehenderit vitae in! Facere, explicabo ducimus.
+    </div>
+  </body>
+</html>
+
+<script>
+  const op = document.getElementById("op");
+  function setBGColor(color) {
+    op.style.backgroundColor = color;
+  }
+
+  function setFGColor(color) {
+    op.style.color = color;
+  }
+
+  function setFontSize(size) {
+    op.style.fontSize = size+"px";
+  }
+</script>

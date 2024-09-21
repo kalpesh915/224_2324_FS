@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+<body onmousemove="getLocation(event)" style="border: 1px solid black; height: 500px; width: 800px;">
+    <img src="../images/pic_bulboff.gif" height="20" width="20" id="bulb1">
+</body>
+</html>
+
+<script>
+    let image = document.getElementById("bulb1");
+    function getLocation(event){
+        image.style.left = event.clientX+"px";
+        image.style.top = event.clientY+"px";
+    }
+</script>
+
