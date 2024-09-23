@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        .outer{
+            height: 620px;
+            width: 620px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        .inner{
+            height: 200px;
+            width: 200px;
+            border: 1px solid black;
+            border-radius: 5px;
+            float: left;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body onload="init()">
+    <div class="outer">
+        <div class="inner" id="1" onclick="makeMove(this.id)"></div>
+        <div class="inner" id="2" onclick="makeMove(this.id)"></div>
+        <div class="inner" id="3" onclick="makeMove(this.id)"></div>
+        <div class="inner" id="4" onclick="makeMove(this.id)"></div>
+        <div class="inner" id="5" onclick="makeMove(this.id)"></div>
+        <div class="inner" id="6" onclick="makeMove(this.id)"></div>
+        <div class="inner" id="7" onclick="makeMove(this.id)"></div>
+        <div class="inner" id="8" onclick="makeMove(this.id)"></div>
+        <div class="inner" id="9" onclick="makeMove(this.id)"></div>
+    </div>
+    <h1 id="op"></h1>
+</body>
+</html>
+
+<script>
+    let positions = [], moves = [], player = 1, count = 0;
+    let winpos = [[1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5,7]];
+    let op = document.getElementById("op");
+    function init(){
+        for(i=1; i<=9; i++){
+            positions[i] = document.getElementById(i);
+            moves[i] = "";
+        }
+        player = 1;
+    }
+
+    function makeMove(i){
+        //alert(i);
+        if(moves[i] == ""){
+            if(player == 1){
+                positions[i].style.backgroundColor = "red";
+                moves[i] = "X";
+                player = 2;
+                count++;
+            }else{
+                positions[i].style.backgroundColor = "black";
+                moves[i] = "O";
+                player = 1;
+                count++;
+            }   
+            if(count >= 5){
+                checkWinner();    
+            }
+        }else{
+            alert("Invalid Move");
+        }
+        console.log(moves);
+    }
+
+    function checkWinner(){
+        for(i=0; i<winpos.length; i++){
+            if(moves[winpos[i][0]] == "X" && moves[winpos[i][1]] == "X" && moves[winpos[i][2]] == "X"){
+                alert("Player 1 is Winner");
+                resetGame();
+            }else if(moves[winpos[i][0]] == "O" && moves[winpos[i][1]] == "O" && moves[winpos[i][2]] == "O"){
+                alert("Player 2 is Winner");
+                resetGame();
+            }
+        }
+
+        if(moves.indexOf("") <= -1){
+            alert("Game Draw");
+            resetGame();
+        }
+    }
+
+    function resetGame(){
+        if(confirm("Do you want to play Again ?")){
+            window.location.reload();
+        }
+    }
+</script>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="myH1">Welocme to world of Events</h1>
+</body>
+</html>
+<script>
+    document.write("<hr>"+document.getElementById("myH1").innerHTML);
+    document.write("<hr>"+document.getElementById("myH1").firstChild.nodeValue);
+    document.write("<hr>"+document.getElementById("myH1").childNodes[0].nodeValue);
+
+    //alert(document.documentElement.innerHTML)
+    //alert(document.body.innerHTML)
+    alert(document.head.innerHTML)
+</script>

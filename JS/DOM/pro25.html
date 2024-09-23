@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">Get Time</button>
+    <h1 id="op"></h1>
+    <hr>
+    <button onclick="addEvent()">Add Event</button>
+    <button onclick="removeEvent()">Remove Event</button>
+</body>
+</html>
+<script>
+    let op = document.getElementById("op");
+    let btn1 = document.getElementById("btn1");
+
+    function getTime(){
+        op.innerHTML = Date();
+    }
+
+    function addEvent(){
+        btn1.addEventListener("click", function(){
+            op.innerHTML = Date();
+        });
+
+        btn1.addEventListener("click", function(){
+            alert("Good Day");
+        });
+
+        btn1.addEventListener("click", function(){
+            console.log("welcome");
+        });
+    }
+
+    function removeEvent(){
+        btn1.removeEventListener("click", getTime);
+    }
+</script>

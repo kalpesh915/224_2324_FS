@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addNode()">Add Node</button>
+    <hr>
+    <div style="border: 1px solid black;" id="myDiv">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus reiciendis totam, ipsum placeat modi quas et accusamus, repudiandae, minus odio laboriosam perferendis pariatur numquam odit inventore aperiam officia nam debitis.</p>
+        <h1 id="myH1">This is Demo Text</h1>
+    </div>
+</body>
+</html>
+<script>
+    const myDiv = document.getElementById("myDiv");
+    const myH1 = document.getElementById("myH1");
+
+    function addNode(){
+        let newNode = document.createElement("p");
+        let text = document.createTextNode("Welcome to JS Nodes");
+        newNode.append(text);
+
+        myDiv.replaceChild(newNode, myH1);
+    }
+</script>
