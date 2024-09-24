@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="jquery.color.js"></script>
+    <style>
+        .demo{
+            color: red;
+        }
+    </style>
+  </head>
+  <body>
+    <button id="btn1">Hide</button>
+    <button id="btn2">Show</button>
+    <hr />
+    <p class="demo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto possimus et nam, ducimus itaque beatae consectetur nesciunt sint deserunt, dolorum inventore minus obcaecati quos, maxime aliquid doloribus cumque quisquam. Ad!</p>
+    <p class="demo">Delectus aliquid quo eius recusandae sapiente tempora quidem, qui consequatur laudantium voluptatum, debitis possimus cumque pariatur quod numquam dicta necessitatibus iusto magni praesentium. Hic labore ea in veniam numquam eum.</p>
+    <p id="op1">Veniam delectus cupiditate impedit ratione deserunt quis assumenda cumque tempore laboriosam quaerat ex dolorum, possimus dicta maiores vitae quae repellendus velit? Non consequuntur delectus reiciendis nulla illo nemo soluta voluptates?</p>
+    <p>Cum vero quasi voluptatibus voluptas, consequuntur similique, doloribus fuga excepturi necessitatibus maxime officia aliquam aut, nam maiores dolorem! Consequatur quo nihil quam, blanditiis totam sunt quod vel adipisci pariatur error?</p>
+    <p class="demo">Aliquid molestiae vel explicabo quod nulla commodi alias numquam at, ex dignissimos provident dolorem! Praesentium iste tempore temporibus nisi minima, maiores quod impedit. Est esse eaque sint iste tempore mollitia.</p>
+    <h6 class="demo">This is Heading Tag</h6>
+  </body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        $("#btn1").dblclick(function(){
+            $("p").hide(1000);
+        });
+    });
+</script>
