@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="jquery.color.js"></script>
+
+    <style>
+        div{
+            background-color: olive;
+            width: 300px;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            position: relative;
+            left: 100px;
+        }
+    </style>
+  </head>
+  <body>
+    <button type="button" id="btn1">Run Animation</button>
+    <hr>
+    <div id="mydiv">Dava Bhavya</div>
+  </body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            $("#mydiv").animate({
+                left:"+=200px",
+                backgroundColor: "black",
+                fontSize: "50px",
+                width: "toggle"
+            }, 5000);
+        });
+    });
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="jquery.color.js"></script>
+
+    <style>
+        div{
+            background-color: olive;
+            width: 300px;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            position: relative;
+        }
+    </style>
+  </head>
+  <body>
+    <button type="button" id="btn1">Run Animation</button>
+    <hr>
+    <div id="mydiv">Dava Bhavya</div>
+  </body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            /*
+                jQuery animate() - Uses Queue Functionality
+                By default, jQuery comes with queue functionality for animations.
+                This means that if you write multiple animate() calls after each other, jQuery creates an "internal" queue with these method calls. Then it runs the animate calls ONE by ONE. So, if you want to perform different animations after each other, we take advantage of the queue functionality:
+            */ 
+            
+            let op = $("#mydiv");
+
+            op.animate({backgroundColor: "black"}, 1000);
+            op.animate({left: "200px"}, 1000);
+            // op.animate({borderRadius: "10px 20px"}, 1000);
+            op.animate({
+                "border-top-left-radius": "10px",
+                "border-top-right-radius": "20px",
+                "border-bottom-left-radius": "50px",
+                "border-bottom-right-radius": "20px"
+            }, 1000);
+            op.animate({fontSize: "50px"}, 1000);
+        });
+    });
+</script>

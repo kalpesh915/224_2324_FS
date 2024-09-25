@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="jquery.color.js"></script>
+
+    <style>
+        div{
+            background-color: olive;
+            color: white;
+            padding: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <button type="button" id="btn1">Hide</button>
+    <button type="button" id="btn2">Show</button>
+    <button type="button" id="btn3">Toggle</button>
+    <hr>
+    <div id="mydiv">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem fugit id sunt, molestias deserunt quia exercitationem perspiciatis doloribus eligendi? Neque, cupiditate alias omnis porro sint architecto unde optio quibusdam laudantium?
+    Itaque distinctio mollitia reiciendis neque, ad necessitatibus error deserunt, aliquid nostrum nesciunt magni. Minima optio laudantium ullam sed, at numquam molestiae, ex ea repellat aliquam distinctio qui saepe maxime nesciunt.
+    Repellat nemo nam minima autem? Eos in minima voluptas necessitatibus, velit autem repellat voluptate molestias dolores nam optio illum hic facere asperiores, rem, cumque placeat labore quasi assumenda maxime quisquam!
+    Maiores sequi iusto possimus illum! Provident laboriosam, molestias animi minima facilis culpa nihil natus totam qui est quos aperiam obcaecati molestiae assumenda veniam quisquam fuga minus quidem officiis atque voluptate?
+    Omnis dignissimos consectetur, est nulla iste beatae, ipsam labore sapiente, porro autem mollitia tenetur accusamus reiciendis vel inventore quod odit laborum. Soluta libero quisquam ipsum, dolore autem blanditiis excepturi voluptatum.</div>
+  </body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            $("#mydiv").hide(3000);
+        });
+
+        $("#btn2").click(function(){
+            $("#mydiv").show(3000);
+        });
+
+        $("#btn3").click(function(){
+            $("#mydiv").toggle(3000);
+        });
+    });
+</script>
