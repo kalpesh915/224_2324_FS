@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="jquery.color.js"></script>
+  </head>
+  <body>
+    <button id="btn1">After</button>
+    <button id="btn2">Before</button>
+    <div id="myText">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta aliquid
+      illo vero nisi eos! Quas molestias, maxime magni adipisci, ullam suscipit
+      provident laboriosam fugiat accusamus error quidem quo cum expedita.
+    </div>
+  </body>
+</html>
+
+<script>
+  $(document).ready(function () {
+    $("#btn1").click(function(){
+        $("#myText").after(" This is Demo Text ");
+    });
+    $("#btn2").click(function(){
+        $("#myText").before(" This is Demo Text ");
+    });
+  });
+</script>

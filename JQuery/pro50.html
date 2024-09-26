@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="jquery.color.js"></script>
+
+    <style>
+        .demo{
+            background-color: yellow;
+            color: red;
+            padding: 30px;
+        }
+    </style>
+  </head>
+  <body>
+    <button id="btn1">Empty</button>
+    <button id="btn2">Remove</button>
+    <hr>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus possimus temporibus itaque illo quod quos esse assumenda, fugit doloremque, voluptates corrupti eaque, dolorum quibusdam voluptatibus labore? Sit optio harum reprehenderit.</p>
+    <p class="demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus possimus temporibus itaque illo quod quos esse assumenda, fugit doloremque, voluptates corrupti eaque, dolorum quibusdam voluptatibus labore? Sit optio harum reprehenderit.</p>
+    <p class="demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus possimus temporibus itaque illo quod quos esse assumenda, fugit doloremque, voluptates corrupti eaque, dolorum quibusdam voluptatibus labore? Sit optio harum reprehenderit.</p>
+    <p class="demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus possimus temporibus itaque illo quod quos esse assumenda, fugit doloremque, voluptates corrupti eaque, dolorum quibusdam voluptatibus labore? Sit optio harum reprehenderit.</p>
+    <p class="demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus possimus temporibus itaque illo quod quos esse assumenda, fugit doloremque, voluptates corrupti eaque, dolorum quibusdam voluptatibus labore? Sit optio harum reprehenderit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus possimus temporibus itaque illo quod quos esse assumenda, fugit doloremque, voluptates corrupti eaque, dolorum quibusdam voluptatibus labore? Sit optio harum reprehenderit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus possimus temporibus itaque illo quod quos esse assumenda, fugit doloremque, voluptates corrupti eaque, dolorum quibusdam voluptatibus labore? Sit optio harum reprehenderit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus possimus temporibus itaque illo quod quos esse assumenda, fugit doloremque, voluptates corrupti eaque, dolorum quibusdam voluptatibus labore? Sit optio harum reprehenderit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus possimus temporibus itaque illo quod quos esse assumenda, fugit doloremque, voluptates corrupti eaque, dolorum quibusdam voluptatibus labore? Sit optio harum reprehenderit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus possimus temporibus itaque illo quod quos esse assumenda, fugit doloremque, voluptates corrupti eaque, dolorum quibusdam voluptatibus labore? Sit optio harum reprehenderit.</p>
+  </body>
+</html>
+
+<script>
+  $(document).ready(function () {
+    $("#btn1").click(function(){
+        $("p.demo").empty();
+    });
+    $("#btn2").click(function(){
+        $("p.demo").remove();
+    });
+  });
+</script>

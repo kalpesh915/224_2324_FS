@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="jquery.color.js"></script>
+
+    <style>
+        .demo{
+            background-color: yellow;
+            color: red;
+            padding: 30px;
+        }
+
+        .center{
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    <button id="btn1">Add Class</button>
+    <button id="btn2">Remove Class</button>
+    <button id="btn3">Toggle Class</button>
+    <hr>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis incidunt perspiciatis eligendi libero maxime asperiores. Doloribus veniam aliquid ex cumque dignissimos. Unde ipsam dolores excepturi corrupti commodi aperiam nam. Voluptates!</p>
+    <p>Sunt accusamus dolorem quod a repellendus, natus veniam deserunt vero distinctio. Non minus voluptas quia officia ipsum mollitia doloremque provident. Iste sequi mollitia fugiat maxime, aut tempora repellat atque alias.</p>
+    <p>Fugit rerum similique ipsa aperiam non iure aliquam praesentium possimus nesciunt ratione velit repudiandae excepturi nisi reprehenderit ab voluptatum error, obcaecati facilis rem officiis ipsum nihil. Possimus rerum sed facilis.</p>
+    <p>Assumenda molestias laudantium delectus doloribus! Corrupti consectetur consequatur facilis illum fuga ut doloremque maiores cupiditate. Eum, dolor aut! Iure, labore tempora. Earum unde error cum rerum perspiciatis atque, nulla doloribus.</p>
+    <p>Temporibus cumque modi itaque sequi beatae recusandae quasi illum harum, officia deserunt aperiam. Repudiandae, doloremque saepe possimus, dolore, voluptates suscipit harum non culpa adipisci itaque quibusdam eum facilis! Expedita, optio!</p>
+  </body>
+</html>
+
+<script>
+  $(document).ready(function () {
+    $("#btn1").click(function(){
+        $("p").addClass("demo");
+    });
+    $("#btn2").click(function(){
+        $("p").removeClass("demo");
+    });
+    $("#btn3").click(function(){
+        $("p").toggleClass("demo");
+    });
+  });
+</script>

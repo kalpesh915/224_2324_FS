@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="jquery.color.js"></script>
+
+    <style>
+      div {
+        background-color: olive;
+        text-align: center;
+        color: white;
+        padding: 20px;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" id="btn1">Get Text</button>
+    <button type="button" id="btn2">Set Text</button>
+    <hr />
+    <div id="mydiv">
+        Welcome to world of <b>jquery</b> With <i>W3Schools.com</i>
+    </div>
+  </body>
+</html>
+
+<script>
+  $(document).ready(function () {
+    $("#btn1").click(function () {
+      alert($("#mydiv").text());
+    });
+
+    $("#btn2").click(function(){
+        //$("#mydiv").text("This text is <b>updated</b> by JQuery");
+        $("#mydiv").text("This text is updated by JQuery");
+    });
+  });
+</script>

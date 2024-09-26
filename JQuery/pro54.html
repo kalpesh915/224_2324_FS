@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="jquery.color.js"></script>
+
+    <style>
+        #mydiv{
+            background-color: yellow;
+            color: red;
+            padding: 30px;
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    <button id="btn1">Get CSS</button>
+    <hr>
+    <div id="mydiv">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero repudiandae quaerat, quo eaque eum saepe nihil rerum ea quam nesciunt adipisci, temporibus amet, laborum excepturi dolorum. Ab tempore ducimus voluptates.
+    </div>
+  </body>
+</html>
+
+<script>
+  $(document).ready(function () {
+    $("#btn1").click(function(){
+        //$("#mydiv").css("backgroundColor","black");
+        $("#mydiv").css("background-color","black");
+    });
+  });
+</script>

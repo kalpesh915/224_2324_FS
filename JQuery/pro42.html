@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="jquery.color.js"></script>
+
+    <style>
+      div {
+        background-color: olive;
+        text-align: center;
+        color: white;
+        padding: 20px;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" id="btn1">Get Val</button>
+    <button type="button" id="btn2">Set Val</button>
+    <hr />
+    <input type="text" name="fname" id="fname" value="Bhavya Dava">
+  </body>
+</html>
+
+<script>
+  $(document).ready(function () {
+    $("#btn1").click(function () {
+      alert($("#fname").val());
+    });
+
+    $("#btn2").click(function(){
+        $("#fname").val("Yash Chavda");
+    });
+  });
+</script>

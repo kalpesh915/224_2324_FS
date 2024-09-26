@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script src="jquery.color.js"></script>
+
+    <style>
+        #mydiv{
+            background-color: yellow;
+            color: red;
+            width: 500px;
+            height: 300px;
+            padding: 30px;
+            border: 10px solid red;
+            margin: 20px;
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    <button id="btn1">Get Height / Width</button>
+    <button id="btn2">Get Inner Height / Width</button>
+    <button id="btn3">Get Outer Height / Width</button>
+    <button id="btn4">Get Outer (true) Height / Width</button>
+    <hr>
+    <div id="mydiv">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero repudiandae quaerat, quo eaque eum saepe nihil rerum ea quam nesciunt adipisci, temporibus amet, laborum excepturi dolorum. Ab tempore ducimus voluptates.
+    </div>
+  </body>
+</html>
+
+<script>
+  $(document).ready(function () {
+    let mydiv = $("#mydiv");
+    $("#btn1").click(function(){
+        alert("Width is "+mydiv.width()+" Height is "+mydiv.height());
+    });
+
+    $("#btn2").click(function(){
+        alert("Width is "+mydiv.innerWidth()+" Height is "+mydiv.innerHeight());
+    });
+
+    $("#btn3").click(function(){
+        alert("Width is "+mydiv.outerWidth()+" Height is "+mydiv.outerHeight());
+    });
+
+    $("#btn4").click(function(){
+        alert("Width is "+mydiv.outerWidth(true)+" Height is "+mydiv.outerHeight(true));
+    });
+  });
+</script>
