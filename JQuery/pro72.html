@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery-3.7.1.js"></script>
+    <script src="jquery.color.js"></script>
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    <h1>This is Heading 1</h1>
+    <h2>This is Heading 2</h2>
+    <h3>This is Heading 3</h3>
+    <h4>This is Heading 4</h4>
+    <h5>This is Heading 5</h5>
+    <h6>This is Heading 6</h6>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, optio est! Assumenda qui nihil consequatur optio voluptates, hic, voluptatem totam ea tenetur harum obcaecati amet minus illum repellendus, libero sequi?</p>
+    <span>Span Tag</span>
+  </body>
+</html>
+
+<script>
+    /*
+
+    */
+        
+  $(document).ready(function () {
+    $("h4").prevUntil("h1").css({"color": "red"});
+  });
+</script>

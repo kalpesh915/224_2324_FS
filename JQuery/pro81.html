@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery-3.7.1.js"></script>
+    <script src="jquery.color.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+        <input type="text" name="search" id="search" placeholder="Search Here..." class="form-control p-3 my-3"/>
+
+        <div class="table-responsive">
+            <table class="table table-hover table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>City</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+
+                <tbody id="mydata">
+                    <tr>
+                        <td>1</td>
+                        <td>Het</td>
+                        <td>Manani</td>
+                        <td>Ahamdabad</td>
+                        <td>het@gmail.com</td>
+                        <td>687456237894</td>
+                        <td>Male</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Bhavin</td>
+                        <td>Thakor</td>
+                        <td>Rajkot</td>
+                        <td>bhavin@gmail.com</td>
+                        <td>687456237894</td>
+                        <td>Male</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Bhavya</td>
+                        <td>Dava</td>
+                        <td>Surat</td>
+                        <td>bhavya@gmail.com</td>
+                        <td>687456237894</td>
+                        <td>Male</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Rajiv</td>
+                        <td>Shekh</td>
+                        <td>Rajkot</td>
+                        <td>rajiv@gmail.com</td>
+                        <td>687456237894</td>
+                        <td>Male</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Yash</td>
+                        <td>Singal</td>
+                        <td>Morbi</td>
+                        <td>yash@gmail.com</td>
+                        <td>687456237894</td>
+                        <td>Male</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Yash</td>
+                        <td>Chavda</td>
+                        <td>Rajkot</td>
+                        <td>yash@gmail.com</td>
+                        <td>687456237894</td>
+                        <td>Male</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Raj</td>
+                        <td>Makwana</td>
+                        <td>Bhavanagar</td>
+                        <td>raj@gmail.com</td>
+                        <td>687456237894</td>
+                        <td>Male</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Patel</td>
+                        <td>Dhruna</td>
+                        <td>Jamnanagr</td>
+                        <td>dhruna@gmail.com</td>
+                        <td>687456237894</td>
+                        <td>Male</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Yashvi</td>
+                        <td>Patel</td>
+                        <td>Surat</td>
+                        <td>Yashvi@gmail.com</td>
+                        <td>687456237894</td>
+                        <td>Male</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Keyur</td>
+                        <td>Ramani</td>
+                        <td>Baroda</td>
+                        <td>keyur@gmail.com</td>
+                        <td>687456237894</td>
+                        <td>Male</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        $("#search").keyup(function(){
+            let searchText = $(this).val().toLowerCase();
+            //console.log(searchText);
+            $("#mydata tr").filter(function(){
+                $(this).toggle($(this).text().toLowerCase().indexOf(searchText) > -1);
+                /*
+                    filter data based on searchtext is exist in our current row or not
+                    if searchtext is exist in row it will return index > 0 other wise return
+                    index -1
+                */ 
+            });
+        });
+    });
+</script>

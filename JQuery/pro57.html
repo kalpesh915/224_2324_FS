@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery-3.7.1.js"></script>
+    <script src="jquery.color.js"></script>
+    <style>
+      .ancestors * {
+        display: block;
+        border: 2px solid gray;
+        color: green;
+        padding: 5px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ancestors">
+      <div>
+        div (great-grandparent)
+        <ul>
+          ul (grandparent)
+          <li>
+            li (Parent)
+            <span>Sapn 1</span>
+            <span>Sapn 2</span>
+          </li>
+          <li>
+            li (Parent)
+            <b>Welcome</b>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr />
+    <div>
+      div (grandparent)
+      <p>
+        p (direct parent)
+        <span>span</span>
+      </p>
+    </div>
+  </body>
+</html>
+
+<script>
+  $(document).ready(function () {
+    $("span").parent().css({"border":"2px solid red"});
+  });
+</script>
