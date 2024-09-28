@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX JQUERY CRUD</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <button id="btn1" type="button">Add New Student</button> | 
+    <button id="btn2" type="button">Get All Students</button> | 
+    <button id="btn3" type="button">Get Student by ID </button> | 
+    <button id="btn4" type="button">Update Student</button> | 
+    <button id="btn5" type="button">Delete Student</button> | 
+</body>
+</html>
+
+<script>
+    const APIURL = "http://localhost:3000/students";
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+            let fname = prompt("Enter your First Name");
+            let lname = prompt("Enter your Last Name");
+
+            $.ajax({
+                method: "POST",
+                url: APIURL,
+                data: JSON.stringify({fname, lname}),
+                contentType: false,
+                processData: false,
+                success: function(response){
+                    console.log(response);
+                    alert("New Record Created");
+                }
+            });
+        })
+
+        $("#btn2").click(function(){
+            $.ajax({
+                method:"GET",
+                url: APIURL,
+                success: function(response){
+                    console.log(response);
+                }
+            });
+        });
+
+        $("#btn3").click(function(){
+            let id = prompt("Enter Student ID")
+            $.ajax({
+                method:"GET",
+                url: APIURL+"/"+id,
+                success: function(response){
+                    console.log(response)
+                },
+                error: function(XHR, text, errorText){
+                    console.log(errorText);
+                }
+            });
+        });
+
+        $("#btn4").click(function(){
+            let id = prompt("Enter Student ID")
+            let fname = prompt("Enter your new First Name");
+            let lname = prompt("Enter your new Last Name");
+
+            $.ajax({
+                method: "PUT",
+                url: APIURL+"/"+id,
+                data: JSON.stringify({fname, lname}),
+                contentType: false,
+                processData: false,
+                success: function(response){
+                    console.log(response);
+                }
+            });
+        });
+
+        $("#btn5").click(function(){
+            let id = prompt("Enter Student ID");
+
+            $.ajax({
+                method: "DELETE",
+                url: APIURL+"/"+id,
+                success: function(response){
+                    console.log(response);
+                }
+            });
+        });
+    });
+</script>

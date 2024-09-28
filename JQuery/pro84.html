@@ -29,7 +29,10 @@
 <script>
   $(document).ready(function () {
     $("#btn1").click(function () {
-      $("#op").load("data.txt");
+      $.get("https://dummyjson.com/products", (data, status)=>{
+        //console.log(data);
+        console.log(JSON.stringify(data));
+      });
     });
   });
 </script>

@@ -1,0 +1,3 @@
+<h1>This is simple text file for loading data with AJAX</h1>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt harum amet voluptatibus praesentium ipsa illum voluptas, ea rerum error reiciendis earum iure culpa eum perspiciatis tenetur in deserunt debitis non.</p>
+<p id="text1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt harum amet voluptatibus praesentium ipsa illum voluptas, ea rerum error reiciendis earum iure culpa eum perspiciatis tenetur in deserunt debitis non.</p>

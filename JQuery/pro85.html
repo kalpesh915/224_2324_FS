@@ -29,7 +29,16 @@
 <script>
   $(document).ready(function () {
     $("#btn1").click(function () {
-      $("#op").load("data.txt");
+      $.ajax({
+        url: "https://dummyjson.com/products",
+        method: "GET",
+        success: function(response){
+            console.log(response);
+            //response = jQuery.parseJSON(response);
+            response = JSON.stringify(response);
+            console.log(response);
+        }
+      });
     });
   });
 </script>

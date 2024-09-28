@@ -29,7 +29,11 @@
 <script>
   $(document).ready(function () {
     $("#btn1").click(function () {
-      $("#op").load("data.txt");
+      $("#op").load("data.txt", (responseText, statusText, XMR)=>{
+        //console.log(responseText);
+        //console.log(statusText);
+        console.log(XMR);
+      });
     });
   });
 </script>
