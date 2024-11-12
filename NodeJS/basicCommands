@@ -1,0 +1,6 @@
+cls     =       clear screen
+cd      =       change directory
+md      =       make directory
+cd ..   =       back 1 folder up
+npm     =       node package manager
+code .  =       open current folder in vs code
