@@ -3,16 +3,20 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "set DEBUG=express:* DEBUG_COLORS=1 & nodemon express24.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "bootstrap": "^5.3.3",
-    "express": "^4.21.1",
+    "cookie-parser": "^1.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
     "jquery": "^3.7.1",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "chalk": "^5.3.0",
