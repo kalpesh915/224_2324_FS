@@ -1,25 +1,27 @@
 <?php
-    session_start();
-    ob_start();
+session_start();
+ob_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <?php
-        require_once("cdn.php");
+    require_once("cdn.php");
     ?>
 </head>
+
 <body>
     <div class="container-fluid">
         <h1 class="p-5 text-white bg-primary text-center">Login Form</h1>
         <?php
-            if(isset($_SESSION["msg"])){
-                echo $_SESSION["msg"];
-                unset($_SESSION["msg"]);
-            }
+        if (isset($_SESSION["msg"])) {
+            echo $_SESSION["msg"];
+            unset($_SESSION["msg"]);
+        }
         ?>
         <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-floating my-3">
@@ -40,37 +42,45 @@
         </div>
     </div>
 </body>
+
 </html>
 
 <?php
-    if(isset($_POST["loginProcess"])){
+if (isset($_POST["loginProcess"])) {
 
-        require_once("connection.php");
+    require_once("connection.php");
 
-        $email = $_POST["email"];
-        $password = $_POST["password"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
 
-        $sqlQuery = "select * from users where email = '$email'";
-        $result = $conn->query($sqlQuery);
-        
-        if($result->num_rows > 0){
-            while($row = $result->fetch_assoc()){
-                if(password_verify($password, $row["password"])){
+    $sqlQuery = "select * from users where email = '$email'";
+    $result = $conn->query($sqlQuery);
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            print_r($row);
+            if ($row["deleted"] == 0) {
+                if (password_verify($password, $row["password"])) {
                     $_SESSION["loginuser"] = $email;
                     header("location:home.php");
-                }else{
+                } else {
                     $_SESSION["msg"] = "<div class='alert alert-danger alert-dismissible'>
-                    <button class='btn-close' data-bs-dismiss='alert'></button>
-                    <strong>Error : </strong> Invalid Email Password</div>";
+                        <button class='btn-close' data-bs-dismiss='alert'></button>
+                        <strong>Error : </strong> Invalid Email Password</div>";
                     header("location:index.php");
                 }
+            }else{
+                $_SESSION["msg"] = "<div class='alert alert-danger alert-dismissible'>
+                <button class='btn-close' data-bs-dismiss='alert'></button>
+                <strong>Error : </strong> Account Disabled</div>";
+                header("location:index.php");
             }
-            
-        }else{
-            $_SESSION["msg"] = "<div class='alert alert-danger alert-dismissible'>
+        }
+    } else {
+        $_SESSION["msg"] = "<div class='alert alert-danger alert-dismissible'>
             <button class='btn-close' data-bs-dismiss='alert'></button>
             <strong>Error : </strong> Invalid Email Address</div>";
-            header("location:index.php");
-        }
+        header("location:index.php");
     }
+}
 ?>
