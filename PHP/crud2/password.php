@@ -59,8 +59,10 @@
             if($users->validateUser($username, $password)){
                 $npassword = password_hash($npassword, PASSWORD_DEFAULT);
                 $users->updatePassword($username, $npassword);
+                $users->logWriter($username,"Password Updated Successfully");
                 $_SESSION["msg"] = $users->createMessage("success", "Password Updated Successfully");
             }else{
+                $users->logWriter($username,"Unsuccessfull Password Update Attepmt");
                 $_SESSION["msg"] = $users->createMessage("error", "Incorrect Current Password");
             }
         }else{
