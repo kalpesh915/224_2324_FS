@@ -10,6 +10,22 @@
 
             return $this->conn->insert_id;
         }
+
+        public function getAllUsers(){
+            $sqlQuery = "select * from users";
+            return $this->conn->query($sqlQuery);
+        }
+
+        public function deleteUser($id){
+            $sqlQuery = "delete from users where id = $id";
+            $this->conn->query($sqlQuery);
+            return $this->conn->affected_rows;
+        }
+
+        public function getOneUser($id){
+            $sqlQuery = "select * from users where id = $id";
+            return $this->conn->query($sqlQuery);
+        }
     }
 
     $users = new Users();
