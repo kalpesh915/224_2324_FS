@@ -1,6 +1,5 @@
 <?php
 require_once("../classes/Users.class.php");
-
 if (isset($_POST["save_user"])) {
     if (isset($_POST["fname"]) && isset($_POST["lname"]) && isset($_POST["city"]) && isset($_POST["gender"]) && isset($_POST["email"]) && isset($_POST["phone"])) {
         $fname = $users->filterData($_POST["fname"]);
@@ -48,11 +47,20 @@ if (isset($_POST["save_user"])) {
     }
 
     echo json_encode($response);
-} else if (isset($_SERVER["REQUEST_METHOD"]) == "GET") {
+} else if ($_SERVER["REQUEST_METHOD"] == "GET") {
     //echo "CALLED";
     if (isset($_GET["id"])) {
         // code for get one user by id
-        echo "One User";
+        $id = $users->filterData($_GET["id"]);
+       $result = $users->getOneUser($id);
+       
+       $response = [
+            "code" => 200,
+            "message" => "User Found",
+            "userData" => $result->fetch_assoc()
+       ];
+
+       echo json_encode($response);
     } else {
         // code for get all users
 
@@ -68,4 +76,17 @@ if (isset($_POST["save_user"])) {
             "users" => $usersData
         ]);
     }
+} else if(isset($_POST["update_user"])){
+    $id = $users->filterData($_POST["id"]);
+    $fname = $users->filterData($_POST["fname"]);
+    $lname = $users->filterData($_POST["lname"]);
+    $city = $users->filterData($_POST["city"]);
+    $gender = $users->filterData($_POST["gender"]);
+    $phone = $users->filterData($_POST["phone"]);
+    $email = $users->filterData($_POST["email"]);
+    $users->updateUser($id, $fname, $lname, $city, $gender, $email, $phone);
+    echo json_encode([
+        "code" => 200,
+        "message" => "User Updated"
+    ]);
 }

@@ -26,6 +26,11 @@
             $sqlQuery = "select * from users where id = $id";
             return $this->conn->query($sqlQuery);
         }
+
+        public function updateUser($id, $fname, $lname, $city, $gender, $email, $phone){
+            $sqlQuery = "update users set fname = '$fname', lname = '$lname', city = '$city', gender = '$gender', email = '$email', phone = '$phone' where id = $id";
+            $this->conn->query($sqlQuery);
+        }
     }
 
     $users = new Users();
