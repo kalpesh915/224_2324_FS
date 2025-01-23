@@ -27,6 +27,21 @@
             $sqlQuery = "select * from logs order by id desc";
             return $this->conn->query($sqlQuery);
         }
+
+        public function updatePassword($email, $newpassword){
+            $sqlQuery = "update adminusers set password = '$newpassword' where email = '$email'";
+            $this->conn->query($sqlQuery);
+        }
+
+        public function getProfile($email){
+            $sqlQuery = "select fname, lname from adminusers where email = '$email'";
+            return $this->conn->query($sqlQuery);
+        }
+
+        public function updateProfile($email, $fname, $lname){
+            $sqlQuery = "update adminusers set fname = '$fname', lname = '$lname' where email = '$email'";
+            $this->conn->query($sqlQuery);
+        }
     }
 
     $adminusers = new AdminUsers();

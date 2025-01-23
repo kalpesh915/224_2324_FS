@@ -1,3 +1,4 @@
+
 <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">
 
@@ -89,13 +90,13 @@
             </a><!-- End Profile Iamge Icon -->
 
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-                
+
                 <li>
                     <hr class="dropdown-divider">
                 </li>
 
                 <li>
-                    <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                    <a class="dropdown-item d-flex align-items-center" href="profile">
                         <i class="bi bi-person"></i>
                         <span>My Profile</span>
                     </a>
@@ -115,7 +116,7 @@
                 </li>
 
                 <li>
-                    <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                    <a class="dropdown-item d-flex align-items-center" href="password">
                         <i class="bi bi-key"></i>
                         <span>Password</span>
                     </a>
@@ -133,7 +134,7 @@
                     <hr class="dropdown-divider">
                 </li>
                 <li>
-                    <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                    <a class="dropdown-item d-flex align-items-center" href="backup">
                         <i class="bi bi-hdd"></i>
                         <span>Backup</span>
                     </a>

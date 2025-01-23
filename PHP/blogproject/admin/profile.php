@@ -1,5 +1,11 @@
 <?php
   require_once("commons/session.php");
+  require_once("classes/AdminUsers.class.php");
+
+  $result = $adminusers->getProfile($loginuser);
+
+  // fetch data from result and convert in variables
+  extract($result->fetch_assoc());
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +40,7 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Page Title</h1>
+      <h1>Update Profile</h1>
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
@@ -45,19 +51,30 @@
           <div class="row">
             <!-- Customers Card -->
             <div class="col-xxl-4 col-xl-12">
-
               <div class="card info-card customers-card">
-
-                
-
                 <div class="card-body">
-                  <h5 class="card-title">Title <span></span></h5>
-
-                  
-
+                  <h5 class="card-title"> <span></span></h5>
+                  <?php
+                    if(isset($_SESSION["msg"])){
+                        echo $_SESSION["msg"];
+                        unset($_SESSION["msg"]);
+                    }
+                  ?>
+                <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+                    <div class="my-3">
+                        <label for="fname" class="form-label">Enter First Name</label>
+                        <input type="text" name="fname" id="fname" required class="form-control" value="<?= $fname; ?>">
+                    </div>
+                    <div class="my-3">
+                        <label for="lname" class="form-label">Enter Last Name</label>
+                        <input type="text" name="lname" id="lname" required class="form-control" value="<?= $lname; ?>">
+                    </div>
+                    <div class="my-3">
+                        <input type="submit" value="Update Profile" name="updateProcess" class="btn btn-primary">
+                    </div>
+                </form>
                 </div>
               </div>
-
             </div><!-- End Customers Card -->
           </div>
         </div><!-- End Left side columns -->
@@ -84,7 +101,23 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
 </body>
-
 </html>
+
+<?php
+    if(isset($_POST["updateProcess"])){
+        $fname = $adminusers->filterData($_POST["fname"]);
+        $lname = $adminusers->filterData($_POST["lname"]);
+
+        $adminusers->updateProfile($loginuser, $fname, $lname);
+
+        $adminusers->logWriter($loginuser, "Profile Updated to $fname $lname");
+
+        $_SESSION["msg"] = "<div class='alert alert-success alert-dismissible'>
+        <button class='btn-close' data-bs-dismiss='alert'></button>
+        <strong>Success</strong> : Profile Updated
+        </div>";
+
+        header("location:profile");
+    }
+?>
