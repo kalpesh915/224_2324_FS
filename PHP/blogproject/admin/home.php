@@ -1,5 +1,9 @@
 <?php
   require_once("commons/session.php");
+  require_once("classes/AdminUsers.class.php");
+
+  $result = $adminusers->getProfile($loginuser);
+  extract($result->fetch_assoc());
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +38,7 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Page Title</h1>
+      <h1>Welcome <?= $fname." ",$lname?>,</h1>
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
@@ -47,13 +51,22 @@
             <div class="col-xxl-4 col-xl-12">
 
               <div class="card info-card customers-card">
-
-                
-
                 <div class="card-body">
-                  <h5 class="card-title">Title <span></span></h5>
-
-                  
+                  <?php
+                    $hours = date("H");
+                    if($hours >= 5 && $hours < 12){
+                      $greet = "Good Morning";
+                    }else if ($hours >= 12 && $hours <= 14 ){
+                      $greet = "Good Noon";
+                    }else if ($hours >= 14 && $hours <= 15 ){
+                      $greet = "Good Afternoon";
+                    }else if ($hours >= 15 && $hours <= 20 ){
+                      $greet = "Good Evening";
+                    }else{
+                      $greet = "Good to See you Here.";
+                    }
+                  ?>
+                  <h3 class="card-title"><?= $greet; ?><span></span></h3>
 
                 </div>
               </div>

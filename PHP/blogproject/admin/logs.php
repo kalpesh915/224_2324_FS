@@ -1,5 +1,18 @@
 <?php
 require_once("commons/session.php");
+require_once("classes/AdminUsers.class.php");
+if(isset($_POST["clearProcess"])){
+    $password = $adminusers->filterData($_POST["password"]);
+    if($adminusers->adminLogin($loginuser, $password)){
+        $adminusers->deleteAllLogs();
+        $adminusers->logWriter($loginuser, "Logs Deleted");
+    }else{
+        $adminusers->logWriter($loginuser, "Invalid Attempt to Delete Logs");
+    }
+    header("location:logs");
+}
+
+    $adminusers->markAllLogstoRead();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,12 +63,10 @@ require_once("commons/session.php");
                         <div class="col-xxl-4 col-xl-12">
 
                             <div class="card info-card customers-card">
-
-
-
                                 <div class="card-body">
-                                    <h5 class="card-title">Title <span></span></h5>
-
+                                    <div class="mt-4 d-flex justify-content-end">
+                                        <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#clearlogmodal">Clear Logs</button>
+                                    </div>
                                     <!-- Table with stripped rows -->
                                     <table class="table datatable">
                                         <thead>
@@ -67,7 +78,7 @@ require_once("commons/session.php");
                                         </thead>
                                         <tbody>
                                            <?php
-                                                require_once("classes/AdminUsers.class.php");
+                                                
                                                 $result = $adminusers->getAllLogs();
 
                                                 while($row = $result->fetch_assoc()){
@@ -115,3 +126,27 @@ require_once("commons/session.php");
 </body>
 
 </html>
+
+<!-- Modal -->
+<div class="modal fade" id="clearlogmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Clear Log Messages</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="my-3">
+            <input type="password" name="password" id="password" required class="form-control" placeholder="Enter Current Password">
+            </div>
+            <input type="submit" value="Clear Log Messages" name="clearProcess" class="btn btn-danger">
+        </form>                                                
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+

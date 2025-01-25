@@ -1,4 +1,7 @@
-
+<?php
+    require_once("classes/AdminUsers.class.php");
+    $unreadLogsCount = $adminusers->getUnreadLogsCount();
+?>
 <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">
 
@@ -12,32 +15,38 @@
 
             <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                 <i class="bi bi-bell"></i>
-                <span class="badge bg-primary badge-number">4</span>
+                <span class="badge bg-primary badge-number"><?= $unreadLogsCount; ?></span>
             </a><!-- End Notification Icon -->
 
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
                 <li class="dropdown-header">
-                    You have 4 new notifications
-                    <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                    You have <?= $unreadLogsCount; ?>new notifications
+                    <a href="logs"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
                 </li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
 
-                <li class="notification-item">
-                    <i class="bi bi-exclamation-circle text-warning"></i>
-                    <div>
-                        <h4>Lorem Ipsum</h4>
-                        <p>Quae dolorem earum veritatis oditseno</p>
-                        <p>30 min. ago</p>
-                    </div>
-                </li>
+                <?php
+                    $result = $adminusers->getSomeLogs(3);
+
+                    while($row = $result->fetch_assoc()){
+                        echo "<li class='notification-item'>
+                            <div>
+                                <h4>$row[email]</h4>
+                                <p>$row[logmessage]</p>
+                                <p>$row[timestamp]</p>
+                            </div>
+                            </li>";
+                    }
+                ?>
+                
 
                 <li>
                     <hr class="dropdown-divider">
                 </li>
                 <li class="dropdown-footer">
-                    <a href="#">Show all notifications</a>
+                    <a href="logs">Show all notifications</a>
                 </li>
 
             </ul><!-- End Notification Dropdown Items -->
@@ -106,9 +115,9 @@
                 </li>
 
                 <li>
-                    <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                    <a class="dropdown-item d-flex align-items-center" href="settings">
                         <i class="bi bi-gear"></i>
-                        <span>Account Settings</span>
+                        <span>Settings</span>
                     </a>
                 </li>
                 <li>
@@ -143,7 +152,7 @@
                     <hr class="dropdown-divider">
                 </li>
                 <li>
-                    <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                    <a class="dropdown-item d-flex align-items-center" href="smtp">
                         <i class="bi bi-envelope"></i>
                         <span>SMTP</span>
                     </a>
