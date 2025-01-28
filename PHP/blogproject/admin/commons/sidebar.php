@@ -203,7 +203,7 @@
       </li><!-- End Contact Page Nav -->
       
       <li class="nav-item">
-        <a class="nav-link collapsed" href="services">
+        <a class="nav-link collapsed" href="social">
           <i class="bi bi-people"></i>
           <span>Social</span>
         </a>
