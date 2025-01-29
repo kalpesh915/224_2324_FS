@@ -78,12 +78,10 @@ if(isset($_GET["delete"])){
                                     <table class="table datatable">
                                         <thead>
                                             <tr>
-                                                <th>
-                                                    Question
-                                                </th>
+                                                <th>Question</th>
+                                                <th>Answer</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
-
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -97,12 +95,15 @@ if(isset($_GET["delete"])){
                                                     $statusbtn = "<a href='faq?id=$row[id]&status=1' class='btn btn-success'>Enable</a>";
                                                 }
 
+                                                $answer = substr($row["answer"], 0, 40)."...";
+
                                                 echo "<tr>
                                                     <td>$row[question]</td>
+                                                    <td title='$row[answer]'>$answer</td>
                                                     <td>$statusbtn</td>
                                                     <td>
                                                         <button type='button' class='btn btn-danger' onclick='confirmDelete($row[id])'><i class='bi bi-trash'></i></button>
-                                                        <a href='' class='btn btn-primary'>
+                                                        <a href='editfaq?id=$row[id]' class='btn btn-primary'>
                                                         <i class='bi bi-pencil'></i>
                                                         </a>
                                                     </td>

@@ -152,6 +152,15 @@
                     <hr class="dropdown-divider">
                 </li>
                 <li>
+                    <a class="dropdown-item d-flex align-items-center" href="seo">
+                        <i class="bi bi-globe"></i>
+                        <span>SEO</span>
+                    </a>
+                </li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li>
                     <a class="dropdown-item d-flex align-items-center" href="smtp">
                         <i class="bi bi-envelope"></i>
                         <span>SMTP</span>
