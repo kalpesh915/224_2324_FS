@@ -1,6 +1,22 @@
 <?php
 require_once("commons/session.php");
 require_once("classes/Services.class.php");
+
+// status code
+if(isset($_GET["status"])){
+    $id = $_GET["id"];
+    $status = $_GET["status"];
+
+    $services->updateServiceStatus($id, $status);
+    header("location:services");
+}
+
+// delete service
+if(isset($_GET["delete"])){
+    $id = $_GET["id"];
+    $services->deleteService($id);
+    header("location:services");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -97,12 +113,22 @@ require_once("classes/Services.class.php");
                                                 $result = $services->getAllServices();
 
                                                 while($row = $result->fetch_assoc()){
+                                                    if($row["status"] == 1){
+                                                        $statusbtn = "<a href='services?status=0&id=$row[id]' class='btn btn-danger'>Disable</a>";
+                                                    }else{
+                                                        $statusbtn = "<a href='services?status=1&id=$row[id]' class='btn btn-success'>Enable</a>";
+                                                    }
+
                                                     echo "<tr>
                                                         <td>$row[servicetitle]</td>
                                                         <td>$row[servicedesc]</td>
                                                         <td><i class='bi bi-$row[serviceicon]'></i></td>
-                                                        <td></td>
-                                                        <td></td>
+                                                        <td>$statusbtn</td>
+                                                        <td>
+                                                            <button class='btn btn-danger' onclick='deleteService($row[id])'><i class='bi bi-trash'></i></button>
+
+                                                            <a href='editservice?id=$row[id]' class='btn btn-primary'><i class='bi bi-pencil'></i></a>
+                                                        </td>
                                                     </tr>";
                                                 }
                                             ?>
@@ -160,3 +186,11 @@ require_once("classes/Services.class.php");
         header("location:services");
     }
 ?>
+
+<script>
+    function deleteService(id){
+        if(confirm("Are you sure to delete this Service ?")){
+            window.location.assign("services?delete=1&id="+id);
+        }
+    }
+</script>
