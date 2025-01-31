@@ -2,11 +2,16 @@
 require_once("commons/session.php");
 require_once("classes/Category.class.php");
 
-if(isset($_GET["status"])){
-    $id = $category->filterData($_GET["id"]);
-    $status = $category->filterData($_GET["status"]);
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+    $result = $category->getOneCategory($id);
 
-    $category->updateCategoryStatus($id, $status);
+    if ($result->num_rows > 0) {
+        extract($result->fetch_assoc());
+    } else {
+        header("location:category");
+    }
+} else {
     header("location:category");
 }
 ?>
@@ -45,7 +50,7 @@ if(isset($_GET["status"])){
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Add / Manage Category</h1>
+            <h1>Edit Category</h1>
         </div><!-- End Page Title -->
 
         <section class="section dashboard">
@@ -61,55 +66,25 @@ if(isset($_GET["status"])){
                                 <div class="card-body">
                                     <h5 class="card-title"><span></span></h5>
                                     <?php
-                                        if(isset($_SESSION["msg"])){
-                                            echo $_SESSION["msg"];
-                                            unset($_SESSION["msg"]);
-                                        }
+                                    if (isset($_SESSION["msg"])) {
+                                        echo $_SESSION["msg"];
+                                        unset($_SESSION["msg"]);
+                                    }
                                     ?>
 
-                                    <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                                    <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"])."?id=$id"; ?>" method="post">
                                         <div class="my-3">
                                             <label for="categoryname" class="form-label">Enter Category Name</label>
-                                            <input type="text" name="categoryname" id="categoryname" required class="form-control" >
+                                            <input type="text" name="categoryname" id="categoryname" required class="form-control" value='<?= $categoryname; ?>'>
                                         </div>
 
                                         <div class="my-2">
-                                            <input type="submit" value="Add New Category" class="btn btn-primary" name="addProcess">
+                                            <input type="submit" value="Update Category" class="btn btn-primary" name="updateProcess">
                                             <input type="reset" value="Reset" class="btn btn-danger">
                                         </div>
 
                                     </form>
 
-                                    <hr>
-
-                                    <table class="table datatable">
-                                        <thead>
-                                            <tr>
-                                                <th>Category Name</th>
-                                                <th>Status</th>
-                                                <th>Edit</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                                $result = $category->getAllCategory();
-
-                                                while($row = $result->fetch_assoc()){
-                                                    if($row["status"] == 1){
-                                                        $statusBtn = "<a href='category?id=$row[id]&status=0' class='btn btn-danger'>Disable</a>";
-                                                    }else{
-                                                        $statusBtn = "<a href='category?id=$row[id]&status=1' class='btn btn-success'>Enable</a>";
-                                                    }
-
-                                                    echo "<tr>
-                                                        <td>$row[categoryname]</td>
-                                                        <td>$statusBtn</td>
-                                                        <td><a href='editcategory?id=$row[id]' class='btn btn-primary'><i class='bi bi-pencil'></i></a></td>
-                                                    </tr>";
-                                                }
-                                            ?>
-                                        </tbody>
-                                    </table>
 
                                 </div>
                             </div>
@@ -146,23 +121,21 @@ if(isset($_GET["status"])){
 </html>
 
 <?php
-    if(isset($_POST["addProcess"])){
-        $catgoryname = $category->filterData($_POST["categoryname"]);
-
-        if($category->addNewCategory($catgoryname)){
+    if(isset($_POST["updateProcess"])){
+        $categoryname = $category->filterData($_POST["categoryname"]);
+        if($category->updateCategory($id, $categoryname)){
             $_SESSION["msg"] = "<div class='alert alert-success alert-dismissible'>
             <button class='btn-close' data-bs-dismiss='alert'></button>
-            <strong>Success</strong> : $catgoryname Category Added in Database.
+            <strong>Success</strong> : $categoryname Category Updted in Database
             </div>";
-
-            $category->logWriter($loginuser, "$catgoryname Category Added in Database");
+            $category->logWriter($loginuser, "$categoryname Category Updated in Database");
         }else{
             $_SESSION["msg"] = "<div class='alert alert-danger alert-dismissible'>
             <button class='btn-close' data-bs-dismiss='alert'></button>
-            <strong>Error</strong> : $catgoryname Category already Exist in Database.
+            <strong>Error</strong> : $categoryname Category already in Database
             </div>";
         }
 
-        header("location:category");
+        header("location:editcategory?id=$id");
     }
 ?>
