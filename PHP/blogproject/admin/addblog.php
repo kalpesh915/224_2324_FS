@@ -72,7 +72,7 @@
                                 }
                             ?>
                         </select>
-
+                    </div>
                         <div class="my-3">
                             <label for="blogcontent" class="form-label">Enter Blog Content</label>
                             <textarea name="blogcontent" id="blogcontent" required class="form-control" rows="10"></textarea>
@@ -93,7 +93,7 @@
                             <input type="submit" value="Add New Blog" class="btn btn-primary" name="addProcess">
                             <input type="reset" value="Reset" class="btn btn-danger">
                         </div>
-                    </div>
+                    
                   </form>
                 </div>
               </div>

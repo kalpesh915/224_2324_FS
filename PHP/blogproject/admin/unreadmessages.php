@@ -1,14 +1,6 @@
 <?php
 require_once("commons/session.php");
-require_once("classes/Blogs.class.php");
-
-if(isset($_GET["status"])){
-    $id = $_GET["id"];
-    $status = $_GET["status"];
-
-    $blogs->updateBlogStatus($id, $status);
-    header("location:viewblogs");
-}
+require_once("classes/AdminUsers.class.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +37,7 @@ if(isset($_GET["status"])){
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>View / Manage Blogs</h1>
+            <h1>Unread Messages</h1>
         </div><!-- End Page Title -->
 
         <section class="section dashboard">
@@ -63,41 +55,32 @@ if(isset($_GET["status"])){
                                     <table class="table datatable">
                                         <thead>
                                             <tr>
-                                                <th>Blog Title</th>
-                                                <th>Blog Date</th>
-                                                <th>Category</th>
-                                                <th>Image</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
+                                                <th>Sender</th>
+                                                <th>Date</th>
+                                                <th>Subject</th>
+                                                <th>View</th>
+                                                <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                           <?php
-                                            $result = $blogs->getAllBlogs();
+                                            <?php
+                                                $result = $adminusers->getAllUnreadMessage();
 
-                                            while($row = $result->fetch_assoc()){
-
-                                                if($row["status"] == 1){
-                                                    $statusbtn = "<a href='viewblogs?id=$row[id]&status=0' class='btn btn-danger'>Disable</a>";
-                                                }else{
-                                                    $statusbtn = "<a href='viewblogs?id=$row[id]&status=1' class='btn btn-success'>Enable</a>";
+                                                while($row = $result->fetch_assoc()){
+                                                    echo "<tr>
+                                                        <td>$row[senderemail]</td>
+                                                        <td>$row[messagedate]</td>
+                                                        <td>$row[subject]</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>";
                                                 }
-
-                                                echo "<tr>
-                                                    <td>$row[blogtitle]</td>
-                                                    <td>$row[created_at]</td>
-                                                    <td>$row[categoryname]</td>
-                                                    <td><img src='$row[blogimagepath]' style='width:100px;'></td>
-                                                    <td>$statusbtn</td>
-                                                    <td><a href='editblog?id=$row[id]' class='btn btn-primary'><i class='bi bi-pencil'></i><a></td>
-                                                </tr>";
-                                            }
-                                           ?>
-
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
+
                         </div><!-- End Customers Card -->
                     </div>
                 </div><!-- End Left side columns -->

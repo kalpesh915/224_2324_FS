@@ -18,6 +18,35 @@
 
             return $this->conn->query($sqlQuery);
         }
+
+        public function updateBlogStatus($id, $status){
+            $sqlQuery = "update blogs set status = $status where id = $id";
+            $this->conn->query($sqlQuery);
+        }
+
+        public function getOneBlog($id){
+            $sqlQuery = "select * from blogs where id = $id";
+            return $this->conn->query($sqlQuery);
+        }
+
+        public function updateBlog($id, $blogtitle, $blogcategory, $blogcontent, $blogimage = null, $blogcomment){
+            if($blogimage !== null){
+                // delete existing blog image
+
+                $sqlQuery = "select blogimagepath from blogs where id = $id";
+                $result = $this->conn->query($sqlQuery);
+                while($row = $result->fetch_assoc()){
+                    unlink($row["blogimagepath"]);
+                }
+
+                // update new image
+                $sqlQuery = "update blogs set blogimagepath = '$blogimage' where id = $id";
+                $this->conn->query($sqlQuery);
+            }
+
+            $sqlQuery = "update blogs set blogtitle = '$blogtitle', blogcategory = '$blogcategory', blogcontent = '$blogcontent', blogcomment = '$blogcomment' where id = $id";
+            $this->conn->query($sqlQuery);
+        }
     }
 
     $blogs = new Blogs();

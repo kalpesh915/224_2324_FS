@@ -65,6 +65,24 @@
             $sqlQuery = "update logs set status = 1 where status = 0";
             $this->conn->query($sqlQuery);
         }
+
+        public function getUnreadMessageCount(){
+            $sqlQuery = "select count(id) from messages where status = 0";
+            $result = $this->conn->query($sqlQuery);
+            while($row = $result->fetch_assoc()){
+                return $row["count(id)"];
+            }
+        }
+
+        public function getSomeMessages($limit){
+            $sqlQuery = "select * from messages order by id desc limit $limit";
+            return $this->conn->query($sqlQuery);
+        }
+        
+        public function getAllUnreadMessage(){
+            $sqlQuery = "select * from messages where status = 0 order by id desc";
+            return $this->conn->query($sqlQuery);
+        }
     }
 
     $adminusers = new AdminUsers();
