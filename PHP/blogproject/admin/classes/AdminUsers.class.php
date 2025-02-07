@@ -75,13 +75,33 @@
         }
 
         public function getSomeMessages($limit){
-            $sqlQuery = "select * from messages order by id desc limit $limit";
+            $sqlQuery = "select * from messages where status = 0 order by id desc limit $limit";
             return $this->conn->query($sqlQuery);
         }
         
         public function getAllUnreadMessage(){
             $sqlQuery = "select * from messages where status = 0 order by id desc";
             return $this->conn->query($sqlQuery);
+        }
+
+        public function getAllMessage(){
+            $sqlQuery = "select * from messages order by id desc";
+            return $this->conn->query($sqlQuery);
+        }
+
+        public function getOneMesaage($id) {
+            $sqlQuery = "select * from messages where id = $id";
+            return $this->conn->query($sqlQuery);
+        }
+
+        public function markMessageasRead($id){
+            $sqlQuery = "update messages set status = 1 where id = $id";
+            $this->conn->query($sqlQuery);
+        }
+
+        public function deleteMessage($id){
+            $sqlQuery = "delete from messages where id = $id";
+            $this->conn->query($sqlQuery);
         }
     }
 

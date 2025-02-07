@@ -37,7 +37,7 @@ require_once("classes/AdminUsers.class.php");
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Unread Messages</h1>
+            <h1>All Messages</h1>
         </div><!-- End Page Title -->
 
         <section class="section dashboard">
@@ -63,7 +63,7 @@ require_once("classes/AdminUsers.class.php");
                                         </thead>
                                         <tbody>
                                             <?php
-                                                $result = $adminusers->getAllUnreadMessage();
+                                                $result = $adminusers->getAllMessage();
 
                                                 while($row = $result->fetch_assoc()){
                                                     echo "<tr>

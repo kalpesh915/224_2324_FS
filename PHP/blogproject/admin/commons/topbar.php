@@ -76,7 +76,7 @@ $unreadMessageCount = $adminusers->getUnreadMessageCount();
 
                 while ($row = $result->fetch_assoc()) {
                     echo "<li class='message-item'>
-                         <a href='readmessage'>
+                         <a href='readmessage?id=$row[id]'>
                         
                         <div>
                             <h4>$row[senderemail]</h4>
