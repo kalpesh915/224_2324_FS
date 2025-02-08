@@ -91,9 +91,19 @@
           </li>
         </ul>
       </li><!-- End Charts Nav -->
-
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="team">
+          <i class="bi bi-person"></i>
+          <span>Team</span>
+        </a>
+      </li>
      
-      <li class="nav-heading">Pages</li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="slider">
+          <i class="bi bi-image"></i>
+          <span>Slider</span>
+        </a>
+      </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="category">
           <i class="bi bi-list"></i>
