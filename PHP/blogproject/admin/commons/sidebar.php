@@ -92,7 +92,7 @@
         </ul>
       </li><!-- End Charts Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="team">
+        <a class="nav-link collapsed" href="teams">
           <i class="bi bi-person"></i>
           <span>Team</span>
         </a>
