@@ -57,7 +57,7 @@
         }
 
         public function getSomeLogs($limit){
-            $sqlQuery = "select * from logs order by id desc limit $limit";
+            $sqlQuery = "select * from logs where status = 0  order by id desc limit $limit";
             return $this->conn->query($sqlQuery);
         }
 
