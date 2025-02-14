@@ -1,3 +1,24 @@
+<?php
+session_start();
+ob_start();
+
+require_once("classes/Client.class.php");
+
+if(isset($_POST["msgProcess"])){
+    $senderemail = $client->filterData($_POST["senderemail"]);
+    $subject = $client->filterData($_POST["subject"]);
+    $content = $client->filterData($_POST["content"]);
+
+    $client->storeNewMessage($senderemail, $subject, $content);
+
+    $_SESSION["msg"] = "<div class='alert alert-success alert-dismissible'>
+    <button class='btn-close' data-bs-dismiss='alert'></button>
+    <strong>Success</strong> : Thnaks for your message, we will reach you soon.
+    </div>";
+
+    header("location:index#contact");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -158,20 +179,27 @@
 
                 <div class="row gy-4">
 
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="service-item item-cyan position-relative">
-                            <div class="icon">
-                                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
+                    <?php
+                        $serviceResult = $client->getAllServices();
+
+                        while($serviceRow = $serviceResult->fetch_assoc()){
+                            echo " <div class='col-lg-4 col-md-6' data-aos='fade-up' data-aos-delay='100'>
+                        <div class='service-item item-cyan position-relative'>
+                            <div class='icon'>
+                                <svg width='100' height='100' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'>
+                                    <path stroke='none' stroke-width='0' fill='#f5f5f5' d='M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174'></path>
                                 </svg>
-                                <i class="bi bi-activity"></i>
+                                <i class='bi bi-$serviceRow[serviceicon]'></i>
                             </div>
-                            <a href="service-details.html" class="stretched-link">
-                                <h3>Nesciunt Mete</h3>
+                            <a href='#' class='stretched-link'>
+                                <h3>$serviceRow[servicetitle]</h3>
                             </a>
-                            <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
+                            <p>$serviceRow[servicedesc]</p>
                         </div>
-                    </div><!-- End Service Item -->
+                    </div>";
+                        }
+                    ?>
+
                 </div>
 
             </div>
@@ -247,24 +275,40 @@
             <div class="container">
 
                 <div class="row gy-4">
+                    <?php
+                        $teamResult = $client->getAllTeamMembers();
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                        <div class="team-member">
-                            <div class="member-img">
-                                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
+                        while($teamRow = $teamResult->fetch_assoc()){
+                            echo "<div class='col-lg-3 col-md-6 d-flex align-items-stretch' data-aos='fade-up' data-aos-delay='100'>
+                        <div class='team-member'>
+                            <div class='member-img'>
+                                <img src='admin/$teamRow[photopath]' class='img-fluid' alt=''>
+                                <div class='social'>";
+                                if($teamRow["teamtwitter"] != ""){
+                                    echo "<a href='$teamRow[teamtwitter]'><i class='bi bi-twitter-x'></i></a>";
+                                }
+
+                                if($teamRow["teamfacebook"] != ""){
+                                    echo "<a href='$teamRow[teamfacebook]'><i class='bi bi-facebook'></i></a>";
+                                }
+
+                                if($teamRow["teaminstagram"] != ""){
+                                    echo "<a href='$teamRow[teaminstagram]'><i class='bi bi-instagram'></i></a>";
+                                }
+
+                                if($teamRow["teamlinkedin"] != ""){
+                                    echo "<a href='$teamRow[teamlinkedin]'><i class='bi bi-linkedin'></i></a>";
+                                }
+                            echo "</div>
                             </div>
-                            <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>Chief Executive Officer</span>
+                            <div class='member-info'>
+                                <h4>$teamRow[name]</h4>
+                                <span>$teamRow[designation]</span>
                             </div>
                         </div>
-                    </div><!-- End Team Member -->
+                    </div>";
+                        }
+                    ?>
 
 
                 </div>
@@ -272,8 +316,6 @@
             </div>
 
         </section><!-- /Team Section -->
-
-
 
         <!-- Faq Section -->
         <section id="faq" class="faq section light-background">
@@ -292,13 +334,31 @@
 
                         <div class="faq-container">
 
-                            <div class="faq-item faq-active">
-                                <h3>Non consectetur a erat nam at lectus urna duis?</h3>
-                                <div class="faq-content">
-                                    <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
+                            <?php
+                            $faqresult = $client->getAllFAQ();
+
+                            $count = 1;
+                            while ($faqrow = $faqresult->fetch_assoc()) {
+                                if ($count == 1) {
+                                    echo "<div class='faq-item faq-active'>
+                                    <h3>$faqrow[question]</h3>
+                                    <div class='faq-content'>
+                                        <p>$faqrow[answer]</p>
+                                    </div>
+                                    <i class='faq-toggle bi bi-chevron-right'></i>
+                                </div>";
+                                $count++;
+                                } else {
+                                    echo "<div class='faq-item'>
+                                <h3>$faqrow[question]</h3>
+                                <div class='faq-content'>
+                                    <p>$faqrow[answer]</p>
                                 </div>
-                                <i class="faq-toggle bi bi-chevron-right"></i>
-                            </div><!-- End Faq item-->
+                                <i class='faq-toggle bi bi-chevron-right'></i>
+                            </div>";
+                                }
+                            }
+                            ?>
                         </div>
                     </div><!-- End Faq Column-->
                 </div>
@@ -314,11 +374,14 @@
                 <h2>Contact</h2>
                 <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
             </div><!-- End Section Title -->
-
+            <?php
+                $contactresult = $client->getContactInfo();
+                extract($contactresult->fetch_assoc());
+            ?>
             <div class="container" data-aos="fade-up" data-aos-delay="100">
 
                 <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe style="border:0; width: 100%; height: 270px;" src="<?= $googlemap; ?>" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div><!-- End Google Maps -->
 
                 <div class="row gy-4">
@@ -328,7 +391,7 @@
                             <i class="bi bi-person flex-shrink-0"></i>
                             <div>
                                 <h3>Contact Person</h3>
-                                <p>A108 Adam Street, New York, NY 535022</p>
+                                <p><?= $contactperson; ?></p>
                             </div>
                         </div>
 
@@ -336,7 +399,7 @@
                             <i class="bi bi-geo-alt flex-shrink-0"></i>
                             <div>
                                 <h3>Address</h3>
-                                <p>A108 Adam Street, New York, NY 535022</p>
+                                <p><?= $address; ?></p>
                             </div>
                         </div><!-- End Info Item -->
 
@@ -344,7 +407,7 @@
                             <i class="bi bi-telephone flex-shrink-0"></i>
                             <div>
                                 <h3>Call Us</h3>
-                                <p>+1 5589 55488 55</p>
+                                <p><a href="tel:<?=$phonenumber;?>"><?= $phonenumber; ?></a></p>
                             </div>
                         </div><!-- End Info Item -->
 
@@ -352,18 +415,23 @@
                             <i class="bi bi-envelope flex-shrink-0"></i>
                             <div>
                                 <h3>Email Us</h3>
-                                <p>info@example.com</p>
+                                <p><a href="mailto:<?=$emailaddress;?>"><?= $emailaddress; ?></a></p>
                             </div>
                         </div><!-- End Info Item -->
 
                     </div>
 
                     <div class="col-lg-8">
-                        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                        <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="" data-aos="fade-up" data-aos-delay="200">
                             <div class="row gy-4">
-
+                                <?php
+                                    if(isset($_SESSION["msg"])){
+                                        echo $_SESSION["msg"];
+                                        //unset($_SESSION["msg"]);
+                                    }
+                                ?>
                                 <div class="col-md-12 ">
-                                    <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                                    <input type="email" class="form-control" name="senderemail" placeholder="Your Email" required="">
                                 </div>
 
                                 <div class="col-md-12">
@@ -371,15 +439,11 @@
                                 </div>
 
                                 <div class="col-md-12">
-                                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                                    <textarea class="form-control" name="content" rows="6" placeholder="Message" required=""></textarea>
                                 </div>
 
                                 <div class="col-md-12 text-center">
-                                    <div class="loading">Loading</div>
-                                    <div class="error-message"></div>
-                                    <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                                    <button type="submit">Send Message</button>
+                                    <input type="submit" class="btn btn-primary" value="Send Message" name="msgProcess">
                                 </div>
 
                             </div>
@@ -444,11 +508,11 @@
                     </div>
                 </form>
                 <div class="my-3 text-center">
-                <a href="forgotpassword">Forgot Password</a> | <a href="#signup" data-bs-toggle="modal" data-bs-dismiss="modal">Create Account</a>
+                    <a href="forgotpassword">Forgot Password</a> | <a href="#signup" data-bs-toggle="modal" data-bs-dismiss="modal">Create Account</a>
                 </div>
             </div>
             <div class="modal-footer">
-                
+
             </div>
         </div>
     </div>
@@ -485,11 +549,11 @@
                     </div>
                 </form>
                 <div class="my-3 text-center">
-                <a href="#login" data-bs-toggle="modal" data-bs-dismiss="modal">Already Have Account</a>
+                    <a href="#login" data-bs-toggle="modal" data-bs-dismiss="modal">Already Have Account</a>
                 </div>
             </div>
             <div class="modal-footer">
-            
+
             </div>
         </div>
     </div>
