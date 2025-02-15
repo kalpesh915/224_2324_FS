@@ -31,6 +31,40 @@
             $sqlQuery = "insert into messages (senderemail, subject, content) values ('$senderemail', '$subejct', '$content')";
             $this->conn->query($sqlQuery);
         }
+
+        public function checkUserExist($email){
+            $sqlQuery = "select * from users where email = '$email'";
+            $result = $this->conn->query($sqlQuery);
+
+            if($result->num_rows > 0){
+                return 1;
+            }else{
+                return 0;
+            }
+        }
+
+        public function createNewUser($name, $email, $password, $gender, $phone, $photopath){
+            $sqlQuery = "insert into users (name, email, password, gender, phone, photopath) values ('$name', '$email', '$password', '$gender', '$phone', '$photopath')";
+
+            $this->conn->query($sqlQuery);
+        }
+
+        public function loginUser($email, $password){
+            $sqlQuery = "select * from users where email = '$email'";
+            $result = $this->conn->query($sqlQuery);
+
+            if($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+                    if(password_verify($password, $row["password"])){
+                        return 1;
+                    }else{
+                        return 0;
+                    }
+                }
+            }else{
+                return 0;
+            }
+        }
     }
 
     $client = new Client();

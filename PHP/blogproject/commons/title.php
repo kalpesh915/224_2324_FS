@@ -1,4 +1,4 @@
-<title>Index - OnePage Bootstrap Template</title>
+<title>Blog Project</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 
