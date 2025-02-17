@@ -4,12 +4,12 @@ ob_start();
 
 require_once("classes/Client.class.php");
 
-if(isset($_POST["logoutProcess"])){
+if (isset($_POST["logoutProcess"])) {
     unset($_SESSION["validuser"]);
     header("location:index");
 }
 
-if(isset($_POST["msgProcess"])){
+if (isset($_POST["msgProcess"])) {
     $senderemail = $client->filterData($_POST["senderemail"]);
     $subject = $client->filterData($_POST["subject"]);
     $content = $client->filterData($_POST["content"]);
@@ -25,7 +25,7 @@ if(isset($_POST["msgProcess"])){
 }
 
 // signup
-if(isset($_POST["signupProcess"])){
+if (isset($_POST["signupProcess"])) {
     $name = $client->filterData($_POST["name"]);
     $email = $client->filterData($_POST["email"]);
     $password = $client->filterData($_POST["password"]);
@@ -34,19 +34,19 @@ if(isset($_POST["signupProcess"])){
     $phone = $client->filterData($_POST["phone"]);
     $profilephoto = $_FILES["profilephoto"];
 
-    if($password == $cpassword){
+    if ($password == $cpassword) {
         $validType = ["image/jpg", "image/jpeg"];
 
-        if(in_array($profilephoto["type"], $validType)){
+        if (in_array($profilephoto["type"], $validType)) {
             // check for email is available or not
-            if(!$client->checkUserExist($email)){
+            if (!$client->checkUserExist($email)) {
                 $source = $profilephoto["tmp_name"];
                 $random = rand(9999, 99999);
                 $date = date("dmYHisa");
                 $photoname = $profilephoto["name"];
                 $destination = "userimages/$random $date $email $photoname";
 
-                move_uploaded_file($source, "admin/".$destination);
+                move_uploaded_file($source, "admin/" . $destination);
 
                 $password = password_hash($password, PASSWORD_DEFAULT);
                 $client->createNewUser($name, $email, $password, $gender, $phone, $destination);
@@ -55,19 +55,19 @@ if(isset($_POST["signupProcess"])){
                 <button class='btn-close' data-bs-dismiss='alert'></button>
                 <strong>Success</strong> : $email user Created in database
                 </div>";
-            }else{
+            } else {
                 $_SESSION["msg1"] = "<div class='alert alert-danger alert-dismissible'>
                 <button class='btn-close' data-bs-dismiss='alert'></button>
                 <strong>Error</strong> : $email user is already in database
                 </div>";
             }
-        }else{
+        } else {
             $_SESSION["msg1"] = "<div class='alert alert-danger alert-dismissible'>
             <button class='btn-close' data-bs-dismiss='alert'></button>
             <strong>Error</strong> : Must Select .JPG or .JPEG photo
             </div>";
         }
-    }else{
+    } else {
         $_SESSION["msg1"] = "<div class='alert alert-danger alert-dismissible'>
         <button class='btn-close' data-bs-dismiss='alert'></button>
         <strong>Error</strong> : Confirm Password does not match.
@@ -78,17 +78,17 @@ if(isset($_POST["signupProcess"])){
 }
 
 // Login Code
-if(isset($_POST["loginProcess"])){
+if (isset($_POST["loginProcess"])) {
     $email = $client->filterData($_POST["email"]);
     $password = $client->filterData($_POST["password"]);
 
-    if($client->loginUser($email, $password)){
+    if ($client->loginUser($email, $password)) {
         $_SESSION["validuser"] = $email;
         $_SESSION["msg1"] = "<div class='alert alert-success alert-dismissible'>
         <button class='btn-close' data-bs-dismiss='alert'></button>
         <strong>Success</strong> : Login Successfully
         </div>";
-    }else{
+    } else {
         $_SESSION["msg1"] = "<div class='alert alert-danger alert-dismissible'>
         <button class='btn-close' data-bs-dismiss='alert'></button>
         <strong>Error</strong> : email or password is incorrect
@@ -104,10 +104,20 @@ if(isset($_POST["loginProcess"])){
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <?php require_once("commons/title.php"); ?>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WP8DKDSP');</script>
+<!-- End Google Tag Manager -->
 </head>
 
 <body class="index-page">
-
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WP8DKDSP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <header id="header" class="header d-flex align-items-center sticky-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
@@ -118,20 +128,76 @@ if(isset($_POST["loginProcess"])){
             <?php require_once("commons/menu.php"); ?>
         </div>
     </header>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <?php
+                $sliderResult = $client->getSliderImages();
+                $slidercount = 1;
+                for ($i = 1; $i < $sliderResult->num_rows; $i++) {
+                    if ($slidercount == 1) {
+                            echo "<button type='button' data-bs-target='carouselExampleCaptions' data-bs-slide-to='$i' class='active' aria-current='true' aria-label='Slide $i'></button>";
+                        $slidercount++;
+                    } else {
+                        echo " <button type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='1' aria-label='Slide $i'></button>";
+                    }
+                }
+                ?>
+                
+               
 
+            </div>
+            <div class="carousel-inner">
+                <?php
+
+
+                $slidercount = 1;
+                while ($sliderRow = $sliderResult->fetch_assoc()) {
+                    if ($slidercount == 1) {
+                        echo "<div class='carousel-item active'>
+                    <img src='admin/$sliderRow[photopath]' class='d-block w-100' alt='$sliderRow[slidertitle]'>
+                    <div class='carousel-caption d-none d-md-block'>
+                        <h5>$sliderRow[slidertitle]</h5>
+                        <p>$sliderRow[description]</p>
+                    </div>
+                </div>";
+                        $slidercount++;
+                    } else {
+                        echo "<div class='carousel-item'>
+                    <img src='admin/$sliderRow[photopath]' class='d-block w-100' alt='$sliderRow[slidertitle]'>
+                    <div class='carousel-caption d-none d-md-block'>
+                        <h5>$sliderRow[slidertitle]</h5>
+                        <p>$sliderRow[description]</p>
+                    </div>
+                </div>";
+                    }
+                }
+                ?>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        </div>
     <main class="main">
         <?php
-            if(isset($_SESSION["msg1"])){
-                echo $_SESSION["msg1"];
-                //unset($_SESSION["msg1"]);
-            }
-        ?> 
+        if (isset($_SESSION["msg1"])) {
+            echo $_SESSION["msg1"];
+            //unset($_SESSION["msg1"]);
+        }
+        ?>
         <!-- Hero Section -->
         <section id="hero" class="hero section">
 
             <img src="assets/img/hero-bg-abstract.jpg" alt="" data-aos="fade-in" class="">
 
             <div class="container">
+
+            
                 <div class="row justify-content-center" data-aos="zoom-out">
                     <div class="col-xl-7 col-lg-9 text-center">
                         <h1>Welcome to My Blogs</h1>
@@ -179,6 +245,8 @@ if(isset($_POST["loginProcess"])){
             </div>
 
         </section><!-- /Hero Section -->
+
+      
 
         <!-- About Section -->
         <section id="about" class="about section">
@@ -263,10 +331,10 @@ if(isset($_POST["loginProcess"])){
                 <div class="row gy-4">
 
                     <?php
-                        $serviceResult = $client->getAllServices();
+                    $serviceResult = $client->getAllServices();
 
-                        while($serviceRow = $serviceResult->fetch_assoc()){
-                            echo " <div class='col-lg-4 col-md-6' data-aos='fade-up' data-aos-delay='100'>
+                    while ($serviceRow = $serviceResult->fetch_assoc()) {
+                        echo " <div class='col-lg-4 col-md-6' data-aos='fade-up' data-aos-delay='100'>
                         <div class='service-item item-cyan position-relative'>
                             <div class='icon'>
                                 <svg width='100' height='100' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'>
@@ -280,7 +348,7 @@ if(isset($_POST["loginProcess"])){
                             <p>$serviceRow[servicedesc]</p>
                         </div>
                     </div>";
-                        }
+                    }
                     ?>
 
                 </div>
@@ -321,22 +389,34 @@ if(isset($_POST["loginProcess"])){
 
                     <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
                         <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-app">App</li>
-                        <li data-filter=".filter-product">Card</li>
-                        <li data-filter=".filter-branding">Web</li>
+                        <?php
+                            $categroyResult = $client->getAllCategory();
+
+                            while($categroyRow = $categroyResult->fetch_assoc()){
+                                echo "<li data-filter='.filter-$categroyRow[categoryclass]'>$categroyRow[categoryname]</li>";
+                            }
+                        ?>
                     </ul><!-- End Portfolio Filters -->
 
                     <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                            <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 1</h4>
-                                <p>Lorem ipsum, dolor sit</p>
-                                <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                        <?php
+                            $blogsResult = $client->getBlogs();
+
+                            while($blogRow = $blogsResult->fetch_assoc()){
+                                echo "<div class='col-lg-4 col-md-6 portfolio-item isotope-item filter-$blogRow[categoryclass]'>
+                            <img src='admin/$blogRow[blogimagepath]' class='img-fluid' alt=''>
+                            <div class='portfolio-info'>
+                                <h4>$blogRow[blogtitle]</h4>
+                                <p>$blogRow[created_at]</p>
+                                <a href='admin/$blogRow[blogimagepath]' title='$blogRow[blogtitle]' data-gallery='portfolio-gallery-app' class='glightbox preview-link'><i class='bi bi-zoom-in'></i></a>
+                                <a href='portfolio-details.html' title='More Details' class='details-link'><i class='bi bi-link-45deg'></i></a>
                             </div>
-                        </div><!-- End Portfolio Item -->
+                        </div>";
+                            }
+                        ?>
+
+                      <!-- End Portfolio Item -->
 
                     </div><!-- End Portfolio Container -->
 
@@ -359,30 +439,30 @@ if(isset($_POST["loginProcess"])){
 
                 <div class="row gy-4">
                     <?php
-                        $teamResult = $client->getAllTeamMembers();
+                    $teamResult = $client->getAllTeamMembers();
 
-                        while($teamRow = $teamResult->fetch_assoc()){
-                            echo "<div class='col-lg-3 col-md-6 d-flex align-items-stretch' data-aos='fade-up' data-aos-delay='100'>
+                    while ($teamRow = $teamResult->fetch_assoc()) {
+                        echo "<div class='col-lg-3 col-md-6 d-flex align-items-stretch' data-aos='fade-up' data-aos-delay='100'>
                         <div class='team-member'>
                             <div class='member-img'>
                                 <img src='admin/$teamRow[photopath]' class='img-fluid' alt=''>
                                 <div class='social'>";
-                                if($teamRow["teamtwitter"] != ""){
-                                    echo "<a href='$teamRow[teamtwitter]'><i class='bi bi-twitter-x'></i></a>";
-                                }
+                        if ($teamRow["teamtwitter"] != "") {
+                            echo "<a href='$teamRow[teamtwitter]'><i class='bi bi-twitter-x'></i></a>";
+                        }
 
-                                if($teamRow["teamfacebook"] != ""){
-                                    echo "<a href='$teamRow[teamfacebook]'><i class='bi bi-facebook'></i></a>";
-                                }
+                        if ($teamRow["teamfacebook"] != "") {
+                            echo "<a href='$teamRow[teamfacebook]'><i class='bi bi-facebook'></i></a>";
+                        }
 
-                                if($teamRow["teaminstagram"] != ""){
-                                    echo "<a href='$teamRow[teaminstagram]'><i class='bi bi-instagram'></i></a>";
-                                }
+                        if ($teamRow["teaminstagram"] != "") {
+                            echo "<a href='$teamRow[teaminstagram]'><i class='bi bi-instagram'></i></a>";
+                        }
 
-                                if($teamRow["teamlinkedin"] != ""){
-                                    echo "<a href='$teamRow[teamlinkedin]'><i class='bi bi-linkedin'></i></a>";
-                                }
-                            echo "</div>
+                        if ($teamRow["teamlinkedin"] != "") {
+                            echo "<a href='$teamRow[teamlinkedin]'><i class='bi bi-linkedin'></i></a>";
+                        }
+                        echo "</div>
                             </div>
                             <div class='member-info'>
                                 <h4>$teamRow[name]</h4>
@@ -390,7 +470,7 @@ if(isset($_POST["loginProcess"])){
                             </div>
                         </div>
                     </div>";
-                        }
+                    }
                     ?>
 
 
@@ -430,7 +510,7 @@ if(isset($_POST["loginProcess"])){
                                     </div>
                                     <i class='faq-toggle bi bi-chevron-right'></i>
                                 </div>";
-                                $count++;
+                                    $count++;
                                 } else {
                                     echo "<div class='faq-item'>
                                 <h3>$faqrow[question]</h3>
@@ -458,8 +538,8 @@ if(isset($_POST["loginProcess"])){
                 <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
             </div><!-- End Section Title -->
             <?php
-                $contactresult = $client->getContactInfo();
-                extract($contactresult->fetch_assoc());
+            $contactresult = $client->getContactInfo();
+            extract($contactresult->fetch_assoc());
             ?>
             <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -490,7 +570,7 @@ if(isset($_POST["loginProcess"])){
                             <i class="bi bi-telephone flex-shrink-0"></i>
                             <div>
                                 <h3>Call Us</h3>
-                                <p><a href="tel:<?=$phonenumber;?>"><?= $phonenumber; ?></a></p>
+                                <p><a href="tel:<?= $phonenumber; ?>"><?= $phonenumber; ?></a></p>
                             </div>
                         </div><!-- End Info Item -->
 
@@ -498,7 +578,7 @@ if(isset($_POST["loginProcess"])){
                             <i class="bi bi-envelope flex-shrink-0"></i>
                             <div>
                                 <h3>Email Us</h3>
-                                <p><a href="mailto:<?=$emailaddress;?>"><?= $emailaddress; ?></a></p>
+                                <p><a href="mailto:<?= $emailaddress; ?>"><?= $emailaddress; ?></a></p>
                             </div>
                         </div><!-- End Info Item -->
 
@@ -508,10 +588,10 @@ if(isset($_POST["loginProcess"])){
                         <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="" data-aos="fade-up" data-aos-delay="200">
                             <div class="row gy-4">
                                 <?php
-                                    if(isset($_SESSION["msg"])){
-                                        echo $_SESSION["msg"];
-                                        //unset($_SESSION["msg"]);
-                                    }
+                                if (isset($_SESSION["msg"])) {
+                                    echo $_SESSION["msg"];
+                                    //unset($_SESSION["msg"]);
+                                }
                                 ?>
                                 <div class="col-md-12 ">
                                     <input type="email" class="form-control" name="senderemail" placeholder="Your Email" required="">
@@ -609,7 +689,7 @@ if(isset($_POST["loginProcess"])){
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
+                <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                     <div class="my-2 form-floating">
                         <input type="text" name="name" id="name" class="form-control" placeholder="Enter Your Name" required>
                         <label for="name" class="form-label">Enter Your Name</label>

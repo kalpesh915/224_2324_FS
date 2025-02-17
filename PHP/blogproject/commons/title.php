@@ -1,6 +1,10 @@
 <title>Blog Project</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
+<?php
+  $seoResult = $client->getMetaInfo();
+  extract($seoResult->fetch_assoc());
+?>
+<meta name="description" content="<?= $metadescription; ?>">
+<meta name="keywords" content="<?= $metakeyword; ?>">
 
 
   <!-- Favicons -->

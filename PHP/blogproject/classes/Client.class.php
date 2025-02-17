@@ -27,6 +27,16 @@
             return $this->conn->query($sqlQuery);
         }
 
+        public function getSliderImages(){
+            $sqlQuery = "select * from slider where status = 1";
+            return $this->conn->query($sqlQuery);
+        }
+
+        public function getAllCategory(){
+            $sqlQuery = "select * from category where status = 1";
+            return $this->conn->query($sqlQuery);
+        }
+
         public function storeNewMessage($senderemail, $subejct, $content){
             $sqlQuery = "insert into messages (senderemail, subject, content) values ('$senderemail', '$subejct', '$content')";
             $this->conn->query($sqlQuery);
@@ -64,6 +74,17 @@
             }else{
                 return 0;
             }
+        }
+
+        public function getBlogs(){
+            $sqlQuery = "select blogs.id, blogs.blogtitle, blogs.blogimagepath, blogs.created_at, category.categoryname, category.categoryclass from blogs inner join category on blogs.blogcategory  = category.id";
+
+            return $this->conn->query($sqlQuery);
+        }
+
+        public function getMetaInfo(){
+            $sqlQuery = "select * from seo where id = 1";
+            return $this->conn->query($sqlQuery);
         }
     }
 
