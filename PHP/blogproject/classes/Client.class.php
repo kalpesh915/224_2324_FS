@@ -86,6 +86,12 @@
             $sqlQuery = "select * from seo where id = 1";
             return $this->conn->query($sqlQuery);
         }
+
+        public function getBlog($id){
+            $sqlQuery = "SELECT blogs.id, blogs.blogtitle, blogs.blogcontent, blogs.blogimagepath, blogs.blogcomment, blogs.created_at, category.categoryname from blogs inner join category on blogs.blogcategory = category.id where blogs.id = $id";
+
+            return $this->conn->query($sqlQuery);
+        }
     }
 
     $client = new Client();
