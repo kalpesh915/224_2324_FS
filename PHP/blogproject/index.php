@@ -82,13 +82,19 @@ if (isset($_POST["loginProcess"])) {
     $email = $client->filterData($_POST["email"]);
     $password = $client->filterData($_POST["password"]);
 
-    if ($client->loginUser($email, $password)) {
+    $status = $client->loginUser($email, $password);
+    if ($status == 1) {
         $_SESSION["validuser"] = $email;
         $_SESSION["msg1"] = "<div class='alert alert-success alert-dismissible'>
         <button class='btn-close' data-bs-dismiss='alert'></button>
         <strong>Success</strong> : Login Successfully
         </div>";
-    } else {
+    }else if($status == 2){
+        $_SESSION["msg1"] = "<div class='alert alert-danger alert-dismissible'>
+        <button class='btn-close' data-bs-dismiss='alert'></button>
+        <strong>Error</strong> : Your Account is Disbled please Contact Admin
+        </div>";
+    } else if($status == 0){
         $_SESSION["msg1"] = "<div class='alert alert-danger alert-dismissible'>
         <button class='btn-close' data-bs-dismiss='alert'></button>
         <strong>Error</strong> : email or password is incorrect
@@ -128,6 +134,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <?php require_once("commons/menu.php"); ?>
         </div>
     </header>
+    <?php
+        if (isset($_SESSION["msg1"])) {
+            echo $_SESSION["msg1"];
+            //unset($_SESSION["msg1"]);
+        }
+        ?>
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <?php
@@ -184,12 +196,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </button>
         </div>
     <main class="main">
-        <?php
-        if (isset($_SESSION["msg1"])) {
-            echo $_SESSION["msg1"];
-            //unset($_SESSION["msg1"]);
-        }
-        ?>
+       
         <!-- Hero Section -->
         <section id="hero" class="hero section">
 

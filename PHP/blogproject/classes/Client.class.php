@@ -65,10 +65,14 @@
 
             if($result->num_rows > 0){
                 while($row = $result->fetch_assoc()){
-                    if(password_verify($password, $row["password"])){
-                        return 1;
+                    if($row["status"] == 1){
+                        if(password_verify($password, $row["password"])){
+                            return 1;
+                        }else{
+                            return 0;
+                        }
                     }else{
-                        return 0;
+                        return 2;
                     }
                 }
             }else{
@@ -76,8 +80,12 @@
             }
         }
 
-        public function getBlogs(){
-            $sqlQuery = "select blogs.id, blogs.blogtitle, blogs.blogimagepath, blogs.created_at, category.categoryname, category.categoryclass from blogs inner join category on blogs.blogcategory  = category.id";
+        public function getBlogs($limit = null, $id = null){
+            if($limit == null){
+                $sqlQuery = "select blogs.id, blogs.blogtitle, blogs.blogimagepath, blogs.created_at, category.categoryname, category.categoryclass from blogs inner join category on blogs.blogcategory  = category.id";
+            }else{
+                $sqlQuery = "select blogs.id, blogs.blogtitle, blogs.blogimagepath, blogs.created_at, category.categoryname, category.categoryclass from blogs inner join category on blogs.blogcategory  = category.id where blogs.id != $id order by created_at desc  limit $limit";
+            }
 
             return $this->conn->query($sqlQuery);
         }

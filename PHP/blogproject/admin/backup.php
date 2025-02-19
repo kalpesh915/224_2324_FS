@@ -50,7 +50,7 @@
         <div class="col-lg-12">
           <div class="row">
             <!-- Customers Card -->
-            <div class="col-xxl-4 col-xl-12">
+            <div class="col-xxl-12 col-xl-12">
 
               <div class="card info-card customers-card">
                 <div class="card-body">

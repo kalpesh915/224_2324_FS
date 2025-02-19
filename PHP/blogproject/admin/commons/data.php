@@ -1,69 +1,214 @@
-<!-- Sales Card -->
-<div class="col-xxl-4 col-md-6">
+<?php
+require_once("classes/Data.class.php");
+?>
+<div class="col-xxl-3 col-md-6">
     <div class="card info-card sales-card">
-
-        <div class="filter">
-            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
-                </li>
-
-                <li><a class="dropdown-item" href="#">Today</a></li>
-                <li><a class="dropdown-item" href="#">This Month</a></li>
-                <li><a class="dropdown-item" href="#">This Year</a></li>
-            </ul>
-        </div>
-
         <div class="card-body">
-            <h5 class="card-title">Sales <span>| Today</span></h5>
+            <h5 class="card-title">Comments <span></span></h5>
 
             <div class="d-flex align-items-center">
                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                     <i class="bi bi-cart"></i>
                 </div>
                 <div class="ps-3">
-                    <h6>145</h6>
-                    <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
-
+                    <h6></h6>
                 </div>
             </div>
         </div>
-
     </div>
-</div><!-- End Sales Card -->
+</div>
 
-<!-- Revenue Card -->
-<div class="col-xxl-4 col-md-6">
-    <div class="card info-card revenue-card">
+<div class="col-xxl-3 col-md-6">
+    <div class="card info-card sales-card">
+        <a href="viewblogs">
+            <div class="card-body">
+                <h5 class="card-title">Blogs <span></span></h5>
 
-        <div class="filter">
-            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <li class="dropdown-header text-start">
-                    <h6>Filter</h6>
-                </li>
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-menu-button-wide"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h6><?= $data->countBlogs(); ?></h6>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
 
-                <li><a class="dropdown-item" href="#">Today</a></li>
-                <li><a class="dropdown-item" href="#">This Month</a></li>
-                <li><a class="dropdown-item" href="#">This Year</a></li>
-            </ul>
-        </div>
+<div class="col-xxl-3 col-md-6">
+    <div class="card info-card sales-card">
+        <a href="category">
+            <div class="card-body">
+                <h5 class="card-title">Category <span></span></h5>
 
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-list"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h6><?= $data->countCategory(); ?></h6>
+                    </div>
+                </div>
+
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xxl-3 col-md-6">
+    <div class="card info-card sales-card">
+        <a href="users">
+            <div class="card-body">
+                <h5 class="card-title">Users <span></span></h5>
+
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-person-lines-fill"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h6><?= $data->countUsers(); ?></h6>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xxl-3 col-md-6">
+    <div class="card info-card sales-card">
+        <a href="unreadmessages">
+            <div class="card-body">
+                <h5 class="card-title">Messages<span></span></h5>
+
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-chat-left-text"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h6><?= $data->newMessagesCount(); ?></h6>
+                        <span class="text-muted small pt-2 ps-1">New Message</span>
+
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xxl-3 col-md-6">
+    <div class="card info-card sales-card">
+        <a href="services">
+            <div class="card-body">
+                <h5 class="card-title">Services<span></span></h5>
+
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-box"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h6><?= $data->countServices(); ?></h6>
+                    </div>
+                </div>
+        </a>
+    </div>
+</div>
+</div>
+
+<div class="col-xxl-3 col-md-6">
+    <div class="card info-card sales-card">
+        <a href="teams">
+            <div class="card-body">
+                <h5 class="card-title">Team <span></span></h5>
+
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-person"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h6><?= $data->countTeams(); ?></h6>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xxl-3 col-md-6">
+    <div class="card info-card sales-card">
+        <a href="slider">
+            <div class="card-body">
+                <h5 class="card-title">Slider <span></span></h5>
+
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-image"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h6><?= $data->countSlider(); ?></h6>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xxl-3 col-md-6">
+    <div class="card info-card sales-card">
+        <a href="faq">
+            <div class="card-body">
+                <h5 class="card-title">FAQ <span></span></h5>
+
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-question-circle"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h6><?= $data->countFAQ(); ?></h6>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xxl-3 col-md-6">
+    <div class="card info-card sales-card">
+        <a href="backup">
+            <div class="card-body">
+                <h5 class="card-title">Backup <span></span></h5>
+
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-hdd"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h6><?php
+                            $files = scandir("dbbackups/");
+                            echo  $count = count($files) - 2;
+                        ?></h6>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="col-xxl-3 col-md-6">
+    <div class="card info-card sales-card">
+        <a href="logs">
         <div class="card-body">
-            <h5 class="card-title">Revenue <span>| This Month</span></h5>
+            <h5 class="card-title">Logs <span></span></h5>
 
             <div class="d-flex align-items-center">
                 <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <i class="bi bi-currency-dollar"></i>
+                    <i class="bi bi-bell"></i>
                 </div>
                 <div class="ps-3">
-                    <h6>$3,264</h6>
-                    <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
-
+                    <h6><?= $data->countLogs(); ?></h6>
                 </div>
             </div>
         </div>
-
     </div>
-</div><!-- End Revenue Card -->
+</div>

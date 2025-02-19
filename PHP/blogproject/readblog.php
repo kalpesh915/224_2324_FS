@@ -10,9 +10,9 @@ if (isset($_POST["logoutProcess"])) {
 }
 
 if (isset($_GET["id"])) {
-    $id = $client->filterData($_GET["id"]);
+    $blogid = $client->filterData($_GET["id"]);
 
-    $blogResult = $client->getBlog($id);
+    $blogResult = $client->getBlog($blogid);
 
     if ($blogResult->num_rows > 0) {
         extract($row = $blogResult->fetch_assoc());
@@ -175,6 +175,51 @@ if (isset($_POST["loginProcess"])) {
                 echo "<p class='my-3 px-5 lead text-danger'>Comment are Disabled on this Post</p>";
             }
             ?>
+
+            <hr>
+
+              <!-- Portfolio Section -->
+        <section id="blogs" class="portfolio section">
+
+<!-- Section Title -->
+<div class="container section-title" data-aos="fade-up">
+    <h2>Latest Blogs</h2>
+    <p>Read our Latest Uploaded Blogs on Diffrent Topics</p>
+</div><!-- End Section Title -->
+
+<div class="container">
+
+    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+
+        <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <?php
+                $blogsResult = $client->getBlogs(3, $blogid);
+
+                while($blogRow = $blogsResult->fetch_assoc()){
+                    echo "<a href='readblog?id=$blogRow[id]' >
+                    <div class='col-lg-4 col-md-6 portfolio-item isotope-item filter-$blogRow[categoryclass]'>
+                <img src='admin/$blogRow[blogimagepath]' class='img-fluid' alt=''>
+                <div class='portfolio-info'>
+                    <h4>$blogRow[blogtitle]</h4>
+                    <p>$blogRow[created_at]</p>
+                    <a href='admin/$blogRow[blogimagepath]' title='$blogRow[blogtitle]' data-gallery='portfolio-gallery-app' class='glightbox preview-link'><i class='bi bi-zoom-in'></i></a>
+                    <a href='readblog?id=$blogRow[id]' title='More Details' class='details-link'><i class='bi bi-link-45deg'></i></a>
+                </div>
+            </div></a>";
+                }
+            ?>
+
+          <!-- End Portfolio Item -->
+
+        </div><!-- End Portfolio Container -->
+
+    </div>
+
+</div>
+
+</section><!-- /Portfolio Section -->
         </section><!-- /Hero Section -->
 
     </main>

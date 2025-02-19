@@ -1,6 +1,15 @@
 <?php
 require_once("commons/session.php");
 require_once("classes/Users.class.php");
+
+// status code
+if(isset($_GET["status"])){
+    $id = $_GET["id"];
+    $status = $_GET["status"];
+
+    $users->updateUserStatus($id, $status);
+    header("location:users");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +57,7 @@ require_once("classes/Users.class.php");
                 <div class="col-lg-12">
                     <div class="row">
                         <!-- Customers Card -->
-                        <div class="col-xxl-4 col-xl-12">
+                        <div class="col-xxl-12 col-xl-12">
                             <div class="card info-card customers-card">
                                 <div class="card-body">
                                     <h5 class="card-title">Title <span></span></h5>
@@ -69,13 +78,18 @@ require_once("classes/Users.class.php");
                                                 $result = $users->getAllUsers();
 
                                                 while($row = $result->fetch_assoc()){
+                                                    if($row["status"] == 1){
+                                                        $statusbtn = "<a href='users?status=0&id=$row[id]' class='btn btn-danger'>Disable</a>";
+                                                    }else{
+                                                        $statusbtn = "<a href='users?status=1&id=$row[id]' class='btn btn-success'>Enable</a>";
+                                                    }
                                                     echo "<tr>
                                                         <td>$row[name]</td>
                                                         <td>$row[email]</td>
                                                         <td>$row[phone]</td>
                                                         <td>$row[gender]</td>
                                                         <td><img src='$row[photopath]' style='width:50px;' class='rounded-circle'></td>
-                                                        <td></td>
+                                                        <td>$statusbtn</td>
                                                     </tr>";
                                                 }
                                             ?>
