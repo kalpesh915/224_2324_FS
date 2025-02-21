@@ -9,6 +9,7 @@ if (isset($_POST["logoutProcess"])) {
     header("location:index");
 }
 
+
 if (isset($_GET["id"])) {
     $blogid = $client->filterData($_GET["id"]);
 
@@ -21,6 +22,19 @@ if (isset($_GET["id"])) {
     }
 } else {
     header("location:index");
+}
+
+
+/// post comment
+if(isset($_POST["commentProcess"])){
+    $comment = $client->filterData($_POST["comment"]);
+    $client->postComment($_SESSION["validuser"], $blogid, $comment);
+    $_SESSION["msg1"] = "<div class='alert alert-success alert-dismissible'>
+    <button class='btn-close' data-bs-dismiss='alert'></button>
+    <strong>Success</strong> : Comment Posted Successfully, Wait for approval from Admin.
+    </div>";
+
+    unset($_POST["commentProcess"]);
 }
 
 // signup
@@ -143,7 +157,7 @@ if (isset($_POST["loginProcess"])) {
         <?php
         if (isset($_SESSION["msg1"])) {
             echo $_SESSION["msg1"];
-            //unset($_SESSION["msg1"]);
+            unset($_SESSION["msg1"]);
         }
         ?>
         <!-- Hero Section -->
@@ -157,12 +171,26 @@ if (isset($_POST["loginProcess"])) {
             </section>
 
 
+        <hr>
+        <div class="my-3 p-5">
+            <?php
+                $commentResult = $client->getComments($blogid);
+
+                while($commentRow = $commentResult->fetch_assoc()){
+                    $userid = ($_SESSION["validuser"] == $commentRow["userid"]) ? "You" : $commentRow["userid"];
+                    echo "<div class='card my-3'>
+                        <div class='card-header'><b>$userid</b> on $commentRow[commentdate],</div>
+                        <div class='card-body'>
+                        <p class='card-text'>$commentRow[commenttext]</p></div></div>";
+                }
+            ?>
+        </div>
             <?php
             if ($blogcomment == 1) {
                 if (isset($_SESSION["validuser"])) {
-                    echo "<form action='' method=''>
+                    echo "<form action='$_SERVER[PHP_SELF]?id=$blogid' method='post'>
                     <div class='my-3 px-5'>
-                        <h3>Comments :</h3>
+                        <h3>Write Comments :</h3>
                         <textarea name='comment' id='comment' class='form-control' required placeholder='Write Your Comment Here..' ></textarea>
 
                         <input type='submit' value='Post Comment' class='btn btn-primary my-2' name='commentProcess'>

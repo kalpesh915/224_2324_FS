@@ -298,21 +298,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <div class="col-lg-4 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                            <span data-purecounter-start="0" data-purecounter-end="<?= $client->countBlogs();?>" data-purecounter-duration="3" class="purecounter"></span>
                             <p>Blogs</p>
                         </div>
                     </div><!-- End Stats Item -->
 
                     <div class="col-lg-4 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                            <span data-purecounter-start="0" data-purecounter-end="<?= $client->countUsers();?>" data-purecounter-duration="3" class="purecounter"></span>
                             <p>Users</p>
                         </div>
                     </div><!-- End Stats Item -->
 
                     <div class="col-lg-4 col-md-6">
                         <div class="stats-item text-center w-100 h-100">
-                            <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+                            <span data-purecounter-start="0" data-purecounter-end="<?= $client->countComments(); ?>" data-purecounter-duration="3" class="purecounter"></span>
                             <p>Comments</p>
                         </div>
                     </div><!-- End Stats Item -->
@@ -372,8 +372,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="col-xl-10">
                         <div class="text-center">
                             <h3>Call To Action</h3>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <a class="cta-btn" href="#">Call To Action</a>
+                            <p>Read our Latest Blogs on Different Topics and give your Comments.</p>
+                            <a class="cta-btn" href="#login">Call To Action</a>
                         </div>
                     </div>
                 </div>

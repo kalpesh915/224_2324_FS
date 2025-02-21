@@ -29,6 +29,16 @@
             }
         }
 
+
+        public function newCommentsCount(){
+            $sqlQuery = "select count(id) as count from comments where status = 0";
+            $result = $this->conn->query($sqlQuery);
+
+            while($row = $result->fetch_assoc()){
+                return $row["count"];
+            }
+        }
+
         public function newMessagesCount(){
             $sqlQuery = "select count(id) as count from messages where status = 0";
             $result = $this->conn->query($sqlQuery);

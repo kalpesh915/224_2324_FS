@@ -100,6 +100,44 @@
 
             return $this->conn->query($sqlQuery);
         }
+
+        public function countUsers(){
+            $sqlQuery = "select count(id) as count from users";
+            $result = $this->conn->query($sqlQuery);
+
+            while($row = $result->fetch_assoc()){
+                return $row["count"];
+            }
+        }
+
+        public function countBlogs(){
+            $sqlQuery = "select count(id) as count from blogs";
+            $result = $this->conn->query($sqlQuery);
+
+            while($row = $result->fetch_assoc()){
+                return $row["count"];
+            }
+        }
+
+        public function countComments(){
+            $sqlQuery = "select count(id) as count from comments";
+            $result = $this->conn->query($sqlQuery);
+
+            while($row = $result->fetch_assoc()){
+                return $row["count"];
+            }
+            
+        }
+
+        public function postComment($userid, $blogid, $commenttext){
+            $sqlQuery = "insert into comments (userid, blogid, commenttext) values ('$userid', '$blogid', '$commenttext')";
+            $this->conn->query($sqlQuery);
+        }
+
+        public function getComments($blogid){
+            $sqlQuery = "select * from comments where blogid = $blogid and adminstatus = 1 order by id desc";
+            return $this->conn->query($sqlQuery);
+        }
     }
 
     $client = new Client();

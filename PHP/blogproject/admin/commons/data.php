@@ -11,7 +11,7 @@ require_once("classes/Data.class.php");
                     <i class="bi bi-cart"></i>
                 </div>
                 <div class="ps-3">
-                    <h6></h6>
+                    <h6><?= $data->newCommentsCount(); ?></h6>
                 </div>
             </div>
         </div>
