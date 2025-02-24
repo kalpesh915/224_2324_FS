@@ -1,15 +1,12 @@
 <?php
-require_once("commons/session.php");
-require_once("classes/Users.class.php");
+    require_once("commons/session.php");
+    require_once("classes/Users.class.php");
 
-// status code
-if(isset($_GET["status"])){
-    $id = $_GET["id"];
-    $status = $_GET["status"];
-
-    $users->updateUserStatus($id, $status);
-    header("location:users");
-}
+    if(isset($_GET["userid"])){
+        $userid = $_GET["userid"];
+    }else{
+        header("location:users");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +43,7 @@ if(isset($_GET["status"])){
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Manage Users</h1>
+            <h1>Pending Comments</h1>
         </div><!-- End Page Title -->
 
         <section class="section dashboard">
@@ -60,48 +57,50 @@ if(isset($_GET["status"])){
                         <div class="col-xxl-12 col-xl-12">
                             <div class="card info-card customers-card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Title <span></span></h5>
+                                    <h5 class="card-title"><span></span></h5>
                                     <!-- Table with stripped rows -->
                                     <table class="table datatable">
                                         <thead>
                                             <tr>
                                                 <th>Username</th>
-                                                <th>Email</th>
-                                                <th>Phone</th>
-                                                <th>Gender</th>
-                                                <th>Photo</th>
+                                                <th>Date</th>
+                                                <th>BlogTitle</th>
+                                                <th>Comment</th>
                                                 <th>Status</th>
-                                                <th>Activity</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                                $result = $users->getAllUsers();
+                                                $result = $users->viewUserActivity($userid);
 
                                                 while($row = $result->fetch_assoc()){
-                                                    if($row["status"] == 1){
-                                                        $statusbtn = "<a href='users?status=0&id=$row[id]' class='btn btn-danger'>Disable</a>";
-                                                    }else{
-                                                        $statusbtn = "<a href='users?status=1&id=$row[id]' class='btn btn-success'>Enable</a>";
+                                                    $commenttext = substr($row["commenttext"], 0, 40)."...";
+
+                                                    if($row["adminstatus"] == 0){
+                                                        $adminstatus = "<span class='text-bg-secondary p-2'>Pending</span>";
+                                                    }else if($row["adminstatus"] == 1){
+                                                        $adminstatus = "<span class='text-bg-success p-2'>Approved</span>";
+                                                    }else if($row["adminstatus"] == 2){
+                                                        $adminstatus = "<span class='text-bg-danger p-2'>Rejected</span>";
                                                     }
+
                                                     echo "<tr>
-                                                        <td>$row[name]</td>
-                                                        <td>$row[email]</td>
-                                                        <td>$row[phone]</td>
-                                                        <td>$row[gender]</td>
-                                                        <td><img src='$row[photopath]' style='width:50px;' class='rounded-circle'></td>
-                                                        <td>$statusbtn</td>
-                                                        <td><a href='activity?userid=$row[email]' class='btn btn-primary'><i class='bi bi-eye'></i></a></td>
+                                                        <td>$row[userid]</td>
+                                                        <td>$row[commentdate]</td>
+                                                        <td>$row[blogtitle]</td>
+                                                        <td title='$row[commenttext]'>$commenttext</td>
+                                                        <td>$adminstatus</td>
+                                                        <td><a href='viewcomment?id=$row[id]' class='btn btn-primary'>
+                                                        <i class='bi bi-eye'></i></a></td>
                                                     </tr>";
                                                 }
                                             ?>
-
                                         </tbody>
                                     </table>
                                     <!-- End Table with stripped rows -->
                                 </div>
                             </div>
-
                         </div><!-- End Customers Card -->
                     </div>
                 </div><!-- End Left side columns -->

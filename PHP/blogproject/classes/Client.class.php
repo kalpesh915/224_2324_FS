@@ -138,6 +138,12 @@
             $sqlQuery = "select * from comments where blogid = $blogid and adminstatus = 1 order by id desc";
             return $this->conn->query($sqlQuery);
         }
+
+        public function viewUserActivity($userid){
+            $sqlQuery = "select comments.id, comments.commentdate, comments.userid, comments.commenttext, comments.adminstatus, blogs.blogtitle from comments inner join blogs on comments.blogid = blogs.id where comments.userid = '$userid'";
+
+            return $this->conn->query($sqlQuery);
+        }
     }
 
     $client = new Client();

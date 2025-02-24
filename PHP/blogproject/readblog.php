@@ -177,7 +177,7 @@ if (isset($_POST["loginProcess"])) {
                 $commentResult = $client->getComments($blogid);
 
                 while($commentRow = $commentResult->fetch_assoc()){
-                    $userid = ($_SESSION["validuser"] == $commentRow["userid"]) ? "You" : $commentRow["userid"];
+                    $userid = ((isset($_SESSION["validuser"])) && ($_SESSION["validuser"] == $commentRow["userid"])) ? "You" : $commentRow["userid"];
                     echo "<div class='card my-3'>
                         <div class='card-header'><b>$userid</b> on $commentRow[commentdate],</div>
                         <div class='card-body'>

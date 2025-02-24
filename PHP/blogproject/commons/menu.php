@@ -8,7 +8,7 @@
           <li><a href="#contact">Contact</a></li>
           <?php
             if(isset($_SESSION["validuser"])){
-              echo "<li><a href='#logout' data-bs-toggle='modal'>Activity</a></li>
+              echo "<li><a href='activity'>Activity</a></li>
               <li><a href='#logout' data-bs-toggle='modal'>Logout</a></li>";
             }else{
               echo "<li><a href='#login' data-bs-toggle='modal'>Login</a></li>";
