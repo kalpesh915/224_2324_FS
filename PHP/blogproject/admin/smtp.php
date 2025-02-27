@@ -80,7 +80,11 @@
                         </div>
                         <div class="my-3">
                             <label class="form0-label" for="smtpport">Enter SMTP Port</label>
-                            <input type="text" name="smtpport" id="smtpport" required class="form-control" value="<?= $smtpport; ?>">
+                            <input type="number" name="smtpport" id="smtpport" required class="form-control" value="<?= $smtpport; ?>">
+                        </div>
+                        <div class="my-3">
+                            <label class="form0-label" for="otptime">Enter OTP Time</label>
+                            <input type="number" name="otptime" id="otptime" required class="form-control" value="<?= $otptime; ?>">
                         </div>
 
                         <div class="my-3">
@@ -143,8 +147,9 @@
         $smtppassword = $smtp->filterData($_POST["smtppassword"]);
         $smtpsecure = $smtp->filterData($_POST["smtpsecure"]);
         $smtpport = $smtp->filterData($_POST["smtpport"]);
+        $otptime = $smtp->filterData($_POST["otptime"]);
 
-        $smtp->updateSMTPInfo($smtphostname, $smtpusername, $smtppassword, $smtpsecure, $smtpport);
+        $smtp->updateSMTPInfo($smtphostname, $smtpusername, $smtppassword, $smtpsecure, $smtpport, $otptime);
 
 
         $_SESSION["msg"] = "<div class='alert alert-success alert-dismissible'>
