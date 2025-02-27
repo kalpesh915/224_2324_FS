@@ -8,8 +8,8 @@
             return $this->conn->query($sqlQuery);
         }
 
-        public function updateSMTPInfo($smtphostname, $smtpusername, $smtppassword, $smtpsecure, $smtpport){
-            $sqlQuery = "update smtpconfig set smtphostname = '$smtphostname', smtpusername = '$smtpusername', smtppassword = '$smtppassword', smtpsecure = '$smtpsecure', smtpport = '$smtpport' where id = 1";
+        public function updateSMTPInfo($smtphostname, $smtpusername, $smtppassword, $smtpsecure, $smtpport, $otptime){
+            $sqlQuery = "update smtpconfig set smtphostname = '$smtphostname', smtpusername = '$smtpusername', smtppassword = '$smtppassword', smtpsecure = '$smtpsecure', smtpport = '$smtpport', otptime = '$otptime' where id = 1";
             $this->conn->query($sqlQuery);
         }
     }
