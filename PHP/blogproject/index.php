@@ -139,6 +139,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             echo $_SESSION["msg1"];
             //unset($_SESSION["msg1"]);
         }
+
+        if (isset($_SESSION["msg"])) {
+            echo $_SESSION["msg"];
+            unset($_SESSION["msg"]);
+        }
         ?>
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">

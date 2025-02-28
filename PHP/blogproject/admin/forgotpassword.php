@@ -163,7 +163,7 @@ if (isset($_POST["forgotProcess"])) {
     <strong>Error</strong> : $email is Not Registered user with US
     </div>";
 
-        //header("location:forgotpassword");
+        header("location:forgotpassword");
     }
 }
 ?>

@@ -3,7 +3,7 @@
 -- Host: localhost	Database: blogingsystem
 -- ------------------------------------------------------
 -- Server version 	10.4.32-MariaDB
--- Date: Sat, 15 Feb 2025 15:25:40 +0530
+-- Date: Fri, 28 Feb 2025 15:08:03 +0530
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -42,7 +42,7 @@ CREATE TABLE `adminusers` (
 LOCK TABLES `adminusers` WRITE;
 /*!40000 ALTER TABLE `adminusers` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `adminusers` VALUES (1,'Nisarg','Kapupara','admin@project.com','$2y$10$lyyaVTlVlzdV8x/h9pHALegb/LpAL/VLl/xrxUJ3ceSeu5FkZc9R6','2025-01-22 09:23:00','2025-01-25 09:58:59');
+INSERT INTO `adminusers` VALUES (1,'Nisarg','Kapupara','hetmanani177@gmail.com','$2y$10$sHZrAEwteiU8o2xo02D9COAHK/T4edryvZ6Q9RHUDBYI.4y6t66LW','2025-01-22 09:23:00','2025-02-27 09:56:52');
 /*!40000 ALTER TABLE `adminusers` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -67,7 +67,7 @@ CREATE TABLE `blogs` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -77,12 +77,12 @@ CREATE TABLE `blogs` (
 LOCK TABLES `blogs` WRITE;
 /*!40000 ALTER TABLE `blogs` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `blogs` VALUES (1,'Blog on Deepseek',1,'DeepSeek is revolutionizing the way we interact with information. As an AI-driven search engine, it goes beyond traditional keyword matching, leveraging advanced natural language processing to understand context and deliver highly relevant results. Whether you&#039;re researching complex topics or seeking quick answers, DeepSeek adapts to your needs, offering personalized, accurate, and efficient solutions. Its ability to learn and evolve ensures it stays ahead in the ever-changing digital landscape. DeepSeek isn’t just a tool; it’s a gateway to smarter, faster, and more intuitive information discovery. Dive into DeepSeek and experience the future of search today!','blogimages/06022025032637pm 40624 img4.jpg',1,0,'2025-02-04 09:44:00','2025-02-06 09:56:37'),(2,'Another Blog on Deepseek AI',1,'DeepSeek is revolutionizing the way we interact with information. As an AI-driven search engine, it goes beyond traditional keyword matching, leveraging advanced natural language processing to understand context and deliver highly relevant results. Whether you&#039;re researching complex topics or seeking quick answers, DeepSeek adapts to your needs, offering personalized, accurate, and efficient solutions. Its ability to learn and evolve ensures it stays ahead in the ever-changing digital landscape. DeepSeek isn’t just a tool; it’s a gateway to smarter, faster, and more intuitive information discovery. Dive into DeepSeek and experience the future of search today!','blogimages/06022025032706pm 26434 img1.jpg',1,1,'2025-02-04 09:45:34','2025-02-06 09:57:06'),(3,'Daily Food',3,'A vegetarian diet is a powerful way to stay healthy and energetic. Packed with essential nutrients, plant-based foods like fruits, vegetables, whole grains, nuts, and legumes provide fiber, vitamins, and antioxidants that boost immunity and improve digestion. Leafy greens, lentils, and dairy products offer protein and calcium for strong muscles and bones. Avoiding processed foods and focusing on fresh, organic produce helps maintain a balanced weight and lowers the risk of heart disease and diabetes. Hydration and mindful eating further enhance overall well-being. Embrace a vegetarian lifestyle for a healthier, more sustainable future!','blogimages/06022025032717pm 55884 img11.jpg',1,1,'2025-02-04 09:56:19','2025-02-06 09:57:17'),(4,'How to make butter nan at Home',2,'Ingredients (Makes 6-8 Naans)\r\n\r\n    2 cups all-purpose flour (maida)\r\n\r\n    1/2 tsp baking powder\r\n\r\n    1/4 tsp baking soda\r\n\r\n    1/2 tsp sugar\r\n\r\n    1/2 tsp salt\r\n\r\n    2 tbsp yogurt (plain, unsweetened)\r\n\r\n    2 tbsp milk (warm)\r\n\r\n    2 tbsp butter (melted) + extra for brushing\r\n\r\n    1/4 cup water (approx., for kneading)\r\n\r\n    1-2 tbsp nigella seeds (kalonji) or sesame seeds (optional, for topping)\r\n\r\nInstructions\r\n1. Prepare the Dough\r\n\r\n    In a large mixing bowl, combine the flour, baking powder, baking soda, sugar, and salt.\r\n\r\n    Add the yogurt, melted butter, and warm milk. Mix well.\r\n\r\n    Gradually add water and knead into a soft, smooth dough. The dough should be slightly sticky but manageable.\r\n\r\n    Cover the dough with a damp cloth and let it rest for 2 hours in a warm place.\r\n\r\n2. Shape the Naan\r\n\r\n    After the dough has rested, divide it into 6-8 equal-sized balls.\r\n\r\n    Roll each ball into an oval or round shape using a rolling pin. You can make it thick or thin, depending on your preference.\r\n\r\n    If desired, sprinkle nigella seeds or sesame seeds on top and gently press them into the dough.\r\n\r\n3. Cook the Naan\r\n\r\n    Heat a skillet or tawa over medium-high heat.\r\n\r\n    Place the rolled naan on the hot skillet. Cook for about 30 seconds until bubbles start to form.\r\n\r\n    Flip the naan and cook the other side for another 30 seconds.\r\n\r\n    For a charred effect, you can hold the naan directly over a flame using tongs for a few seconds until it puffs up and gets slight char marks.\r\n\r\n    Remove from heat and brush generously with melted butter.\r\n\r\n4. Serve\r\n\r\n    Serve hot with your favorite curry, dal, or dip.','blogimages/06022025032731pm 74619 img12.jpg',1,1,'2025-02-06 09:24:10','2025-02-06 09:57:31');
+INSERT INTO `blogs` VALUES (1,'Blog on Deepseek',1,'DeepSeek is revolutionizing the way we interact with information. As an AI-driven search engine, it goes beyond traditional keyword matching, leveraging advanced natural language processing to understand context and deliver highly relevant results. Whether you&#039;re researching complex topics or seeking quick answers, DeepSeek adapts to your needs, offering personalized, accurate, and efficient solutions. Its ability to learn and evolve ensures it stays ahead in the ever-changing digital landscape. DeepSeek isn’t just a tool; it’s a gateway to smarter, faster, and more intuitive information discovery. Dive into DeepSeek and experience the future of search today!','blogimages/06022025032637pm 40624 img4.jpg',0,1,'2025-02-04 09:44:00','2025-02-18 09:55:56'),(2,'Another Blog on Deepseek AI',1,'DeepSeek is revolutionizing the way we interact with information. As an AI-driven search engine, it goes beyond traditional keyword matching, leveraging advanced natural language processing to understand context and deliver highly relevant results. Whether you&#039;re researching complex topics or seeking quick answers, DeepSeek adapts to your needs, offering personalized, accurate, and efficient solutions. Its ability to learn and evolve ensures it stays ahead in the ever-changing digital landscape. DeepSeek isn’t just a tool; it’s a gateway to smarter, faster, and more intuitive information discovery. Dive into DeepSeek and experience the future of search today!','blogimages/06022025032706pm 26434 img1.jpg',1,1,'2025-02-04 09:45:34','2025-02-06 09:57:06'),(3,'Daily Food',3,'A vegetarian diet is a powerful way to stay healthy and energetic. Packed with essential nutrients, plant-based foods like fruits, vegetables, whole grains, nuts, and legumes provide fiber, vitamins, and antioxidants that boost immunity and improve digestion. Leafy greens, lentils, and dairy products offer protein and calcium for strong muscles and bones. Avoiding processed foods and focusing on fresh, organic produce helps maintain a balanced weight and lowers the risk of heart disease and diabetes. Hydration and mindful eating further enhance overall well-being. Embrace a vegetarian lifestyle for a healthier, more sustainable future!','blogimages/06022025032717pm 55884 img11.jpg',1,1,'2025-02-04 09:56:19','2025-02-06 09:57:17'),(4,'How to make butter nan at Home',2,'Ingredients (Makes 6-8 Naans)\r\n\r\n    2 cups all-purpose flour (maida)\r\n\r\n    1/2 tsp baking powder\r\n\r\n    1/4 tsp baking soda\r\n\r\n    1/2 tsp sugar\r\n\r\n    1/2 tsp salt\r\n\r\n    2 tbsp yogurt (plain, unsweetened)\r\n\r\n    2 tbsp milk (warm)\r\n\r\n    2 tbsp butter (melted) + extra for brushing\r\n\r\n    1/4 cup water (approx., for kneading)\r\n\r\n    1-2 tbsp nigella seeds (kalonji) or sesame seeds (optional, for topping)\r\n\r\nInstructions\r\n1. Prepare the Dough\r\n\r\n    In a large mixing bowl, combine the flour, baking powder, baking soda, sugar, and salt.\r\n\r\n    Add the yogurt, melted butter, and warm milk. Mix well.\r\n\r\n    Gradually add water and knead into a soft, smooth dough. The dough should be slightly sticky but manageable.\r\n\r\n    Cover the dough with a damp cloth and let it rest for 2 hours in a warm place.\r\n\r\n2. Shape the Naan\r\n\r\n    After the dough has rested, divide it into 6-8 equal-sized balls.\r\n\r\n    Roll each ball into an oval or round shape using a rolling pin. You can make it thick or thin, depending on your preference.\r\n\r\n    If desired, sprinkle nigella seeds or sesame seeds on top and gently press them into the dough.\r\n\r\n3. Cook the Naan\r\n\r\n    Heat a skillet or tawa over medium-high heat.\r\n\r\n    Place the rolled naan on the hot skillet. Cook for about 30 seconds until bubbles start to form.\r\n\r\n    Flip the naan and cook the other side for another 30 seconds.\r\n\r\n    For a charred effect, you can hold the naan directly over a flame using tongs for a few seconds until it puffs up and gets slight char marks.\r\n\r\n    Remove from heat and brush generously with melted butter.\r\n\r\n4. Serve\r\n\r\n    Serve hot with your favorite curry, dal, or dip.','blogimages/06022025032731pm 74619 img12.jpg',1,1,'2025-02-06 09:24:10','2025-02-06 09:57:31'),(5,'ChatGPT',1,'What is ChatGPT?\r\n\r\nChatGPT is an AI-powered chatbot that uses natural language processing (NLP) to understand and generate human-like text. Built on OpenAI’s powerful GPT (Generative Pre-trained Transformer) model, it can engage in meaningful conversations, answer questions, assist with tasks, and even generate creative content like stories, poems, and code.\r\n\r\nHow Does ChatGPT Work?\r\n\r\nChatGPT works by analyzing vast amounts of text data to predict and generate relevant responses. It understands context, grammar, and intent, allowing users to interact with it as if they were speaking to a human. The AI continuously learns from interactions to improve its accuracy and effectiveness.','blogimages/19022025025754pm 30423 img2.jpg',1,1,'2025-02-19 09:27:54','2025-02-19 09:27:54');
 /*!40000 ALTER TABLE `blogs` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
 
--- Dumped table `blogs` with 4 row(s)
+-- Dumped table `blogs` with 5 row(s)
 --
 
 --
@@ -115,6 +115,39 @@ UNLOCK TABLES;
 COMMIT;
 
 -- Dumped table `category` with 5 row(s)
+--
+
+--
+-- Table structure for table `comments`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `commentdate` timestamp NOT NULL DEFAULT current_timestamp(),
+  `userid` varchar(128) NOT NULL,
+  `blogid` int(11) NOT NULL,
+  `commenttext` varchar(2048) NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 0,
+  `adminstatus` tinyint(4) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comments`
+--
+
+LOCK TABLES `comments` WRITE;
+/*!40000 ALTER TABLE `comments` DISABLE KEYS */;
+SET autocommit=0;
+INSERT INTO `comments` VALUES (1,'2025-02-21 09:47:27','het@gmail.com',4,'Sample Comemnt',1,0),(2,'2025-02-21 09:48:37','het@gmail.com',4,'Another Comment',1,2),(3,'2025-02-21 09:49:35','bhavya@gmail.com',4,'Another Comment',1,2),(4,'2025-02-21 09:49:57','het@gmail.com',4,'Another Comment',1,0),(5,'2025-02-21 09:49:59','het@gmail.com',4,'Another Comment',1,1),(6,'2025-02-21 09:50:08','het@gmail.com',4,'Another Comment',0,0),(7,'2025-02-21 09:51:48','het@gmail.com',4,'Another Comment',1,0),(8,'2025-02-21 09:51:51','het@gmail.com',4,'Another Comment',1,0),(9,'2025-02-21 09:52:38','het@gmail.com',4,'Another Comment',0,0),(10,'2025-02-21 09:56:58','het@gmail.com',4,'Another Comment',1,1),(11,'2025-02-21 09:57:23','het@gmail.com',4,'Another Comment',0,0),(12,'2025-02-21 09:57:31','het@gmail.com',4,'Another Comment',0,0),(13,'2025-02-21 09:57:36','het@gmail.com',4,'Another Comment',0,0),(14,'2025-02-21 09:58:01','het@gmail.com',4,'Another Comment',0,1),(15,'2025-02-21 09:58:31','het@gmail.com',4,'Another Comment',0,0),(16,'2025-02-21 10:00:06','het@gmail.com',4,'Another Comment',1,0),(17,'2025-02-21 10:00:24','het@gmail.com',4,'Another Comment',0,1),(18,'2025-02-21 10:00:56','het@gmail.com',4,'Another Comment',0,0),(19,'2025-02-21 10:01:13','het@gmail.com',4,'Another Comment',0,0),(20,'2025-02-21 10:01:45','het@gmail.com',4,'Another Comment',0,0),(21,'2025-02-21 10:02:05','het@gmail.com',4,'This is another comment',0,0),(22,'2025-02-21 10:04:01','het@gmail.com',4,'This is another comment',0,0),(23,'2025-02-21 10:04:30','het@gmail.com',4,'This is another comment',0,0),(24,'2025-02-21 10:04:48','het@gmail.com',4,'This is another comment',0,0),(25,'2025-02-22 09:22:29','het@gmail.com',4,'again testing comment code',0,1),(26,'2025-02-22 09:23:02','het@gmail.com',4,'again testing commentagain testing commentagain testing commentagain testing commentagain testing commentagain testing commentagain testing commentagain testing commentagain testing commentagain testing commentagain testing commentagain testing commentagain testing commentagain testing commentagain testing commentagain testing commentagain testing commentagain testing commentagain testing commentagain testing commentagain testing commentagain testing comment',1,1),(27,'2025-02-22 09:47:30','het@gmail.com',4,'again testing comment code',0,0),(28,'2025-02-24 09:30:34','het@gmail.com',4,'Another testing comment on this blog',0,0),(29,'2025-02-24 09:47:20','het@gmail.com',4,'Another testing comment on this blog',0,0);
+/*!40000 ALTER TABLE `comments` ENABLE KEYS */;
+UNLOCK TABLES;
+COMMIT;
+
+-- Dumped table `comments` with 29 row(s)
 --
 
 --
@@ -196,7 +229,7 @@ CREATE TABLE `logs` (
   `logmessage` varchar(1024) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=154 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -206,12 +239,12 @@ CREATE TABLE `logs` (
 LOCK TABLES `logs` WRITE;
 /*!40000 ALTER TABLE `logs` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `logs` VALUES (88,'2025-02-07 09:42:48','admin@project.com','Logs Deleted',1),(89,'2025-02-07 09:43:00','admin@project.com','Logout Successfully',1),(90,'2025-02-08 08:59:57','admin@project.com','Login Successfully',1),(91,'2025-02-08 09:10:56','admin@project.com','Logout Successfully',1),(92,'2025-02-08 09:16:21','admin@project.com','Login Successfully',1),(93,'2025-02-08 09:58:50','admin@project.com','Logout Successfully',1),(94,'2025-02-11 09:04:34','admin@project.com','Login Successfully',1),(95,'2025-02-11 09:34:36','admin@project.com','Login Successfully',1),(96,'2025-02-11 09:36:31','admin@project.com','Login Successfully',1),(97,'2025-02-11 09:40:54','admin@project.com','Bhavya Dava Member added in Team Section',1),(98,'2025-02-11 09:41:57','admin@project.com','Keyur Ramani Member added in Team Section',1),(99,'2025-02-11 09:50:07','admin@project.com','Bhavya Dava Member added in Team Section',1),(100,'2025-02-11 09:50:24','admin@project.com','Keyur Ramani Member added in Team Section',1),(101,'2025-02-11 09:52:39','admin@project.com','Prince Patel Member added in Team Section',1),(102,'2025-02-11 09:54:09','admin@project.com','Bhavya Dava Member added in Team Section',1),(103,'2025-02-11 09:55:44','admin@project.com','Bhavya Dava Member added in Team Section',1),(104,'2025-02-11 09:55:59','admin@project.com','Keyur Ramani Member added in Team Section',1),(105,'2025-02-11 09:56:16','admin@project.com','Prince Patel Member added in Team Section',1),(106,'2025-02-12 09:10:02','admin@project.com','Login Successfully',1),(107,'2025-02-12 10:15:22','admin@project.com','img1.jpg Slider Added in Database',0),(108,'2025-02-12 10:16:39','admin@project.com','Logout Successfully',0),(109,'2025-02-14 09:06:19','admin@project.com','Login Successfully',0),(110,'2025-02-14 09:11:24','admin@project.com','New FAQ Sample FAQ Added',0),(111,'2025-02-14 09:35:28','admin@project.com','Bhavin Thakor Member added in Team Section',0),(112,'2025-02-14 09:44:00','admin@project.com','Samle Service Service Added in Database',0),(113,'2025-02-14 09:58:38','admin@project.com','Logout Successfully',0),(114,'2025-02-15 08:58:55','admin@project.com','Login Successfully',0);
+INSERT INTO `logs` VALUES (139,'2025-02-26 04:59:45','hetmanani177@gmail.com','Logs Deleted',1),(140,'2025-02-26 04:59:48','hetmanani177@gmail.com','Logout Successfully',1),(141,'2025-02-27 09:16:38','hetmanani177@gmail.com','Login Successfully',1),(142,'2025-02-27 09:22:16','hetmanani177@gmail.com','Logout Successfully',1),(143,'2025-02-27 09:22:33','hetmanani177@gmail.com','Password reset otp 629304 Generated and Send to Your Registered Email Address',1),(144,'2025-02-27 09:24:10','hetmanani177@gmail.com','Login Successfully',1),(145,'2025-02-27 09:24:56','hetmanani177@gmail.com','Logout Successfully',1),(146,'2025-02-27 09:25:36','hetmanani177@gmail.com','Password reset otp 170199 Generated and Send to Your Registered Email Address',1),(147,'2025-02-27 09:55:45','hetmanani177@gmail.com','Password Reset Successfully ',1),(148,'2025-02-27 09:56:22','hetmanani177@gmail.com','Password reset otp 487007 Generated and Send to Your Registered Email Address',1),(149,'2025-02-27 09:56:52','hetmanani177@gmail.com','Password Reset Successfully ',1),(150,'2025-02-27 09:57:05','hetmanani177@gmail.com','Login Successfully',1),(151,'2025-02-27 10:01:10','hetmanani177@gmail.com','Logout Successfully',1),(152,'2025-02-27 10:01:25','hetmanani177@gmail.com','Password reset otp 693533 Generated and Send to Your Registered Email Address',1),(153,'2025-02-28 09:06:47','hetmanani177@gmail.com','Login Successfully',1);
 /*!40000 ALTER TABLE `logs` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
 
--- Dumped table `logs` with 27 row(s)
+-- Dumped table `logs` with 15 row(s)
 --
 
 --
@@ -230,7 +263,7 @@ CREATE TABLE `messages` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updted_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -240,12 +273,44 @@ CREATE TABLE `messages` (
 LOCK TABLES `messages` WRITE;
 /*!40000 ALTER TABLE `messages` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `messages` VALUES (11,'2025-02-14 09:55:30','hello@gmail.com','sample','sample message',0,'2025-02-14 09:55:30','2025-02-14 09:55:30');
+INSERT INTO `messages` VALUES (11,'2025-02-14 09:55:30','hello@gmail.com','sample','sample message',1,'2025-02-14 09:55:30','2025-02-19 10:12:42');
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
 
 -- Dumped table `messages` with 1 row(s)
+--
+
+--
+-- Table structure for table `otpentry`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `otpentry` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(128) NOT NULL,
+  `otp` varchar(20) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `expire_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `status` tinyint(4) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `otpentry`
+--
+
+LOCK TABLES `otpentry` WRITE;
+/*!40000 ALTER TABLE `otpentry` DISABLE KEYS */;
+SET autocommit=0;
+INSERT INTO `otpentry` VALUES (7,'hetmanani177@gmail.com','693533','2025-02-27 10:01:25','2025-02-27 10:21:25',0),(10,'bhavydava@gmail.com','802090','2025-02-28 09:30:53','2025-02-28 09:50:53',0);
+/*!40000 ALTER TABLE `otpentry` ENABLE KEYS */;
+UNLOCK TABLES;
+COMMIT;
+
+-- Dumped table `otpentry` with 2 row(s)
 --
 
 --
@@ -369,7 +434,7 @@ CREATE TABLE `slider` (
 LOCK TABLES `slider` WRITE;
 /*!40000 ALTER TABLE `slider` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `slider` VALUES (2,'Sample1','Demo Slider1','sliderimages/12022025034403pm 99110 img2.jpg',1,'2025-02-12 10:02:48','2025-02-12 10:14:03'),(4,'Another  Slider','Another SliderA   nother Slider Another Slider','sliderimages/12022025034538pm 47410 img10.jpg',1,'2025-02-12 10:15:22','2025-02-12 10:15:38');
+INSERT INTO `slider` VALUES (2,'Sample1','Demo Slider1 Demo Slider1 Demo Slider1 Demo Slider1 Demo Slider1 Demo Slider1 Demo Slider1 Demo Slider1','sliderimages/12022025034403pm 99110 img2.jpg',1,'2025-02-12 10:02:48','2025-02-17 09:30:25'),(4,'Another  Slider','Another SliderA   nother Slider Another Slider','sliderimages/12022025034538pm 47410 img10.jpg',1,'2025-02-12 10:15:22','2025-02-12 10:15:38');
 /*!40000 ALTER TABLE `slider` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -390,6 +455,7 @@ CREATE TABLE `smtpconfig` (
   `smtppassword` varchar(128) NOT NULL,
   `smtpsecure` varchar(32) NOT NULL,
   `smtpport` int(11) NOT NULL,
+  `otptime` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updted_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
@@ -403,7 +469,7 @@ CREATE TABLE `smtpconfig` (
 LOCK TABLES `smtpconfig` WRITE;
 /*!40000 ALTER TABLE `smtpconfig` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `smtpconfig` VALUES (1,'mail.google.com','info@yourserver.com','1234554321','SSH',990,'2025-01-25 09:08:19','2025-01-25 09:30:02');
+INSERT INTO `smtpconfig` VALUES (1,'mail.prajapatispirit.org','developers@prajapatispirit.org','123@IantRajkot','ssl',465,20,'2025-01-25 09:08:19','2025-02-27 10:00:36');
 /*!40000 ALTER TABLE `smtpconfig` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -513,7 +579,7 @@ CREATE TABLE `users` (
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 SET autocommit=0;
-INSERT INTO `users` VALUES (2,'Bhavya Dava','bhavya@gmail.com','$2y$10$k3cUZeOx9KA/ff0GW2PYgOW6f6htiEhNFN0Tz7od4UwX7loWvzeze','9900990099','male','userimages/27688 15022025102628am bhavya@gmail.com img2.jpg',1,'2025-02-15 09:26:28','2025-02-15 09:26:28'),(3,'Het Manani','het@gmail.com','$2y$10$GWstcnuWxkohvWHsgNoeru0oNDZcI1ZyXSdPjFlZXyfxF.qMtS.Bi','9900990099','male','userimages/57556 15022025102733am het@gmail.com img10.jpg',1,'2025-02-15 09:27:33','2025-02-15 09:27:33'),(4,'Bhvin Thakor','bhavin@gmail.com','$2y$10$skhydMUusEoKlJufIx6Sce9Y7lJURUzzgKr9P5j1TlevacIaqB1JK','9900990099','male','userimages/81221 15022025104059am bhavin@gmail.com img10.jpg',1,'2025-02-15 09:40:59','2025-02-15 09:40:59');
+INSERT INTO `users` VALUES (2,'Bhavya Dava','bhavydava@gmail.com','$2y$10$KOxg8SmCLnZwtqmCWkzFQeBNbVTILQokFaHKK0mF7G5cGj6yLbYHG','9900990099','male','userimages/27688 15022025102628am bhavya@gmail.com img2.jpg',1,'2025-02-15 09:26:28','2025-02-28 09:36:46'),(3,'Het Manani','hetmanani177@gmail.com','$2y$10$GWstcnuWxkohvWHsgNoeru0oNDZcI1ZyXSdPjFlZXyfxF.qMtS.Bi','9900990099','male','userimages/57556 15022025102733am het@gmail.com img10.jpg',1,'2025-02-15 09:27:33','2025-02-28 09:30:29'),(4,'Bhvin Thakor','bhavin@gmail.com','$2y$10$skhydMUusEoKlJufIx6Sce9Y7lJURUzzgKr9P5j1TlevacIaqB1JK','9900990099','male','userimages/81221 15022025104059am bhavin@gmail.com img10.jpg',1,'2025-02-15 09:40:59','2025-02-15 09:40:59');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 COMMIT;
@@ -531,4 +597,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on: Sat, 15 Feb 2025 15:25:40 +0530
+-- Dump completed on: Fri, 28 Feb 2025 15:08:03 +0530

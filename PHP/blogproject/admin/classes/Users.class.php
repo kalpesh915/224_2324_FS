@@ -17,6 +17,7 @@
 
             return $this->conn->query($sqlQuery);
         }
+        
     }
 
     $users = new Users();
