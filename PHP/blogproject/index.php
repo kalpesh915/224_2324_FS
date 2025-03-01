@@ -3,105 +3,6 @@ session_start();
 ob_start();
 
 require_once("classes/Client.class.php");
-
-if (isset($_POST["logoutProcess"])) {
-    unset($_SESSION["validuser"]);
-    header("location:index");
-}
-
-if (isset($_POST["msgProcess"])) {
-    $senderemail = $client->filterData($_POST["senderemail"]);
-    $subject = $client->filterData($_POST["subject"]);
-    $content = $client->filterData($_POST["content"]);
-
-    $client->storeNewMessage($senderemail, $subject, $content);
-
-    $_SESSION["msg"] = "<div class='alert alert-success alert-dismissible'>
-    <button class='btn-close' data-bs-dismiss='alert'></button>
-    <strong>Success</strong> : Thnaks for your message, we will reach you soon.
-    </div>";
-
-    header("location:index#contact");
-}
-
-// signup
-if (isset($_POST["signupProcess"])) {
-    $name = $client->filterData($_POST["name"]);
-    $email = $client->filterData($_POST["email"]);
-    $password = $client->filterData($_POST["password"]);
-    $cpassword = $client->filterData($_POST["cpassword"]);
-    $gender = $client->filterData($_POST["gender"]);
-    $phone = $client->filterData($_POST["phone"]);
-    $profilephoto = $_FILES["profilephoto"];
-
-    if ($password == $cpassword) {
-        $validType = ["image/jpg", "image/jpeg"];
-
-        if (in_array($profilephoto["type"], $validType)) {
-            // check for email is available or not
-            if (!$client->checkUserExist($email)) {
-                $source = $profilephoto["tmp_name"];
-                $random = rand(9999, 99999);
-                $date = date("dmYHisa");
-                $photoname = $profilephoto["name"];
-                $destination = "userimages/$random $date $email $photoname";
-
-                move_uploaded_file($source, "admin/" . $destination);
-
-                $password = password_hash($password, PASSWORD_DEFAULT);
-                $client->createNewUser($name, $email, $password, $gender, $phone, $destination);
-
-                $_SESSION["msg1"] = "<div class='alert alert-success alert-dismissible'>
-                <button class='btn-close' data-bs-dismiss='alert'></button>
-                <strong>Success</strong> : $email user Created in database
-                </div>";
-            } else {
-                $_SESSION["msg1"] = "<div class='alert alert-danger alert-dismissible'>
-                <button class='btn-close' data-bs-dismiss='alert'></button>
-                <strong>Error</strong> : $email user is already in database
-                </div>";
-            }
-        } else {
-            $_SESSION["msg1"] = "<div class='alert alert-danger alert-dismissible'>
-            <button class='btn-close' data-bs-dismiss='alert'></button>
-            <strong>Error</strong> : Must Select .JPG or .JPEG photo
-            </div>";
-        }
-    } else {
-        $_SESSION["msg1"] = "<div class='alert alert-danger alert-dismissible'>
-        <button class='btn-close' data-bs-dismiss='alert'></button>
-        <strong>Error</strong> : Confirm Password does not match.
-        </div>";
-    }
-
-    header("location:index");
-}
-
-// Login Code
-if (isset($_POST["loginProcess"])) {
-    $email = $client->filterData($_POST["email"]);
-    $password = $client->filterData($_POST["password"]);
-
-    $status = $client->loginUser($email, $password);
-    if ($status == 1) {
-        $_SESSION["validuser"] = $email;
-        $_SESSION["msg1"] = "<div class='alert alert-success alert-dismissible'>
-        <button class='btn-close' data-bs-dismiss='alert'></button>
-        <strong>Success</strong> : Login Successfully
-        </div>";
-    }else if($status == 2){
-        $_SESSION["msg1"] = "<div class='alert alert-danger alert-dismissible'>
-        <button class='btn-close' data-bs-dismiss='alert'></button>
-        <strong>Error</strong> : Your Account is Disbled please Contact Admin
-        </div>";
-    } else if($status == 0){
-        $_SESSION["msg1"] = "<div class='alert alert-danger alert-dismissible'>
-        <button class='btn-close' data-bs-dismiss='alert'></button>
-        <strong>Error</strong> : email or password is incorrect
-        </div>";
-    }
-    header("location:index");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -137,12 +38,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <?php
         if (isset($_SESSION["msg1"])) {
             echo $_SESSION["msg1"];
-            //unset($_SESSION["msg1"]);
-        }
-
-        if (isset($_SESSION["msg"])) {
-            echo $_SESSION["msg"];
-            unset($_SESSION["msg"]);
+            unset($_SESSION["msg1"]);
         }
         ?>
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -603,7 +499,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <?php
                                 if (isset($_SESSION["msg"])) {
                                     echo $_SESSION["msg"];
-                                    //unset($_SESSION["msg"]);
+                                    unset($_SESSION["msg"]);
                                 }
                                 ?>
                                 <div class="col-md-12 ">
@@ -662,4 +558,102 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <?php
     require_once("commons/models.php");
+
+    if (isset($_POST["logoutProcess"])) {
+        unset($_SESSION["validuser"]);
+        header("location:index");
+    }
+    
+    if (isset($_POST["msgProcess"])) {
+        $senderemail = $client->filterData($_POST["senderemail"]);
+        $subject = $client->filterData($_POST["subject"]);
+        $content = $client->filterData($_POST["content"]);
+    
+        $client->storeNewMessage($senderemail, $subject, $content);
+    
+        $_SESSION["msg"] = "<div class='alert alert-success alert-dismissible'>
+        <button class='btn-close' data-bs-dismiss='alert'></button>
+        <strong>Success</strong> : Thnaks for your message, we will reach you soon.
+        </div>";
+        header("location:index#contact");
+    }
+    
+    // signup
+    if (isset($_POST["signupProcess"]) and $_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = $client->filterData($_POST["name"]);
+        $email = $client->filterData($_POST["email"]);
+        $password = $client->filterData($_POST["password"]);
+        $cpassword = $client->filterData($_POST["cpassword"]);
+        $gender = $client->filterData($_POST["gender"]);
+        $phone = $client->filterData($_POST["phone"]);
+        $profilephoto = $_FILES["profilephoto"];
+    
+        if ($password == $cpassword) {
+            $validType = ["image/jpg", "image/jpeg"];
+    
+            if (in_array($profilephoto["type"], $validType)) {
+                // check for email is available or not
+                if (!$client->checkUserExist($email)) {
+                    $source = $profilephoto["tmp_name"];
+                    $random = rand(9999, 99999);
+                    $date = date("dmYHisa");
+                    $photoname = $profilephoto["name"];
+                    $destination = "userimages/$random $date $email $photoname";
+    
+                    move_uploaded_file($source, "admin/" . $destination);
+    
+                    $password = password_hash($password, PASSWORD_DEFAULT);
+                    $client->createNewUser($name, $email, $password, $gender, $phone, $destination);
+    
+                    $_SESSION["msg1"] = "<div class='alert alert-success alert-dismissible'>
+                    <button class='btn-close' data-bs-dismiss='alert'></button>
+                    <strong>Success</strong> : $email user Created in database
+                    </div>";
+                } else {
+                    $_SESSION["msg1"] = "<div class='alert alert-danger alert-dismissible'>
+                    <button class='btn-close' data-bs-dismiss='alert'></button>
+                    <strong>Error</strong> : $email user is already in database
+                    </div>";
+                }
+            } else {
+                $_SESSION["msg1"] = "<div class='alert alert-danger alert-dismissible'>
+                <button class='btn-close' data-bs-dismiss='alert'></button>
+                <strong>Error</strong> : Must Select .JPG or .JPEG photo
+                </div>";
+            }
+        } else {
+            $_SESSION["msg1"] = "<div class='alert alert-danger alert-dismissible'>
+            <button class='btn-close' data-bs-dismiss='alert'></button>
+            <strong>Error</strong> : Confirm Password does not match.
+            </div>";
+        }
+    
+        header("location:index");
+    }
+    
+    // Login Code
+    if (isset($_POST["loginProcess"]) and $_SERVER["REQUEST_METHOD"] == "POST") {
+        $email = $client->filterData($_POST["email"]);
+        $password = $client->filterData($_POST["password"]);
+    
+        $status = $client->loginUser($email, $password);
+        if ($status == 1) {
+            $_SESSION["validuser"] = $email;
+            $_SESSION["msg1"] = "<div class='alert alert-success alert-dismissible'>
+            <button class='btn-close' data-bs-dismiss='alert'></button>
+            <strong>Success</strong> : Login Successfully
+            </div>";
+        }else if($status == 2){
+            $_SESSION["msg1"] = "<div class='alert alert-danger alert-dismissible'>
+            <button class='btn-close' data-bs-dismiss='alert'></button>
+            <strong>Error</strong> : Your Account is Disbled please Contact Admin
+            </div>";
+        } else if($status == 0){
+            $_SESSION["msg1"] = "<div class='alert alert-danger alert-dismissible'>
+            <button class='btn-close' data-bs-dismiss='alert'></button>
+            <strong>Error</strong> : email or password is incorrect
+            </div>";
+        }
+        header("location:index");
+    }
 ?>

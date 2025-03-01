@@ -2,20 +2,22 @@
 require_once("classes/Data.class.php");
 ?>
 <div class="col-xxl-3 col-md-6">
-    <div class="card info-card sales-card">
-        <div class="card-body">
-            <h5 class="card-title">Comments <span></span></h5>
+    <a href="pendingcomment">
+        <div class="card info-card sales-card">
+            <div class="card-body">
+                <h5 class="card-title">Comments <span></span></h5>
 
-            <div class="d-flex align-items-center">
-                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <i class="bi bi-chat"></i>
-                </div>
-                <div class="ps-3">
-                    <h6><?= $data->newCommentsCount(); ?></h6>
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-chat"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h6><?= $data->newCommentsCount(); ?></h6>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </a>
 </div>
 
 <div class="col-xxl-3 col-md-6">
@@ -187,7 +189,7 @@ require_once("classes/Data.class.php");
                         <h6><?php
                             $files = scandir("dbbackups/");
                             echo  $count = count($files) - 2;
-                        ?></h6>
+                            ?></h6>
                     </div>
                 </div>
             </div>
@@ -198,17 +200,17 @@ require_once("classes/Data.class.php");
 <div class="col-xxl-3 col-md-6">
     <div class="card info-card sales-card">
         <a href="logs">
-        <div class="card-body">
-            <h5 class="card-title">Logs <span></span></h5>
+            <div class="card-body">
+                <h5 class="card-title">Logs <span></span></h5>
 
-            <div class="d-flex align-items-center">
-                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <i class="bi bi-bell"></i>
-                </div>
-                <div class="ps-3">
-                    <h6><?= $data->countLogs(); ?></h6>
+                <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-bell"></i>
+                    </div>
+                    <div class="ps-3">
+                        <h6><?= $data->countLogs(); ?></h6>
+                    </div>
                 </div>
             </div>
-        </div>
     </div>
 </div>
