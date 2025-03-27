@@ -1,0 +1,14 @@
+{
+  "students": [
+    {
+      "fname": "YASH",
+      "lname": "SINGAL",
+      "email": "yash@gmail.co.in",
+      "phone": "99009900877",
+      "city": "ahamdabad",
+      "gender": "Male",
+      "fees": "12345",
+      "id": "114c"
+    }
+  ]
+}
